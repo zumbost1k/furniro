@@ -1,0 +1,144 @@
+import React, { useState } from 'react';
+import './products.css'
+import { Link } from 'react-router-dom';
+
+const Allproducts = [
+    {
+        path: 'grifo.svg',
+        name: 'Grifo',
+        type: 'Night lamp',
+        cost: '2.500.000',
+        oldCost: '',
+        new: false,
+        discount: ''
+    },
+    {
+        path: 'leviosa.svg',
+        name: 'Leviosa',
+        type: 'Stylish cafe chair',
+        cost: '2.500.000',
+        oldCost: '',
+        new: false,
+        discount: ''
+    },
+    {
+        path: 'lolito.svg',
+        name: 'Lolito',
+        type: 'Luxury big sofa',
+        cost: '7.000.000',
+        oldCost: '14.000.000',
+        discount: '-50%'
+    },
+    {
+        path: 'muggo.svg',
+        name: 'Muggo',
+        type: 'Small mug',
+        cost: '150.000',
+        oldCost: '',
+        new: true,
+        discount: ''
+
+    },
+    {
+        path: 'pingky.svg',
+        name: 'Pingky',
+        type: 'Cute bed set',
+        cost: '7.000.000',
+        oldCost: '14.000.000',
+        discount: '-50%',
+        new: false,
+    },
+    {
+        path: 'potty.svg',
+        name: 'Potty',
+        type: 'Minimalist flower pot',
+        cost: '500.000',
+        oldCost: '',
+        new: true,
+        discount: ''
+    },
+    {
+        path: 'respira.svg',
+        name: 'Respira',
+        type: 'Outdoor bar table and stool',
+        cost: '500.000',
+        oldCost: '',
+        new: true,
+        discount: ''
+    },
+    {
+        path: 'syltherine.svg',
+        name: 'Syltherine',
+        type: 'Stylish cafe chair',
+        cost: '2.500.000',
+        oldCost: '3.500.000',
+        discount: '-30%',
+        new: false
+    },
+]
+
+const productHooverItems = [
+    {
+        path: '1.svg',
+        text: 'Share',
+    },
+    {
+        path: '2.svg',
+        text: 'Compare',
+    },
+    {
+        path: '3.svg',
+        text: 'Like',
+    },
+]
+
+const productHooverItemsList = productHooverItems.map(item => {
+    return (
+        <Link to='' className='product_link_item'>
+            <img src={`/photos/products/${item.path}`} alt={item.text} />
+            <p>{item.text}</p>
+        </Link>
+    )
+})
+
+const ProductList = ({ products, index }) => {
+    return products.slice(0, index).map((product) => {
+        return (
+            <Link to='' className='product_item'>
+                <div className='item_hoover_state'>
+                    <button className='item_button'>Add to cart</button>
+                    <div className='product_link_items'>{productHooverItemsList}</div>
+                </div>
+                <img src={`/photos/products/${product.path}`} alt={product.name} />
+                {product.discount && <div className='item_circle item_discount'>{product.discount}</div>}
+                {product.new && <div className='item_circle item_new'>New</div>}
+                <div className='item_text'>
+                    <h3 className='item_name'>{product.name}</h3>
+                    <p className='item_type'>{product.type}</p>
+                    <div className='item_cost'>
+                        <p className='current_cost'>Rp {product.cost}</p>
+                        {product.oldCost && <p className='old_cost'> Rp {product.oldCost}</p>}
+                    </div>
+                </div>
+            </Link>
+        )
+
+    })
+}
+
+const Products = () => {
+    const [showMore, setShowMore] = useState(false);
+    return (
+        <section className='products_section'>
+            <h2 className='products_header'>Our Products</h2>
+            <div className='products'>
+                {<ProductList products={Allproducts} index={showMore ? 8 : 4} />}
+            </div>
+            <div><button className='show_more' onClick={e => { setShowMore(!showMore) }}>Show {showMore ? 'Less' : 'More'}</button></div>
+
+        </section>
+
+    )
+}
+
+export default Products

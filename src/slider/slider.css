@@ -1,0 +1,141 @@
+.slider_section {
+    margin-top: 70px;
+    display: flex;
+    background: #FCF8F3;
+    overflow: hidden;
+}
+
+.inspiration_block {
+    padding: 220px 40px 220px 100px;
+}
+
+.rooms_inspiration {
+    color: var(--color-gray-1, #3A3A3A);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 120%;
+    width: 422px;
+}
+
+.inspiration_text {
+    color: var(--color-gray-2, #616161);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    width: 368px;
+}
+
+.inspiration_button,
+.inspiration_button:hover {
+    margin-top: 37px;
+    background: var(--primary, #B88E2F);
+    color: var(--color-white, #FFF);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+    padding: 12px 36px;
+    border: 0px;
+}
+
+.relative_of_slider {
+    padding-top: 44px;
+    position: relative;
+    overflow: hidden !important;
+}
+
+.slick-slide div .photo {
+    margin-left: 15%;
+    width: 372px;
+    height: 486px;
+}
+
+.slick-current div .photo {
+    margin-left: 0px;
+    width: 404px;
+    height: 582px;
+}
+
+
+
+.slick-slide div .slide_block {
+    display: none;
+}
+
+.slider {
+    position: relative;
+}
+
+.slick-current div .slide_caption {
+    background-color: rgba(255, 255, 255, 0.72);
+}
+
+.slick-current div .slide_block {
+    display: flex;
+    position: absolute;
+    top: 428px;
+    margin-left: 24px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.slide_caption_text {
+    color: var(--color-gray-2, #616161);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    padding-top: 32px;
+    padding-left: 32px;
+}
+
+.slide_caption_header {
+    color: var(--color-gray-1, #3A3A3A);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 120%;
+    padding: 8px 17px 32px 32px;
+}
+
+
+.slide_caption_button {
+    border: 0;
+    background: var(--primary, #B88E2F);
+    padding: 12px;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+
+.custom-dots {
+    display: flex !important;
+    gap: 15px;
+    position: absolute;
+    top: 526px;
+    margin-left: 428px;
+}
+
+.custom-dots #first_elips {
+    color: #D8D8D8;
+}
+
+.custom-dots #second_elips {
+    color: white;
+}
+
+.slick-active #second_elips {
+    color: #B88E2F;
+}
+
+.slick-active #first_elips {
+    color: #B88E2F;
+}
+
+.custom-dots li::marker {
+    content: ''
+}
+
+.slick-next {
+    position: absolute;
+    top: 50px;
+    left: 93%;
+    width: auto !important;
+    height: auto !important;
+}

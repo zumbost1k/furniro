@@ -1,0 +1,78 @@
+.footer {
+    margin-top: 60px;
+    border-top: 1px solid rgba(0, 0, 0, 0.17);
+}
+
+.links {
+    margin-right: 5%;
+    margin-left: 5%;
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.funiro_col {
+    padding-top: 48px;
+    gap: 45px;
+    display: flex;
+    flex-direction: column;
+}
+
+.funiro {
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.funiro_lorem {
+    color: #9F9F9F;
+    font-size: 16px;
+    width: 285px;
+}
+
+.footer_link {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.links_title {
+    color: #9F9F9F;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.email_footer {
+    margin-right: 10px;
+    border: 0;
+    border-bottom: 2px solid black;
+}
+
+.subscribe {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    border: 0;
+    border-bottom: 2px solid black;
+}
+
+.email_footer:focus {
+    outline: none;
+}
+
+.email_footer::placeholder {
+    color: #9F9F9F;
+    font-size: 14px;
+}
+
+.furino {
+    margin-top: 48px;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding-top: 35px;
+    color: #000;
+    font-size: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.17);
+    padding-bottom: 90px;
+}

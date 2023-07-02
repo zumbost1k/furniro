@@ -1,0 +1,29 @@
+.range_part {
+    text-align: center;
+}
+
+.range {
+    padding-top: 56px;
+    color: var(--font-color, #333);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.lorem_range {
+    color: var(--font-color-1, #666);
+    font-size: 20px;
+}
+
+.rooms {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 63px;
+}
+
+.rooms_caption {
+    padding-top: 20px;
+    color: var(--font-color, #333);
+    font-size: 24px;
+    font-weight: 600;
+}

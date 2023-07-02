@@ -1,0 +1,54 @@
+.background {
+    width: 100%;
+}
+
+.pink_square {
+    padding-left: 40px;
+    right: 60px;
+    top: 153px;
+    position: absolute;
+    border-radius: 10px;
+    background: #FFF3E3;
+    text-align: left;
+}
+
+.arial {
+    padding-top: 62px;
+    color: var(--font-color, #333);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.discover {
+    width: 400px;
+    color: var(--primary, #B88E2F);
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 65px;
+}
+
+.square_lorem {
+    padding-top: 17px;
+    width: 546px;
+    color: var(--font-color, #333);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.buy_now {
+    background: var(--primary, #B88E2F);
+    padding: 25px 72px;
+    border: 0;
+    cursor: pointer;
+    margin-top: 46px;
+    margin-bottom: 37px;
+}
+
+.buy_now_text {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
