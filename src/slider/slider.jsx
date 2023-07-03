@@ -35,23 +35,23 @@ const MySlider = () => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        nextArrow: <svg width="64" height="64" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="Ellipse 4" filter="url(#filter0_d_117_484)">
-                <circle cx="39" cy="39" r="24" fill="white" />
+        nextArrow: <svg width='64' height='64' viewBox='0 0 78 78' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <g id='Ellipse 4' filter='url(#filter0_d_117_484)'>
+                <circle cx='39' cy='39' r='24' fill='white' />
             </g>
-            <g id="Right 24px">
-                <path id="Arrow" d="M35 33L43 39L35 45" stroke="#B88E2F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            <g id='Right 24px'>
+                <path id='Arrow' d='M35 33L43 39L35 45' stroke='#B88E2F' strokeWidth='1.8' strokeLinecap='round' strokeLinejoin='round' />
             </g>
             <defs>
-                <filter id="filter0_d_117_484" x="0" y="0" width="78" height="78" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                    <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_117_484" />
-                    <feOffset dy="4" />
-                    <feGaussianBlur stdDeviation="7" />
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0" />
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_117_484" />
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_117_484" result="shape" />
+                <filter id='filter0_d_117_484' x='0' y='0' width='78' height='78' filterUnits='userSpaceOnUse' colorInterpolationFilters='sRGB'>
+                    <feFlood floodOpacity='0' result='BackgroundImageFix' />
+                    <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha' />
+                    <feMorphology radius='1' operator='dilate' in='SourceAlpha' result='effect1_dropShadow_117_484' />
+                    <feOffset dy='4' />
+                    <feGaussianBlur stdDeviation='7' />
+                    <feColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0' />
+                    <feBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_117_484' />
+                    <feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_117_484' result='shape' />
                 </filter>
             </defs>
         </svg>,
@@ -88,9 +88,9 @@ const MySlider = () => {
                                             <h2 className='slide_caption_header'>{slide.title}</h2>
                                         </div>
                                         <div ><button className='slide_caption_button'>
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g id="Right 16px">
-                                                    <path id="Vector 1" d="M21 12H3M21 12L15 6M21 12L15 18" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                            <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                                <g id='Right 16px'>
+                                                    <path id='Vector 1' d='M21 12H3M21 12L15 6M21 12L15 18' stroke='white' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
                                                 </g>
                                             </svg>
                                         </button></div>
