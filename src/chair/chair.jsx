@@ -4,7 +4,7 @@ import './chair.css'
 const Chair = () => {
     return (
         <header className='header'>
-            <img className='background' src="/photos/chair.svg" alt="chair" />
+            <img className='background' src='/photos/chair.svg' alt='chair' />
             <div className='pink_square'>
                 <h3 className='arial'>New Arrial</h3>
                 <h2 className='discover'>Discover Our New Collection</h2>
@@ -12,7 +12,6 @@ const Chair = () => {
                 <button className='buy_now'><span className='buy_now_text'>BUY Now</span></button>
             </div>
         </header>
-
     )
 }
 

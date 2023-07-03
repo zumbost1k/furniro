@@ -2,6 +2,7 @@
     margin-top: 70px;
     display: flex;
     background: #FCF8F3;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -44,25 +45,25 @@
 }
 
 .slick-slide div .photo {
-    margin-left: 24px;
+    margin-left: 24px !important;
     width: 372px;
     height: 486px;
 }
 
+
 .slick-current div .photo {
-    margin-left: 0px;
+    margin-left: 0px !important;
     width: 404px;
     height: 582px;
 }
 
-
+.slider {
+    overflow: hidden;
+    width: 100%;
+}
 
 .slick-slide div .slide_block {
     display: none;
-}
-
-.slider {
-    position: relative;
 }
 
 .slick-current div .slide_caption {
@@ -135,7 +136,7 @@
 .slick-next {
     position: absolute;
     top: 50px;
-    left: 93%;
+    margin-right: 5%;
     width: auto !important;
     height: auto !important;
 }

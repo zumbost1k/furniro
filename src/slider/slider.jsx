@@ -67,47 +67,43 @@ const MySlider = () => {
         },
     };
     return (
-        <div>
-            <section className='slider_section'>
-                <div className='inspiration_block'>
-                    <h2 className='rooms_inspiration'>50+ Beautiful rooms
-                        inspiration</h2>
-                    <p className='inspiration_text'>Our designer already made a lot of beautiful prototipe of rooms that inspire you</p>
-                    <button className='inspiration_button'>Explore More</button>
-                </div>
+        <section className='slider_section'>
+            <div className='inspiration_block'>
+                <h2 className='rooms_inspiration'>50+ Beautiful rooms
+                    inspiration</h2>
+                <p className='inspiration_text'>Our designer already made a lot of beautiful prototipe of rooms that inspire you</p>
+                <button className='inspiration_button'>Explore More</button>
+            </div>
 
-                <div className='relative_of_slider'>
-                    <Slider {...settings}>
-                        {slides.map((slide) => {
-                            return (
-                                <div className='slider'>
-                                    <img className='photo' src={`/photos/${slide.path}`} alt={slide.title} />
-                                    <div className='slide_block'>
-                                        <div className='slide_caption'>
-                                            <p className='slide_caption_text'>{slide.text}</p>
-                                            <h2 className='slide_caption_header'>{slide.title}</h2>
-                                        </div>
-                                        <div ><button className='slide_caption_button'>
-                                            <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                                <g id='Right 16px'>
-                                                    <path id='Vector 1' d='M21 12H3M21 12L15 6M21 12L15 18' stroke='white' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
-                                                </g>
-                                            </svg>
-                                        </button></div>
+            <div className='relative_of_slider'>
+                <Slider {...settings}>
+                    {slides.map((slide) => {
+                        return (
+                            <div className='slider'>
+                                <img className='photo' src={`/photos/${slide.path}`} alt={slide.title} />
+                                <div className='slide_block'>
+                                    <div className='slide_caption'>
+                                        <p className='slide_caption_text'>{slide.text}</p>
+                                        <h2 className='slide_caption_header'>{slide.title}</h2>
                                     </div>
-
+                                    <div ><button className='slide_caption_button'>
+                                        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                            <g id='Right 16px'>
+                                                <path id='Vector 1' d='M21 12H3M21 12L15 6M21 12L15 18' stroke='white' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
+                                            </g>
+                                        </svg>
+                                    </button></div>
                                 </div>
-                            )
-                        })}
+
+                            </div>
+                        )
+                    })}
 
 
-                    </Slider>
-                </div>
+                </Slider>
+            </div>
 
-            </section>
-
-
-        </div>
+        </section>
     );
 }
 
