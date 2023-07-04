@@ -50,7 +50,6 @@
     height: 486px;
 }
 
-
 .slick-current div .photo {
     margin-left: 0px !important;
     width: 404px;
@@ -58,9 +57,9 @@
 }
 
 .slider {
-    overflow: hidden;
-    width: 100%;
+    overflow: hidden; 
 }
+
 
 .slick-slide div .slide_block {
     display: none;
@@ -78,7 +77,6 @@
     justify-content: flex-end;
     align-items: flex-end;
 }
-
 .slide_caption_text {
     color: var(--color-gray-2, #616161);
     font-size: 16px;

@@ -32,7 +32,7 @@ const MySlider = () => {
         className: 'my_slider',
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 400,
         slidesToShow: 3,
         slidesToScroll: 1,
         nextArrow: <svg width='64' height='64' viewBox='0 0 78 78' fill='none' xmlns='http://www.w3.org/2000/svg'>

@@ -50,6 +50,7 @@
 }
 
 .subscribe {
+    background: white;
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
