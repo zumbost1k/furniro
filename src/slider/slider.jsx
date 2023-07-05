@@ -7,22 +7,22 @@ import 'slick-carousel/slick/slick-theme.css';
 const slides = [
     {
         path: 'bedroom.png',
-        text: '01 - Bed Room',
+        text: '01 — Bed Room',
         title: 'Bedroom'
     },
     {
         path: 'girlPeace.png',
-        text: '02 - girls room',
+        text: '02 — girls room',
         title: 'Girls room'
     },
     {
         path: 'livingPeace.png',
-        text: '03 - Living Peace',
+        text: '03 — Living Peace',
         title: 'Living Peace'
     },
     {
         path: 'innerPeace.png',
-        text: '04 - Inner Peace',
+        text: '04 — Inner Peace',
         title: 'Inner Peace'
     },
 ]
@@ -37,10 +37,10 @@ const MySlider = () => {
         slidesToScroll: 1,
         nextArrow: <svg width='64' height='64' viewBox='0 0 78 78' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <g id='Ellipse 4' filter='url(#filter0_d_117_484)'>
-                <circle cx='39' cy='39' r='24' fill='white' />
+                <circle cx='39' cy='39' r='30' fill='white' />
             </g>
             <g id='Right 24px'>
-                <path id='Arrow' d='M35 33L43 39L35 45' stroke='#B88E2F' strokeWidth='1.8' strokeLinecap='round' strokeLinejoin='round' />
+                <path id='Arrow' d='M35 33L43 39L35 45' stroke='#B88E2F' strokeWidth='3.2' strokeLinecap='round' strokeLinejoin='round' />
             </g>
             <defs>
                 <filter id='filter0_d_117_484' x='0' y='0' width='78' height='78' filterUnits='userSpaceOnUse' colorInterpolationFilters='sRGB'>
@@ -54,7 +54,8 @@ const MySlider = () => {
                     <feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_117_484' result='shape' />
                 </filter>
             </defs>
-        </svg>,
+        </svg>
+        ,
         dotsClass: 'custom-dots',
         customPaging: function (index) {
             return <svg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -80,7 +81,7 @@ const MySlider = () => {
                     {slides.map((slide) => {
                         return (
                             <div className='slider'>
-                                <img className='photo' src={`/photos/${slide.path}`} alt={slide.title} />
+                                <img className='photo' src={`/photos/${slide.path}`} alt={slide.title} width='404' height='582' />
                                 <div className='slide_block'>
                                     <div className='slide_caption'>
                                         <p className='slide_caption_text'>{slide.text}</p>

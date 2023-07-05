@@ -2,10 +2,15 @@
     width: 100%;
 }
 
+.pinsk_suare_text_block {
+    margin-right: 42px;
+}
+
 .pink_square {
-    padding-left: 40px;
+    padding-left: 42px;
+    padding-right: 55px;
     right: 60px;
-    top: 153px;
+    top: 253px;
     position: absolute;
     border-radius: 10px;
     background: #FFF3E3;
@@ -21,15 +26,16 @@
 }
 
 .discover {
-    width: 400px;
+    width: 406px;
     color: var(--primary, #B88E2F);
     font-size: 52px;
     font-weight: 700;
-    line-height: 65px;
+    line-height: 67px;
+    letter-spacing: 1px;
 }
 
 .square_lorem {
-    padding-top: 17px;
+    padding-top: 12px;
     width: 546px;
     color: var(--font-color, #333);
     font-size: 18px;
@@ -42,8 +48,12 @@
     padding: 25px 72px;
     border: 0;
     cursor: pointer;
-    margin-top: 46px;
+    margin-top: 50px;
     margin-bottom: 37px;
+}
+
+.buy_now:hover {
+    background: #9b7827;
 }
 
 .buy_now_text {

@@ -3,26 +3,29 @@
 }
 
 .range {
-    padding-top: 56px;
+    padding-top: 50px;
     color: var(--font-color, #333);
-    font-size: 32px;
+    font-size: 33px;
     font-weight: 700;
+    padding-right: 57px;
+
 }
 
 .lorem_range {
     color: var(--font-color-1, #666);
     font-size: 20px;
+    padding-left: 12px;
 }
 
 .rooms {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding-top: 63px;
+    padding-top: 59px;
 }
 
 .rooms_caption {
-    padding-top: 20px;
+    padding-top: 23px;
     color: var(--font-color, #333);
     font-size: 24px;
     font-weight: 600;

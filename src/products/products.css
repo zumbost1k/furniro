@@ -109,9 +109,17 @@
     width: 285px;
     height: 446px;
     background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
+.product_item:hover .item_hoover_state:hover {
+    opacity: 1;
+}
+
+
 .item_button {
+    cursor: pointer;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60%;
@@ -123,6 +131,14 @@
     width: 202px;
     height: 48px;
     border: 0;
+}
+
+
+.item_button:hover {
+    background: #c5c4be;
+    color: #FFFFFF;
+    border: 1px solid #c5c4be;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .product_link_items {
@@ -142,11 +158,21 @@
 
 .show_more {
     color: var(--primary, #B88E2F);
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
-    line-height: 150%;
+    line-height: 125%;
     border: 1px solid var(--primary, #B88E2F);
     background: #FFF;
-    padding: 12px 75px;
+    padding: 12px 78px;
     margin-top: 32px;
+    cursor: pointer;
+}
+
+.show_more:hover {
+    background: #B88E2F;
+    color: #FFFFFF;
+}
+
+.product_link_item_text {
+    color: white;
 }

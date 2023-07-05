@@ -1,11 +1,11 @@
 .footer {
-    margin-top: 60px;
+    margin-top: 51px;
     border-top: 1px solid rgba(0, 0, 0, 0.17);
 }
 
 .links {
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-right: 7%;
+    margin-left: 7%;
     display: flex;
     text-align: left;
     justify-content: space-between;
@@ -19,16 +19,30 @@
     flex-direction: column;
 }
 
+.furniro_col_second {
+    padding-top: 57px;
+    margin-left: -50px;
+}
+
 .funiro {
-    color: #000;
     font-size: 24px;
-    font-weight: 700;
 }
 
 .funiro_lorem {
+    padding-top: 5px;
     color: #9F9F9F;
     font-size: 16px;
     width: 285px;
+}
+
+.furniro_col_third {
+    margin-right: 110px;
+    margin-left: -110px;
+}
+
+.furniro_col_second .links_title {
+    margin-top: -9px;
+    margin-bottom: 9px;
 }
 
 .footer_link {
@@ -46,7 +60,7 @@
 .email_footer {
     margin-right: 10px;
     border: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 .subscribe {
@@ -55,7 +69,12 @@
     font-size: 14px;
     font-weight: 500;
     border: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
+}
+
+
+.email_footer {
+    width: 200px;
 }
 
 .email_footer:focus {
@@ -69,11 +88,15 @@
 
 .furino {
     margin-top: 48px;
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-right: 7%;
+    margin-left: 7%;
     padding-top: 35px;
     color: #000;
     font-size: 16px;
     border-top: 1px solid rgba(0, 0, 0, 0.17);
     padding-bottom: 90px;
+}
+
+.footer_form {
+    padding-top: 8px;
 }

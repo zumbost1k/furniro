@@ -96,7 +96,7 @@ const productHooverItemsList = productHooverItems.map(item => {
     return (
         <Link to='' className='product_link_item'>
             <img src={`/photos/products/${item.path}`} alt={item.text} />
-            <p>{item.text}</p>
+            <Link to='' className='product_link_item_text'>{item.text}</Link>
         </Link>
     )
 })
@@ -127,7 +127,7 @@ const ProductList = ({ products, index }) => {
 }
 
 const Products = () => {
-    const [showMore, setShowMore] = useState(false);
+    const [showMore, setShowMore] = useState(true);
     return (
         <section className='products_section'>
             <h2 className='products_header'>Our Products</h2>

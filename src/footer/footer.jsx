@@ -23,22 +23,22 @@ const Footer = () => {
     return (
         <footer className='footer'>
             <div className='links'>
-                <div className='funiro_col'>
-                    <h3 className='funiro'>Funiro.</h3>
+                <div className='funiro_col furniro_col_first'>
+                    <h3 className='funiro'><img src="/photos/funiro..svg" alt="funiro." /></h3>
                     <p className='funiro_lorem'>400 University Drive Suite 200 Coral Gables,
-                        FL 33134 USA</p>
+                        <br /> FL 33134 USA</p>
                 </div>
-                <div className='funiro_col'>
+                <div className='funiro_col furniro_col_second'>
                     <h3 className='links_title'>Links</h3>
                     {<FooterLinksList elem={footerLinks} index={0} />}
                 </div>
-                <div className='funiro_col'>
+                <div className='funiro_col furniro_col_second'>
                     <h3 className='links_title'>Help</h3>
                     {<FooterLinksList elem={footerLinks} index={1} />}
                 </div>
-                <div className='funiro_col'>
+                <div className='funiro_col furniro_col_third'>
                     <h3 className='links_title'>Newsletter</h3>
-                    <form action=''>
+                    <form className='footer_form' action=''>
                         <input type='email' className='email_footer' placeholder='Enter Your Email Address' />
                         <input type='submit' className='subscribe' value='SUBSCRIBE' />
                     </form>
