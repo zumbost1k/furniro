@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './products.css'
 import { Link } from 'react-router-dom';
 
-const Allproducts = [
+const allproducts = [
     {
-        path: 'grifo.svg',
+        path: 'grifo.png',
         name: 'Grifo',
         type: 'Night lamp',
         cost: '2.500.000',
@@ -13,7 +13,7 @@ const Allproducts = [
         discount: ''
     },
     {
-        path: 'leviosa.svg',
+        path: 'leviosa.png',
         name: 'Leviosa',
         type: 'Stylish cafe chair',
         cost: '2.500.000',
@@ -22,7 +22,7 @@ const Allproducts = [
         discount: ''
     },
     {
-        path: 'lolito.svg',
+        path: 'lolito.png',
         name: 'Lolito',
         type: 'Luxury big sofa',
         cost: '7.000.000',
@@ -30,7 +30,7 @@ const Allproducts = [
         discount: '-50%'
     },
     {
-        path: 'muggo.svg',
+        path: 'muggo.png',
         name: 'Muggo',
         type: 'Small mug',
         cost: '150.000',
@@ -40,7 +40,7 @@ const Allproducts = [
 
     },
     {
-        path: 'pingky.svg',
+        path: 'pingky.png',
         name: 'Pingky',
         type: 'Cute bed set',
         cost: '7.000.000',
@@ -49,7 +49,7 @@ const Allproducts = [
         new: false,
     },
     {
-        path: 'potty.svg',
+        path: 'potty.png',
         name: 'Potty',
         type: 'Minimalist flower pot',
         cost: '500.000',
@@ -58,7 +58,7 @@ const Allproducts = [
         discount: ''
     },
     {
-        path: 'respira.svg',
+        path: 'respira.png',
         name: 'Respira',
         type: 'Outdoor bar table and stool',
         cost: '500.000',
@@ -67,7 +67,7 @@ const Allproducts = [
         discount: ''
     },
     {
-        path: 'syltherine.svg',
+        path: 'syltherine.png',
         name: 'Syltherine',
         type: 'Stylish cafe chair',
         cost: '2.500.000',
@@ -132,10 +132,9 @@ const Products = () => {
         <section className='products_section'>
             <h2 className='products_header'>Our Products</h2>
             <div className='products'>
-                {<ProductList products={Allproducts} index={showMore ? 8 : 4} />}
+                {<ProductList products={allproducts} index={showMore ? 8 : 4} />}
             </div>
-            <div><button className='show_more' onClick={e => { setShowMore(!showMore) }}>Show {showMore ? 'Less' : 'More'}</button></div>
-
+            <div><button className='show_more' onClick={() => { setShowMore(!showMore) }}>Show {showMore ? 'Less' : 'More'}</button></div>
         </section>
 
     )

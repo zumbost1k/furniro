@@ -4,7 +4,7 @@ import './chair.css'
 const Chair = () => {
     return (
         <header className='header'>
-            <img className='background' src='/photos/chair2.png' alt='chair' width='1440' height='719' />
+            <img className='background' src='/photos/chair.png' alt='chair' width='1440' height='719' />
             <div className='pink_square'>
                     <h3 className='arial'>New Arrival</h3>
                     <h2 className='discover'>Discover Our New Collection</h2>

@@ -3,15 +3,15 @@ import './range.css'
 import { Link } from 'react-router-dom';
 const rooms = [
     {
-        path: 'dining.svg',
+        path: 'dining.png',
         text: 'Dining'
     },
     {
-        path: 'living.svg',
+        path: 'living.png',
         text: 'Living'
     },
     {
-        path: 'bedroom.svg',
+        path: 'bedroom2.png',
         text: 'Bedroom'
     }
 ]
@@ -19,7 +19,7 @@ const rooms = [
 const roomsList = rooms.map(function (room) {
     return (
         <Link to=''>
-            <img src={`/photos/${room.path}`} alt={room.text} />
+            <img className='range_photos' src={`/photos/${room.path}`} alt={room.text} />
             <figcaption className='rooms_caption'>{room.text}</figcaption>
         </Link>
     );

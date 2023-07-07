@@ -7,8 +7,8 @@ const footerLinks = [
     ['Payment Options', 'Returns', 'Privacy Policies']
 ]
 
-const FooterLinksList = ({ elem, index }) => {
-    return elem[index].map((link) => {
+const FooterLinksList = ({ elem }) => {
+    return elem.map((link) => {
         return (
             <Link className='footer_link' to=''>
                 {link}
@@ -30,17 +30,17 @@ const Footer = () => {
                 </div>
                 <div className='funiro_col furniro_col_second'>
                     <h3 className='links_title'>Links</h3>
-                    {<FooterLinksList elem={footerLinks} index={0} />}
+                    {<FooterLinksList elem={footerLinks[0]} />}
                 </div>
                 <div className='funiro_col furniro_col_second'>
                     <h3 className='links_title'>Help</h3>
-                    {<FooterLinksList elem={footerLinks} index={1} />}
+                    {<FooterLinksList elem={footerLinks[1]} />}
                 </div>
                 <div className='funiro_col furniro_col_third'>
                     <h3 className='links_title'>Newsletter</h3>
                     <form className='footer_form' action=''>
                         <input type='email' className='email_footer' placeholder='Enter Your Email Address' />
-                        <input type='submit' className='subscribe' value='SUBSCRIBE' />
+                        <button  className='subscribe' >SUBSCRIBE</button>
                     </form>
 
                 </div>
