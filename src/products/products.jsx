@@ -104,7 +104,7 @@ const productHooverItemsList = productHooverItems.map(item => {
 const ProductList = ({ products, index }) => {
     return products.slice(0, index).map((product) => {
         return (
-            <Link to='' className='product_item'>
+            <Link to={`products/${product.name}`} className='product_item'>
                 <div className='item_hoover_state'>
                     <button className='item_button'>Add to cart</button>
                     <div className='product_link_items'>{productHooverItemsList}</div>

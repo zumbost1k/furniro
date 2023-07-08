@@ -5,6 +5,7 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import Nav from './nav/nav';
 import HomePage from './pages/home';
 import Footer from './footer/footer';
+import Product from './pages/product';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
       <Nav />
       <Routes>
         <Route path='/' element={<HomePage />} />
+        <Route path='/products/:productName' element={<Product />} />
       </Routes>
       <Footer />
     </HashRouter>
