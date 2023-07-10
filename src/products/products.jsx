@@ -126,15 +126,15 @@ const ProductList = ({ products, index }) => {
     })
 }
 
-const Products = () => {
+const Products = ({ title }) => {
     const [showMore, setShowMore] = useState(true);
     return (
         <section className='products_section'>
-            <h2 className='products_header'>Our Products</h2>
+            <h2 className={title === 'Related Products' ? 'products_header_single' : 'products_header'}>{title}</h2>
             <div className='products'>
                 {<ProductList products={allproducts} index={showMore ? 8 : 4} />}
             </div>
-            <div><button className='show_more' onClick={() => { setShowMore(!showMore) }}>Show {showMore ? 'Less' : 'More'}</button></div>
+            <div><button className={title === 'Related Products' ? 'show_more_single' : 'show_more'} onClick={() => { setShowMore(!showMore) }}>Show {showMore ? 'Less' : 'More'}</button></div>
         </section>
 
     )

@@ -14,6 +14,12 @@
     line-height: 120%;
 }
 
+.products_header_single {
+    font-size: 36px;
+    font-weight: 500;
+    margin: -1px 0px -8px -5px;
+}
+
 .products {
     padding-top: 32px;
     display: grid;
@@ -168,6 +174,21 @@
     cursor: pointer;
 }
 
+
+.show_more_single {
+    color: var(--primary, #B88E2F);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 125%;
+    border: 1px solid var(--primary, #B88E2F);
+    background: #FFF;
+    padding: 12px 78px;
+    margin-top: 45px;
+    cursor: pointer;
+    margin-bottom: 42px;
+}
+
+.show_more_single:hover,
 .show_more:hover {
     background: #B88E2F;
     color: #FFFFFF;

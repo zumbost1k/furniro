@@ -10,7 +10,7 @@ const HomePage = () => {
         <div>
             <Chair />
             <Range />
-            <Products />
+            <Products title={'Related Products'}/>
             <MySlider />
             <FuniroFurniture />
         </div>
