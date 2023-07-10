@@ -4,8 +4,8 @@
 }
 
 .links {
-    margin-right: 7%;
-    margin-left: 7%;
+    margin-right: 101px;
+    margin-left: 101px;
     display: flex;
     text-align: left;
     justify-content: space-between;
@@ -88,8 +88,8 @@
 
 .furino {
     margin-top: 48px;
-    margin-right: 7%;
-    margin-left: 7%;
+    margin-right: 101px;
+    margin-left: 101px;
     padding-top: 35px;
     color: #000;
     font-size: 16px;
