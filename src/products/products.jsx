@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './products.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const allproducts = [
     {
@@ -102,29 +102,38 @@ const productHooverItemsList = productHooverItems.map(item => {
 })
 
 const ProductList = ({ products, index }) => {
+    const navigate = useNavigate();
+
     return products.slice(0, index).map((product) => {
+        const handleClick = () => {
+            const newPath = `/products/${product.name}`;
+            navigate(newPath);
+        };
+
         return (
-            <Link to={`products/${product.name}`} className='product_item'>
+            <div className='product_item' onClick={handleClick}>
                 <div className='item_hoover_state'>
                     <button className='item_button'>Add to cart</button>
                     <div className='product_link_items'>{productHooverItemsList}</div>
                 </div>
-                <img src={`/photos/products/${product.path}`} alt={product.name} />
-                {product.discount && <div className='item_circle item_discount'>{product.discount}</div>}
-                {product.new && <div className='item_circle item_new'>New</div>}
-                <div className='item_text'>
-                    <h3 className='item_name'>{product.name}</h3>
-                    <p className='item_type'>{product.type}</p>
-                    <div className='item_cost'>
-                        <p className='current_cost'>Rp {product.cost}</p>
-                        {product.oldCost && <p className='old_cost'> Rp {product.oldCost}</p>}
+                <Link to={`/products/${product.name}`} className='product_link'>
+                    <img src={`/photos/products/${product.path}`} alt={product.name} />
+                    {product.discount && <div className='item_circle item_discount'>{product.discount}</div>}
+                    {product.new && <div className='item_circle item_new'>New</div>}
+                    <div className='item_text'>
+                        <h3 className='item_name'>{product.name}</h3>
+                        <p className='item_type'>{product.type}</p>
+                        <div className='item_cost'>
+                            <p className='current_cost'>Rp {product.cost}</p>
+                            {product.oldCost && <p className='old_cost'> Rp {product.oldCost}</p>}
+                        </div>
                     </div>
-                </div>
-            </Link>
+                </Link>
+            </div>
         )
-
     })
 }
+
 
 const Products = ({ title }) => {
     const [showMore, setShowMore] = useState(true);
