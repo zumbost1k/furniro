@@ -7,8 +7,8 @@ const footerLinks = [
     ['Payment Options', 'Returns', 'Privacy Policies']
 ]
 
-const FooterLinksList = ({ elem }) => {
-    return elem.map((link) => {
+const FooterLinksList = ({ link }) => {
+    return link.map((link) => {
         return (
             <Link className='footer_link' to=''>
                 {link}
@@ -30,11 +30,11 @@ const Footer = () => {
                 </div>
                 <div className='funiro_col furniro_col_second'>
                     <h3 className='links_title'>Links</h3>
-                    {<FooterLinksList elem={footerLinks[0]} />}
+                    {<FooterLinksList link={footerLinks[0]} />}
                 </div>
                 <div className='funiro_col furniro_col_second'>
                     <h3 className='links_title'>Help</h3>
-                    {<FooterLinksList elem={footerLinks[1]} />}
+                    {<FooterLinksList link={footerLinks[1]} />}
                 </div>
                 <div className='funiro_col furniro_col_third'>
                     <h3 className='links_title'>Newsletter</h3>
