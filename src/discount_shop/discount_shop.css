@@ -1,0 +1,33 @@
+.discount_shop {
+    border-bottom: 1px solid #FAF3EA;
+    margin-top: 85px;
+    display: flex;
+    background: #FAF3EA;
+    justify-content: center;
+    gap: 57px;
+    padding: 102px 0px;
+    margin-bottom: -54px;
+}
+
+.discount_shop_item {
+    gap: 12px;
+    display: flex;
+}
+
+.promise_main_text {
+    color: #242424;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.promise_common_text {
+    color: var(--color-gray-3, #898989);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 150%;
+}
+
+.trophy{
+    margin-left: -5px;
+}

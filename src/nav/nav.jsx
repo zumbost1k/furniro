@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const linksWord = ['Home', 'Shop', 'About', 'Contact']
 const linksWordsList = linksWord.map(function (link) {
     return (
-        <Link className='menu_link' to=''>
+        <Link className='menu_link' to={link}>
             {link}
         </Link>
     );

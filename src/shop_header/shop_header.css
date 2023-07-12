@@ -1,0 +1,28 @@
+.shop_header_back {
+    width: 100%;
+}
+
+.shop_header_text {
+    position: absolute;
+    top: 222px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.shop_header_header {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.shop_header_text_inner {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.shop_header_link {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+}

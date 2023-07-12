@@ -10,7 +10,7 @@ const footerLinks = {
 const FooterLinksList = ({ link }) => {
     return link.map((link) => {
         return (
-            <Link className='footer_link' to=''>
+            <Link className='footer_link' to={link}>
                 {link}
             </Link>
         )

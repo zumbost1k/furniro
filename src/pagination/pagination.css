@@ -1,0 +1,144 @@
+.paginate_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.products_shop {
+    margin-left: -6px;
+    padding-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 32px;
+}
+
+.paginate_filter {
+    margin-top: -10px;
+    padding: 22px 100px 23px 100px;
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    background: #F9F1E7;
+    width: 100%;
+}
+
+.product_item_shop {
+    padding-top: 8px;
+    position: relative;
+    display: inline-block;
+}
+
+.product_item_shop .item_hoover_state {
+    display: none;
+}
+
+
+
+.product_item_shop:hover .item_hoover_state {
+    display: flex;
+    position: absolute;
+    width: 285px;
+    height: 446px;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product_item_shop:hover .item_hoover_state:hover {
+    opacity: 1;
+}
+
+.pages_number {
+    font-size: 16px;
+    border-left: 1px solid #9F9F9F;
+    padding-left: 34px;
+    margin-left: 30px;
+}
+
+.paginate_filter_item {
+    align-items: center;
+    display: flex;
+}
+
+.filter_icon_list {
+    display: flex;
+    gap: 24px;
+}
+
+.filter_icon_list_item {
+    display: flex;
+    gap: 12px;
+}
+
+.filter_number_item {
+    margin-top: -4px;
+    display: flex;
+    gap: 17px;
+    align-items: center;
+}
+
+.filter_number_input:focus,
+.filter_number_input {
+    margin-right: 29px;
+    color: #9F9F9F;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    border: 0;
+    width: 55px;
+    height: 55px;
+}
+
+.filter_number_input::-webkit-inner-spin-button,
+.filter_number_input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.filter_select:focus,
+.filter_select {
+    border: 0;
+    width: 188px;
+    height: 55px;
+    color: #9F9F9F;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.previous_btn {
+    display: none;
+}
+
+.pagination {
+    padding-top: 66px;
+    display: flex;
+    gap: 44px;
+}
+
+.page-item {
+    cursor: pointer;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 10px;
+    background: #F9F1E7;
+    padding: 15px 25px;
+    margin-left: -4px;
+}
+
+.page-item-next {
+    margin-left: -6px;
+    margin-right: 6px;
+}
+
+.active {
+    background: var(--primary, #B88E2F);
+    color: white;
+}
