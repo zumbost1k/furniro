@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const footerLinks = {
     links: ['Home', 'Shop', 'About', 'Contact'],
     help: ['Payment Options', 'Returns', 'Privacy Policies']
-  }
+}
 
 const FooterLinksList = ({ link }) => {
     return link.map((link) => {
@@ -40,7 +40,7 @@ const Footer = () => {
                     <h3 className='links_title'>Newsletter</h3>
                     <form className='footer_form' action=''>
                         <input type='email' className='email_footer' placeholder='Enter Your Email Address' />
-                        <button  className='subscribe' >SUBSCRIBE</button>
+                        <button className='subscribe' >SUBSCRIBE</button>
                     </form>
 
                 </div>
