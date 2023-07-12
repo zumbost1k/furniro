@@ -1,0 +1,64 @@
+.background {
+    width: 100%;
+}
+
+.pinsk_suare_text_block {
+    margin-right: 42px;
+}
+
+.pink_square {
+    padding-left: 42px;
+    padding-right: 55px;
+    right: 60px;
+    top: 253px;
+    position: absolute;
+    border-radius: 10px;
+    background: #FFF3E3;
+    text-align: left;
+}
+
+.arial {
+    padding-top: 62px;
+    color: var(--font-color, #333);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.discover {
+    width: 406px;
+    color: var(--primary, #B88E2F);
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 67px;
+    letter-spacing: 1px;
+}
+
+.square_lorem {
+    padding-top: 12px;
+    width: 546px;
+    color: var(--font-color, #333);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.buy_now {
+    background: var(--primary, #B88E2F);
+    padding: 25px 72px;
+    border: 0;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-bottom: 37px;
+}
+
+.buy_now:hover {
+    background: #9b7827;
+}
+
+.buy_now_text {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}

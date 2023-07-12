@@ -1,0 +1,50 @@
+.funiro_section {
+    padding-top: 69px;
+    overflow: hidden;
+}
+
+.funiro_title {
+    right: 559px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.funiro_title_text {
+    color: var(--color-gray-2, #616161);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.funiro_title_header {
+    color: var(--color-gray-1, #3A3A3A);
+    font-size: 43px;
+    font-weight: 900;
+    line-height: 150%;
+}
+
+.funiro_photos {
+    padding-top: 57px;
+    gap: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first_line_photos_right,
+.first_line_photos_left {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.second_line_photos_right,
+.second_line_photos_left {
+    padding-top: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}

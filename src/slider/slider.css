@@ -1,0 +1,165 @@
+.slider_section {
+    margin-top: 70px;
+    display: flex;
+    background: #FCF8F3;
+    width: 100%;
+}
+
+.inspiration_block {
+    padding: 220px 40px 220px 100px;
+}
+
+.rooms_inspiration {
+    color: var(--color-gray-1, #3A3A3A);
+    font-size: 41px;
+    font-weight: 700;
+    line-height: 120%;
+    width: 422px;
+}
+
+.inspiration_text {
+    color: var(--color-gray-2, #616161);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    width: 368px;
+    padding-top: 8px;
+}
+
+.inspiration_button {
+    cursor: pointer;
+    margin-top: 25px;
+    background: var(--primary, #B88E2F);
+    color: var(--color-white, #FFF);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+    padding: 12px 36px;
+    border: 0px;
+}
+
+.inspiration_button:hover {
+    background: #9b7827;
+}
+
+.relative_of_slider {
+    padding-top: 42px;
+}
+
+.slick-list {
+    height: 582px !important;
+    width: 876px !important;
+    overflow: hidden !important;
+}
+
+.slick-track {
+    position: absolute;
+    overflow: hidden !important;
+}
+
+.slick-cloned {
+    opacity: 0;
+}
+
+.slick-active {
+    opacity: 1 !important;
+    display: block !important;
+    margin-right: 24px;
+    width: 372px !important;
+    height: 486px !important;
+    overflow: hidden !important;
+}
+
+.slick-current {
+    display: block !important;
+    width: 404px !important;
+    height: 582px !important;
+}
+
+.slick-next {
+    position: absolute;
+    margin-right: 47px;
+    width: 64px !important;
+    height: 64px !important;
+    right: 0 !important;
+}
+
+
+
+.custom-dots {
+    display: flex !important;
+    gap: 35px;
+    position: absolute;
+    top: 526px;
+    margin-left: 428px;
+    width: 120px;
+}
+
+.custom-dots li {
+    margin-right: -27px !important;
+    width: 27px !important;
+    height: 27px !important;
+}
+
+.custom-dots #first_elips {
+    color: #D8D8D8;
+}
+
+.custom-dots #second_elips {
+    color: white;
+}
+
+.slick-active #second_elips {
+    color: #B88E2F;
+}
+
+.slick-active #first_elips {
+    color: #B88E2F;
+}
+
+.custom-dots li::marker {
+    content: ''
+}
+
+.slick-slide div .slide_block {
+    display: none;
+}
+
+.slick-current div .slide_caption {
+    background-color: rgba(255, 255, 255, 0.72);
+}
+
+.slick-current div .slide_block {
+    display: flex;
+    position: absolute;
+    top: 428px;
+    margin-left: 24px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.slide_caption_text {
+    color: var(--color-gray-2, #616161);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 150%;
+    padding-top: 32px;
+    padding-left: 32px;
+}
+
+.slide_caption_header {
+    color: var(--color-gray-1, #3A3A3A);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 120%;
+    padding: 8px 17px 32px 32px;
+}
+
+
+.slide_caption_button {
+    border: 0;
+    background: var(--primary, #B88E2F);
+    padding: 12px;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
