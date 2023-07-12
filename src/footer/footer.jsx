@@ -2,10 +2,10 @@ import React from 'react';
 import './footer.css'
 import { Link } from 'react-router-dom';
 
-const footerLinks = [
-    ['Home', 'Shop', 'About', 'Contact'],
-    ['Payment Options', 'Returns', 'Privacy Policies']
-]
+const footerLinks = {
+    links: ['Home', 'Shop', 'About', 'Contact'],
+    help: ['Payment Options', 'Returns', 'Privacy Policies']
+  }
 
 const FooterLinksList = ({ link }) => {
     return link.map((link) => {
@@ -30,11 +30,11 @@ const Footer = () => {
                 </div>
                 <div className='funiro_col furniro_col_second'>
                     <h3 className='links_title'>Links</h3>
-                    {<FooterLinksList link={footerLinks[0]} />}
+                    {<FooterLinksList link={footerLinks.links} />}
                 </div>
                 <div className='funiro_col furniro_col_second'>
                     <h3 className='links_title'>Help</h3>
-                    {<FooterLinksList link={footerLinks[1]} />}
+                    {<FooterLinksList link={footerLinks.help} />}
                 </div>
                 <div className='funiro_col furniro_col_third'>
                     <h3 className='links_title'>Newsletter</h3>
