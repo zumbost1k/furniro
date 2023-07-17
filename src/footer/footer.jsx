@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const footerLinks = {
     links: ['Home', 'Shop', 'About', 'Contact'],
     help: ['Payment Options', 'Returns', 'Privacy Policies']
-  }
+}
 
 const FooterLinksList = ({ link }) => {
     return link.map((link) => {
