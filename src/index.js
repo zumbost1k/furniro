@@ -16,7 +16,7 @@ root.render(
       <ScrollToTop />
       <Nav />
       <Routes>
-      <Route path='/' element={<Navigate to='/home' />} />
+        <Route path='/' element={<Navigate to='/home' />} />
         <Route path='/home' element={<HomePage />} />
         <Route path='/products/:productName' element={<Product />} />
         <Route path='/shop' element={<ShopPage />} />

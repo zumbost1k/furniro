@@ -6,7 +6,7 @@ import DiscountShop from "../discount_shop/discount_shop";
 const ShopPage = () => {
     return (
         <div>
-            <ShopHeader />
+            <ShopHeader path={'Shop'}/>
             <PaginatedItems />
             <DiscountShop />
         </div>

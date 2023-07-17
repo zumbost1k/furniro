@@ -10,7 +10,7 @@ import './pagination.css'
 const allproducts = [
     {
         path: 'grifo.png',
-        name: 'Grifo',
+        name: 'Grifo1',
         type: 'Night lamp',
         cost: '2.500.000',
         oldCost: '',
@@ -19,7 +19,7 @@ const allproducts = [
     },
     {
         path: 'leviosa.png',
-        name: 'Leviosa',
+        name: 'Leviosa2',
         type: 'Stylish cafe chair',
         cost: '2.500.000',
         oldCost: '',
@@ -28,7 +28,7 @@ const allproducts = [
     },
     {
         path: 'lolito.png',
-        name: 'Lolito',
+        name: 'Lolito3',
         type: 'Luxury big sofa',
         cost: '7.000.000',
         oldCost: '14.000.000',
@@ -36,7 +36,7 @@ const allproducts = [
     },
     {
         path: 'muggo.png',
-        name: 'Muggo',
+        name: 'Muggo4',
         type: 'Small mug',
         cost: '150.000',
         oldCost: '',
@@ -46,7 +46,7 @@ const allproducts = [
     },
     {
         path: 'pingky.png',
-        name: 'Pingky',
+        name: 'Pingky5',
         type: 'Cute bed set',
         cost: '7.000.000',
         oldCost: '14.000.000',
@@ -55,7 +55,7 @@ const allproducts = [
     },
     {
         path: 'potty.png',
-        name: 'Potty',
+        name: 'Potty6',
         type: 'Minimalist flower pot',
         cost: '500.000',
         oldCost: '',
@@ -64,7 +64,7 @@ const allproducts = [
     },
     {
         path: 'respira.png',
-        name: 'Respira',
+        name: 'Respira7',
         type: 'Outdoor bar table and stool',
         cost: '500.000',
         oldCost: '',
@@ -73,7 +73,7 @@ const allproducts = [
     },
     {
         path: 'syltherine.png',
-        name: 'Syltherine',
+        name: 'Syltherine8',
         type: 'Stylish cafe chair',
         cost: '2.500.000',
         oldCost: '3.500.000',
@@ -82,7 +82,7 @@ const allproducts = [
     },
     {
         path: 'grifo.png',
-        name: 'Grifo',
+        name: 'Grifo9',
         type: 'Night lamp',
         cost: '2.500.000',
         oldCost: '',
@@ -91,7 +91,7 @@ const allproducts = [
     },
     {
         path: 'leviosa.png',
-        name: 'Leviosa',
+        name: 'Leviosa10',
         type: 'Stylish cafe chair',
         cost: '2.500.000',
         oldCost: '',
@@ -100,7 +100,7 @@ const allproducts = [
     },
     {
         path: 'lolito.png',
-        name: 'Lolito',
+        name: 'Lolito11',
         type: 'Luxury big sofa',
         cost: '7.000.000',
         oldCost: '14.000.000',
@@ -108,7 +108,7 @@ const allproducts = [
     },
     {
         path: 'muggo.png',
-        name: 'Muggo',
+        name: 'Muggo12',
         type: 'Small mug',
         cost: '150.000',
         oldCost: '',
@@ -118,7 +118,7 @@ const allproducts = [
     },
     {
         path: 'pingky.png',
-        name: 'Pingky',
+        name: 'Pingky13',
         type: 'Cute bed set',
         cost: '7.000.000',
         oldCost: '14.000.000',
@@ -127,7 +127,7 @@ const allproducts = [
     },
     {
         path: 'potty.png',
-        name: 'Potty',
+        name: 'Potty14',
         type: 'Minimalist flower pot',
         cost: '500.000',
         oldCost: '',
@@ -136,7 +136,7 @@ const allproducts = [
     },
     {
         path: 'respira.png',
-        name: 'Respira',
+        name: 'Respira15',
         type: 'Outdoor bar table and stool',
         cost: '500.000',
         oldCost: '',
@@ -145,7 +145,7 @@ const allproducts = [
     },
     {
         path: 'syltherine.png',
-        name: 'Syltherine',
+        name: 'Syltherine16',
         type: 'Stylish cafe chair',
         cost: '2.500.000',
         oldCost: '3.500.000',
@@ -154,7 +154,7 @@ const allproducts = [
     },
     {
         path: 'grifo.png',
-        name: 'Grifo',
+        name: 'Grifo17',
         type: 'Night lamp',
         cost: '2.500.000',
         oldCost: '',
@@ -163,7 +163,7 @@ const allproducts = [
     },
     {
         path: 'leviosa.png',
-        name: 'Leviosa',
+        name: 'Leviosa18',
         type: 'Stylish cafe chair',
         cost: '2.500.000',
         oldCost: '',
@@ -172,7 +172,7 @@ const allproducts = [
     },
     {
         path: 'lolito.png',
-        name: 'Lolito',
+        name: 'Lolito19',
         type: 'Luxury big sofa',
         cost: '7.000.000',
         oldCost: '14.000.000',
@@ -180,7 +180,7 @@ const allproducts = [
     },
     {
         path: 'muggo.png',
-        name: 'Muggo',
+        name: 'Muggo20',
         type: 'Small mug',
         cost: '150.000',
         oldCost: '',
@@ -190,7 +190,7 @@ const allproducts = [
     },
     {
         path: 'pingky.png',
-        name: 'Pingky',
+        name: 'Pingky21',
         type: 'Cute bed set',
         cost: '7.000.000',
         oldCost: '14.000.000',
@@ -199,7 +199,7 @@ const allproducts = [
     },
     {
         path: 'potty.png',
-        name: 'Potty',
+        name: 'Potty22',
         type: 'Minimalist flower pot',
         cost: '500.000',
         oldCost: '',
@@ -208,7 +208,7 @@ const allproducts = [
     },
     {
         path: 'respira.png',
-        name: 'Respira',
+        name: 'Respira23',
         type: 'Outdoor bar table and stool',
         cost: '500.000',
         oldCost: '',
@@ -217,7 +217,7 @@ const allproducts = [
     },
     {
         path: 'syltherine.png',
-        name: 'Syltherine',
+        name: 'Syltherine24',
         type: 'Stylish cafe chair',
         cost: '2.500.000',
         oldCost: '3.500.000',
@@ -226,7 +226,7 @@ const allproducts = [
     },
     {
         path: 'grifo.png',
-        name: 'Grifo',
+        name: 'Grifo25',
         type: 'Night lamp',
         cost: '2.500.000',
         oldCost: '',
@@ -235,7 +235,7 @@ const allproducts = [
     },
     {
         path: 'leviosa.png',
-        name: 'Leviosa',
+        name: 'Leviosa26',
         type: 'Stylish cafe chair',
         cost: '2.500.000',
         oldCost: '',
@@ -244,7 +244,7 @@ const allproducts = [
     },
     {
         path: 'lolito.png',
-        name: 'Lolito',
+        name: 'Lolito27',
         type: 'Luxury big sofa',
         cost: '7.000.000',
         oldCost: '14.000.000',
@@ -252,7 +252,7 @@ const allproducts = [
     },
     {
         path: 'muggo.png',
-        name: 'Muggo',
+        name: 'Muggo28',
         type: 'Small mug',
         cost: '150.000',
         oldCost: '',
@@ -262,7 +262,7 @@ const allproducts = [
     },
     {
         path: 'pingky.png',
-        name: 'Pingky',
+        name: 'Pingky29',
         type: 'Cute bed set',
         cost: '7.000.000',
         oldCost: '14.000.000',
@@ -271,7 +271,7 @@ const allproducts = [
     },
     {
         path: 'potty.png',
-        name: 'Potty',
+        name: 'Potty30',
         type: 'Minimalist flower pot',
         cost: '500.000',
         oldCost: '',
@@ -280,7 +280,7 @@ const allproducts = [
     },
     {
         path: 'respira.png',
-        name: 'Respira',
+        name: 'Respira31',
         type: 'Outdoor bar table and stool',
         cost: '500.000',
         oldCost: '',
@@ -289,7 +289,7 @@ const allproducts = [
     },
     {
         path: 'syltherine.png',
-        name: 'Syltherine',
+        name: 'Syltherine32',
         type: 'Stylish cafe chair',
         cost: '2.500.000',
         oldCost: '3.500.000',
@@ -298,7 +298,7 @@ const allproducts = [
     },
     {
         path: 'grifo.png',
-        name: 'Grifo',
+        name: 'Grifo33',
         type: 'Night lamp',
         cost: '2.500.000',
         oldCost: '',
@@ -307,7 +307,7 @@ const allproducts = [
     },
     {
         path: 'leviosa.png',
-        name: 'Leviosa',
+        name: 'Leviosa34',
         type: 'Stylish cafe chair',
         cost: '2.500.000',
         oldCost: '',
@@ -316,7 +316,7 @@ const allproducts = [
     },
     {
         path: 'lolito.png',
-        name: 'Lolito',
+        name: 'Lolito35',
         type: 'Luxury big sofa',
         cost: '7.000.000',
         oldCost: '14.000.000',
@@ -324,7 +324,7 @@ const allproducts = [
     },
     {
         path: 'muggo.png',
-        name: 'Muggo',
+        name: 'Muggo36',
         type: 'Small mug',
         cost: '150.000',
         oldCost: '',
@@ -334,7 +334,7 @@ const allproducts = [
     },
     {
         path: 'pingky.png',
-        name: 'Pingky',
+        name: 'Pingky37',
         type: 'Cute bed set',
         cost: '7.000.000',
         oldCost: '14.000.000',
@@ -343,7 +343,7 @@ const allproducts = [
     },
     {
         path: 'potty.png',
-        name: 'Potty',
+        name: 'Potty38',
         type: 'Minimalist flower pot',
         cost: '500.000',
         oldCost: '',
@@ -352,7 +352,7 @@ const allproducts = [
     },
     {
         path: 'respira.png',
-        name: 'Respira',
+        name: 'Respira39',
         type: 'Outdoor bar table and stool',
         cost: '500.000',
         oldCost: '',
@@ -361,7 +361,7 @@ const allproducts = [
     },
     {
         path: 'syltherine.png',
-        name: 'Syltherine',
+        name: 'Syltherine40',
         type: 'Stylish cafe chair',
         cost: '2.500.000',
         oldCost: '3.500.000',
@@ -459,14 +459,21 @@ const PaginatedItems = () => {
     const [itemsPerPage, setItemsPerPage] = useState('16');
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState({
+        filterArrVal: true,
+        currentPageVal: false,
+    });
     const [filterOn, setFilterOn] = useState('default');
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(JSON.parse(localStorage.getItem('localCurrentPage')) || 0);
     const [filteredArray, setFilteredArray] = useState(allproducts)
     useEffect(() => {
         setPageCount(Math.ceil(allproducts.length / itemsPerPage));
 
     }, [itemOffset, itemsPerPage]);
+    useEffect(() => {
+        localStorage.setItem('localCurrentPage', JSON.stringify(currentPage));
+    }, [currentPage])
+
     useEffect(() => {
         if (filterOn === 'default') {
             setFilteredArray(allproducts);
@@ -481,8 +488,13 @@ const PaginatedItems = () => {
                 return costA - costB;
             }));
         }
-        setIsLoading(false);
+        setIsLoading(prevValues => ({
+            ...prevValues,
+            filterArrVal: false
+        }));
     }, [filterOn]);
+
+
     const handlePageClick = (event) => {
         const newOffset = event.selected * itemsPerPage % allproducts.length;
         setItemOffset(newOffset);
@@ -491,7 +503,7 @@ const PaginatedItems = () => {
 
 
 
-    if (!isLoading) {
+    if (Object.values(isLoading).every(item => item === false)) {
         return (
             <section className='paginate_section'>
                 <div className='paginate_filter'>
@@ -506,7 +518,7 @@ const PaginatedItems = () => {
                                 onChange={(e) => {
                                     const inputValue = e.target.value;
                                     const regex = /^[^+-]+$/;
-                                    if (regex.test(inputValue) && (inputValue.length <= 2 && (parseInt(inputValue) <= 16 && inputValue !== '0'))){
+                                    if (regex.test(inputValue) && (inputValue.length <= 2 && (parseInt(inputValue) <= 16 && inputValue !== '0'))) {
                                         setItemsPerPage(inputValue);
                                     }
                                 }}
@@ -523,7 +535,7 @@ const PaginatedItems = () => {
                     </div>
                 </div>
                 <div className='products_shop'><ProductList products={filteredArray.slice(currentPage * itemsPerPage, (currentPage * itemsPerPage + 16))} /></div>
-                <Paginate handlePageClick={handlePageClick} pageCount={pageCount} />
+                <Paginate handlePageClick={handlePageClick} pageCount={pageCount} currentPage={currentPage} />
             </section>
         );
     }
