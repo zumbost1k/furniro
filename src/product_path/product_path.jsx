@@ -7,9 +7,9 @@ const ProductPath = () => {
     const { productName } = useParams();
     return (
         <section className='product_path_section'>
-            <Link to='' className='nav_link nav_link_home'>Home</Link>
+            <Link to='/home' className='nav_link nav_link_home'>Home</Link>
             <img src='/photos/arrow.png' alt='arrow' />
-            <Link to='' className='nav_link nav_link_shop'>Shop</Link>
+            <Link to='/shop' className='nav_link nav_link_shop'>Shop</Link>
             <img src='/photos/arrow.png' alt='arrow' />
             <p className='product_name'>{productName}</p>
         </section>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Nav from './nav/nav';
 import HomePage from './pages/home';
 import Footer from './footer/footer';
@@ -16,6 +16,7 @@ root.render(
       <ScrollToTop />
       <Nav />
       <Routes>
+      <Route path='/' element={<Navigate to='/home' />} />
         <Route path='/home' element={<HomePage />} />
         <Route path='/products/:productName' element={<Product />} />
         <Route path='/shop' element={<ShopPage />} />

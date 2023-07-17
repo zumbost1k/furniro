@@ -4,8 +4,8 @@ import './description.css'
 const Description = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const classNameCheker = (value) => {
-        if (value === currentPage) { return 'active' }
-        else { return 'hiden' }
+        if (value === currentPage) { return 'description_active' }
+        else { return 'description_hiden' }
     }
     return (
         <section className='description_section'>
