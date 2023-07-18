@@ -59,6 +59,7 @@
 }
 
 .form_item_input {
+    overflow: hidden;
     margin-top: 21px;
     margin-bottom: 36px;
     width: 528.75px;
