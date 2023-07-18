@@ -1,0 +1,170 @@
+.blog_section {
+    padding-top: 92px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -40px;
+    margin-bottom: -28px;
+}
+
+.all_posts {
+    display: flex;
+    flex-direction: column;
+    gap: 54px;
+}
+
+.post_info {
+    padding-top: 9px;
+    display: flex;
+    gap: 35px;
+    margin-left: -2px;
+}
+
+.post_info_item {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+}
+
+.post_info_item_text {
+    color: #9F9F9F;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.post_title {
+    letter-spacing: .2px;
+    padding-top: 15px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.post_text {
+    padding-top: 12px;
+    color: #9F9F9F;
+    text-align: justify;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.post_item {
+    width: 817px;
+}
+
+.post_btn {
+    padding-bottom: 12px;
+    cursor: pointer;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 400;
+    border: 0;
+    background: none;
+    margin-left: -3px;
+    white-space: nowrap;
+}
+
+.post_btn_container {
+    padding-top: 30px;
+    width: 77px;
+    border-bottom: 1px solid black;
+    margin-left: 3px;
+}
+
+.blog_body {
+    display: flex;
+    gap: 71px;
+}
+
+.post_category_input {
+    border-radius: 10px;
+    border: 1px solid #9F9F9F;
+    width: 311px;
+    height: 58px;
+    padding-right: 42px;
+    font-size: 14px;
+}
+
+.find_info {
+    position: relative;
+}
+
+.post_category_loop {
+    position: absolute;
+    top: 17px;
+    right: 11px;
+}
+
+.pagination {
+    padding: 52px 0px 0px 50px;
+}
+
+.additional {
+    width: 286px;
+    padding-left: 35px;
+}
+
+.categories_list {
+    padding-top: 33px;
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+    color: #9F9F9F;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.catergory_item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catergory_item_btn {
+    color: #9F9F9F;
+    font-size: 16px;
+    font-weight: 400;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.find_category {
+    padding-top: 43px;
+}
+
+.catergory_item_title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.category {
+    position: relative;
+}
+
+.recent_post_item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.recent_posts {
+    padding-top: 114px;
+}
+
+.recent_posts_container {
+    padding-top: 26px;
+    display: flex;
+    gap: 37px;
+    flex-direction: column;
+}
+
+.recent_post_text {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.recent_post_time {
+    color: #9F9F9F;
+    font-size: 12px;
+    font-weight: 400;
+}

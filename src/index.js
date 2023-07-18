@@ -9,6 +9,7 @@ import Product from './pages/product';
 import ScrollToTop from './scroll_to_top';
 import ShopPage from './pages/shop';
 import Contact from './pages/contact';
+import Blog from './pages/blog';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +23,7 @@ root.render(
         <Route path='/products/:productName' element={<Product />} />
         <Route path='/shop' element={<ShopPage />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/about' element={<Blog />} />
       </Routes>
       <Footer />
     </HashRouter>

@@ -454,7 +454,6 @@ const ProductList = ({ products }) => {
     })
 }
 
-
 const PaginatedItems = () => {
     const [itemsPerPage, setItemsPerPage] = useState('16');
     const [pageCount, setPageCount] = useState(0);
@@ -539,6 +538,7 @@ const PaginatedItems = () => {
             </section>
         );
     }
+
 }
 
 export default PaginatedItems;
