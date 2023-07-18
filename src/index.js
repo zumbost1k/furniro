@@ -8,6 +8,7 @@ import Footer from './footer/footer';
 import Product from './pages/product';
 import ScrollToTop from './scroll_to_top';
 import ShopPage from './pages/shop';
+import Contact from './pages/contact';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
         <Route path='/home' element={<HomePage />} />
         <Route path='/products/:productName' element={<Product />} />
         <Route path='/shop' element={<ShopPage />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
       <Footer />
     </HashRouter>

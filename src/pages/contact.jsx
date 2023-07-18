@@ -1,16 +1,16 @@
 import React from 'react';
 import ShopHeader from '../shop_header/shop_header';
-import PaginatedItems from '../pagination/get_data';
 import DiscountShop from '../discount_shop/discount_shop';
+import ContactForm from '../contact_form/contact_form';
 
-const ShopPage = () => {
+const Contact = () => {
     return (
         <div>
-            <ShopHeader path={'Shop'}/>
-            <PaginatedItems />
+            <ShopHeader logo={true} path={'Contact'} />
+            <ContactForm />
             <DiscountShop />
         </div>
     )
 }
 
-export default ShopPage
+export default Contact

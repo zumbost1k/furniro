@@ -18,6 +18,7 @@
 .shop_header_text_inner {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
 }
 
@@ -29,4 +30,10 @@
 
 .home_header_link {
     font-weight: 700;
+}
+
+.shop_header_icon {
+    position: absolute;
+    top: -60px;
+    left: 60px;
 }
