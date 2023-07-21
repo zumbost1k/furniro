@@ -30,3 +30,131 @@
     gap: 45px;
     padding-right: 100px;
 }
+
+.navig_item {
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.modal_top_line {
+    padding-top: 28px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.modal_top_line_header {
+    margin-left: 29px;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0px 113px 26px 0px;
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 42px;
+}
+
+.modal_top_line_close {
+    padding-top: 7px;
+    padding-left: 42px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.todos_item {
+    padding-left: 28px;
+    display: flex;
+    align-items: center;
+}
+
+.todos_item_main {
+    border-radius: 10px;
+}
+
+.todos_item_main_back {
+    position: relative;
+    border-radius: 10px;
+    background: #F9F1E7;
+    width: 105px;
+    height: 105px;
+}
+
+.todos_item_text {
+    padding-left: 33px;
+}
+
+.todos_item_title {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.todos_item_number {
+    padding-top: 9px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.todos_item_cost {
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.todos_item_cost_yel {
+    color: var(--primary, #B88E2F);
+    padding-left: 14px;
+}
+
+.todos_item_delete {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding-top: 4px;
+    padding-left: 73px;
+}
+
+
+.todos_items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 483px;
+    overflow: auto;
+}
+
+.todos_total_cost {
+    padding-left: 30px;
+    gap: 102px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 1px solid #D9D9D9;
+    padding-bottom: 21px;
+}
+
+.todos_total_cost_numbers {
+    color: var(--primary, #B88E2F);
+    font-weight: 600;
+}
+
+.todos_footer_btn {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 50px;
+    border: 1px solid #000;
+    padding: 6px 30px;
+    background: none;
+}
+
+.todos_footer_btn:hover {
+    background: rgb(235, 232, 232);
+}
+
+.todos_footer_btn_container {
+    padding-top: 26px;
+    display: flex;
+    gap: 14px;
+    padding-left: 25px;
+}
+
+  

@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './product_info.css'
 import { useParams } from 'react-router';
 import { Rating } from '@mui/material';
+import { v4 } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../features/todo/todoSlice';
 const productPhotos = [
     {
         path: 'blue.svg',
@@ -45,6 +48,7 @@ const ProductInfo = () => {
     const [ratingValue, setRatingValue] = useState(3.5);
     const { productName } = useParams();
     const [currentPhoto, setCurrentPhoto] = useState(productPhotos[4])
+    const dispatch = useDispatch()
     const smallPhotos = productPhotos.filter(product => {
         if (product.name !== currentPhoto.name) {
             return product
@@ -61,6 +65,21 @@ const ProductInfo = () => {
 
     const raise = () => {
         if (parseInt(productAmount) < 10) { setProductAmount((parseInt(productAmount) + 1).toString()) }
+    }
+    const addProductHandler = () => {
+        const productInf = {
+            id: v4(),
+            info: {
+                cost: "2.500.00",
+                discount: "-50%",
+                name: "Asgaard sofa",
+                oldCost: "14.000.000",
+                path: "triple_chair.png",
+                type: "Luxury big sofa"
+            },
+            number: productAmount
+        }
+        dispatch(addProduct(productInf))
     }
 
     return (
@@ -146,7 +165,7 @@ const ProductInfo = () => {
                         <button className='amount_calc_button' onClick={raise}>+</button>
                     </div>
                     <div className='add_compare'>
-                        <button className='add_cart add_compare_btn'>Add To Cart</button>
+                        <button className='add_cart add_compare_btn' onClick={() => addProductHandler()}>Add To Cart</button>
                         <button className='compare add_compare_btn'>+ &nbsp;Compare</button>
                     </div>
                 </div>
