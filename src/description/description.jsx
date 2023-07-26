@@ -54,7 +54,7 @@ const Description = () => {
                 <p className='page_fish_text'>Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.</p>
                 <p className='page_fish_text'>Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.</p>
                 <div className='active_page_photos'>
-                    <div class='avtive_photo_container'>
+                    <div className='avtive_photo_container'>
                         <img
                             className='active_page_photo'
                             width='604'
@@ -63,7 +63,7 @@ const Description = () => {
                             alt='small sofa'
                         />
                     </div>
-                    <div class='avtive_photo_container'>
+                    <div className='avtive_photo_container'>
                         <img
                             className='active_page_photo'
                             width='604'
@@ -79,7 +79,7 @@ const Description = () => {
                 <p className='page_fish_text'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, labore.</p>
                 <p className='page_fish_text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, eum asperiores beatae obcaecati praesentium adipisci modi minus eaque. Quo quos inventore illum facere, mollitia, repellendus laboriosam obcaecati non ipsum aperiam possimus, eaque optio vero ab rerum tempora quisquam molestiae perspiciatis aut? Voluptatibus modi ex, iusto illo maxime a placeat minima.</p>
                 <div className='active_page_photos'>
-                    <div class='avtive_photo_container'>
+                    <div className='avtive_photo_container'>
                         <img
                             className='active_page_photo'
                             width='604'
@@ -88,7 +88,7 @@ const Description = () => {
                             alt='small sofa'
                         />
                     </div>
-                    <div class='avtive_photo_container'>
+                    <div className='avtive_photo_container'>
                         <img
                             className='active_page_photo'
                             width='604'
@@ -104,7 +104,7 @@ const Description = () => {
                 <p className='page_fish_text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia exercitationem quaerat nesciunt dolorum consectetur dignissimos voluptatibus vitae, officiis animi consequatur facilis eos accusamus eligendi quo natus cum quibusdam adipisci praesentium.</p>
                 <p className='page_fish_text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla laborum corrupti consectetur repellat aperiam praesentium eaque qui, reprehenderit quidem fugiat provident optio dicta autem incidunt itaque nisi rerum quia delectus officia, esse ex velit nihil rem. Id animi molestiae harum impedit ipsum, totam rerum provident minus dolorum quis ad natus a ratione accusantium, eveniet ex! Tempora obcaecati maiores doloribus nihil.</p>
                 <div className='active_page_photos'>
-                    <div class='avtive_photo_container'>
+                    <div className='avtive_photo_container'>
                         <img
                             className='active_page_photo'
                             width='604'
@@ -113,7 +113,7 @@ const Description = () => {
                             alt='small sofa'
                         />
                     </div>
-                    <div class='avtive_photo_container'>
+                    <div className='avtive_photo_container'>
                         <img
                             className='active_page_photo'
                             width='604'

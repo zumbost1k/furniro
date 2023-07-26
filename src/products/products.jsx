@@ -99,7 +99,7 @@ const productHooverItemsList = productHooverItems.map(item => {
     return (
         <Link to='' className='product_link_item'>
             <img src={`/photos/products/${item.path}`} alt={item.text} />
-            <Link to='' className='product_link_item_text'>{item.text}</Link>
+            <p to='' className='product_link_item_text'>{item.text}</p>
         </Link>
     )
 })
