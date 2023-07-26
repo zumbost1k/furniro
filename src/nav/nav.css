@@ -137,6 +137,7 @@
 }
 
 .todos_footer_btn {
+    color: #000;
     cursor: pointer;
     font-size: 12px;
     font-weight: 400;
@@ -156,5 +157,3 @@
     gap: 14px;
     padding-left: 25px;
 }
-
-  

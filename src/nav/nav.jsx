@@ -3,8 +3,7 @@ import './nav.css'
 import { Link } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { deleteProduct } from '../features/todo/todoSlice';
+import { deleteProduct, useTotalCost } from '../features/todo/todoSlice';
 
 const linksWord = ['Home', 'Shop', 'About', 'Contact']
 const linksWordsList = linksWord.map(function (link) {
@@ -48,25 +47,15 @@ const LinksPhotoList = ({ links, handleOpenModal }) => {
 
 };
 const Nav = () => {
-    const [totalCost, setTotalCost] = useState(0)
     const [showModal, setShowModal] = useState(false)
     const products = useSelector((state) => state.product.products)
+    const totalCost = useTotalCost(products);
     const dispatch = useDispatch()
 
     const deleteProd = (id) => {
         dispatch(deleteProduct(id))
     }
-    useEffect(() => {
-        let totalProductsCost = 0;
-        products.forEach((product) => {
-            const costString = product.info.cost;
-            const costWithoutDots = costString.replace(/\./g, '');
-            const cost = parseInt(costWithoutDots) * parseInt(product.number);
-
-            totalProductsCost += cost;
-        })
-        setTotalCost(totalProductsCost.toLocaleString('en-US'))
-    }, [products])
+    
     const handleOpenModal = () => {
         setShowModal(true);
     }
@@ -144,9 +133,9 @@ const Nav = () => {
                             <p className='todos_total_cost_numbers'> Rs. {totalCost}</p>
                         </div>
                         <div className='todos_footer_btn_container'>
-                            <button className='todos_footer_btn'>Cart</button>
-                            <button className='todos_footer_btn'>Checkout</button>
-                            <button className='todos_footer_btn'>Comparison</button>
+                            <Link to='product/cart' className='todos_footer_btn'>Cart</Link>
+                            <Link to='' className='todos_footer_btn'>Checkout</Link>
+                            <Link to='' className='todos_footer_btn'>Comparison</Link>
                         </div>
                     </div>
                 </ReactModal>
