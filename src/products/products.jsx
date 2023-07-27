@@ -1,84 +1,10 @@
 import React, { useState } from 'react';
 import './products.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { v4 } from 'uuid';
 import { addProduct } from '../features/todo/todoSlice';
 
-const allproducts = [
-    {
-        path: 'grifo.png',
-        name: 'Grifo',
-        type: 'Night lamp',
-        cost: '2.500.000',
-        oldCost: '',
-        new: false,
-        discount: ''
-    },
-    {
-        path: 'leviosa.png',
-        name: 'Leviosa',
-        type: 'Stylish cafe chair',
-        cost: '2.500.000',
-        oldCost: '',
-        new: false,
-        discount: ''
-    },
-    {
-        path: 'lolito.png',
-        name: 'Lolito',
-        type: 'Luxury big sofa',
-        cost: '7.000.000',
-        oldCost: '14.000.000',
-        discount: '-50%'
-    },
-    {
-        path: 'muggo.png',
-        name: 'Muggo',
-        type: 'Small mug',
-        cost: '150.000',
-        oldCost: '',
-        new: true,
-        discount: ''
-
-    },
-    {
-        path: 'pingky.png',
-        name: 'Pingky',
-        type: 'Cute bed set',
-        cost: '7.000.000',
-        oldCost: '14.000.000',
-        discount: '-50%',
-        new: false,
-    },
-    {
-        path: 'potty.png',
-        name: 'Potty',
-        type: 'Minimalist flower pot',
-        cost: '500.000',
-        oldCost: '',
-        new: true,
-        discount: ''
-    },
-    {
-        path: 'respira.png',
-        name: 'Respira',
-        type: 'Outdoor bar table and stool',
-        cost: '500.000',
-        oldCost: '',
-        new: true,
-        discount: ''
-    },
-    {
-        path: 'syltherine.png',
-        name: 'Syltherine',
-        type: 'Stylish cafe chair',
-        cost: '2.500.000',
-        oldCost: '3.500.000',
-        discount: '-30%',
-        new: false
-    },
-]
 
 const productHooverItems = [
     {
@@ -107,7 +33,6 @@ const productHooverItemsList = productHooverItems.map(item => {
 const ProductList = ({ products, index }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch()
-
     return products.slice(0, index).map((product) => {
         const handleClick = () => {
             const newPath = `/products/${product.name}`;
@@ -149,11 +74,12 @@ const ProductList = ({ products, index }) => {
 
 const Products = ({ title }) => {
     const [showMore, setShowMore] = useState(true);
+    const productsList = useSelector((state) => state.productList.products)
     return (
         <section className='products_section'>
             <h2 className={title === 'Related Products' ? 'products_header_single' : 'products_header'}>{title}</h2>
             <div className='products'>
-                {<ProductList products={allproducts} index={showMore ? 8 : 4} />}
+                {<ProductList products={productsList} index={showMore ? 8 : 4} />}
             </div>
             <div><button className={title === 'Related Products' ? 'show_more_single' : 'show_more'} onClick={() => { setShowMore(!showMore) }}>Show {showMore ? 'Less' : 'More'}</button></div>
         </section>
