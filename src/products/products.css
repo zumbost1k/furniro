@@ -158,6 +158,9 @@
 }
 
 .product_link_item {
+    background: none;
+    border: none;
+    cursor: pointer;
     display: flex;
     color: white;
 }

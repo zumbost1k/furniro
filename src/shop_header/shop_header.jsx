@@ -7,7 +7,12 @@ const ShopHeader = ({ logo, path }) => {
         <div>
             <img width='1440' height='330' className='shop_header_back' src='/photos/shop_header_background.png' alt='header back' />
             <div className='shop_header_text'>
-                {logo && <img width='77' height='77' className={path === 'Blog'||path === 'Cart' ? 'shop_header_icon_blog' : 'shop_header_icon'} src='/photos/header_back_phot_icon.png' alt='header icon' />}
+                {logo && <img width='77' height='77'
+                    className={path === 'Blog' || path === 'Cart' ?
+                        'shop_header_icon_blog'
+                        :
+                        path === 'Product Comparison' ? 'shop_header_icon_comparison' : 'shop_header_icon'}
+                    src='/photos/header_back_phot_icon.png' alt='header icon' />}
                 <h2 className='shop_header_header'>
                     {path}
                 </h2>

@@ -1,0 +1,239 @@
+.comparison_body_section {
+    padding: 23px 54px 0px 54px;
+}
+
+.comparison_first_table_line {
+    display: grid;
+    grid-template-columns: 298px 344px 344px 1fr;
+}
+
+.compared_rating {
+    position: absolute;
+    padding-top: 9px;
+    display: flex;
+    padding-left: 4px;
+}
+
+.compared_prod_numb_rating {
+    font-size: 18px;
+    font-weight: 600;
+    padding-right: 5px;
+    margin-top: -2px;
+    width: 30px;
+}
+
+.compared_customer_review {
+    white-space: nowrap;
+    position: absolute;
+    height: 30px;
+    margin-top: -2.5px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #9F9F9F;
+    color: #9F9F9F;
+    font-size: 13px;
+    font-weight: 400;
+    padding-left: 8px;
+    margin-left: 161px;
+}
+
+.compared_empty_star {
+    color: white;
+    font-size: 30px;
+    margin-top: -11px;
+}
+
+.compared_prod_photo_body {
+    position: relative;
+    border-radius: 10px;
+    background: #F9F1E7;
+    width: 280px;
+    height: 177px;
+}
+
+.comparison_first_table_line_item_photos {
+    position: relative;
+    width: 280px;
+    margin-left: 28px;
+}
+
+.comparison_first_table_line_item_photos:nth-child(2) {
+    margin-left: 41px;
+}
+
+.compared_prod_name {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 126.5%;
+}
+
+.compared_request {
+    margin-bottom: 19px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 126.5%;
+    width: 203px;
+}
+
+.compared_request_link {
+    color: #727272;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 3px;
+    padding-right: 13px;
+    border-bottom: 2px solid #727272;
+}
+
+.comparison_first_table_line_item_header {
+    padding-top: 20px;
+    padding-left: 42px;
+}
+
+.compared_prod_photo {
+    border-radius: 10px;
+}
+
+.compared_prod_name {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 126.5%;
+    padding-top: 15px;
+}
+
+.compared_prod_cost {
+    font-size: 18px;
+    padding-top: 7px;
+    font-weight: 600;
+    padding-left: 3px;
+}
+
+.comparison_first_table_line_item_add_items {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 44px 70px 0px 32px;
+}
+
+.nother_prod_label {
+    letter-spacing: .2px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 126.5%;
+}
+
+.nother_prod_selector {
+    position: relative;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 126.5%;
+    border-radius: 6px;
+    background: var(--primary, #B88E2F);
+    border: 0;
+    margin-top: 12px;
+    padding: 12px 16px 11px 19px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('/public/photos/63.svg');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+
+
+
+.compare_text_table {
+    width: 242px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 126.5%;
+    word-wrap: break-word;
+}
+
+.compare_table_item {
+    border-left: 1px solid #E8E8E8;
+    border-right: 1px solid #E8E8E8;
+}
+
+.compare_item_first {
+    padding-left: 42px;
+    padding-right: 30px;
+    width: 290px;
+}
+
+.compare_table_header {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 126.5%;
+    padding: 60px 0px 28px 42px;
+}
+
+.compare_table tr:nth-child(1) th:nth-child(1) {
+    display: block;
+    padding-top: 40px;
+    padding-bottom: 28px;
+}
+
+.compare_table tr td {
+    padding-bottom: 34px;
+}
+
+.compare_item_third,
+.compare_item_second {
+    padding-left: 62px;
+}
+
+.compare_table tr th:nth-child(1) {
+    width: 302px;
+}
+
+.compare_table tr th:nth-child(2) {
+    width: 343px;
+}
+
+.compare_table tr th:nth-child(3) {
+    width: 344px;
+}
+
+.compare_table tr th:nth-child(4) {
+    width: 344px;
+}
+
+.compare_table {
+    table-layout: fixed;
+    margin-top: 93px;
+    border-top: 1px solid #E8E8E8;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.compare_table_item_pad {
+    padding-bottom: 34px;
+}
+
+.compare_table tr {
+    vertical-align: baseline;
+}
+
+.compare_table_btn {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 400;
+    border: 1px solid var(--primary, #B88E2F);
+    background: var(--primary, #B88E2F);
+    padding: 17px 48px;
+    cursor: pointer;
+}
+
+.compare_table_btn:hover {
+    border: 1px solid var(--primary, #a9832b);
+    background: var(--primary, #a9832b);
+}
+
+.compare_item_btn {
+    border-left: 1px solid #E8E8E8;
+    border-right: 1px solid #E8E8E8;
+    padding-left: 62px;
+    padding-bottom: 0px !important;
+}

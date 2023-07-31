@@ -11,8 +11,9 @@ import ShopPage from './pages/shop';
 import Contact from './pages/contact';
 import Blog from './pages/blog';
 import { Provider } from 'react-redux';
-import { store } from './store/store';
 import Cart from './pages/cart';
+import Comparison from './pages/comparison';
+import { store } from './store/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -29,6 +30,7 @@ root.render(
           <Route path='/contact' element={<Contact />} />
           <Route path='/about' element={<Blog />} />
           <Route path='/product/cart' element={<Cart />} />
+          <Route path='/product/comparison' element={<Comparison />} />
         </Routes>
         <Footer />
       </Provider>

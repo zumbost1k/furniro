@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './product_info.css'
 import { useParams } from 'react-router';
 import { Rating } from '@mui/material';
-import { v4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../features/todo/todoSlice';
+import { addProductToCompare } from '../features/compare/compare';
 const productPhotos = [
     {
         path: 'blue.svg',
@@ -68,20 +68,14 @@ const ProductInfo = () => {
     }
     const addProductHandler = () => {
         const productInf = {
-            id: v4(),
-            info: {
-                cost: "2.500.00",
-                discount: "-50%",
-                name: "Asgaard sofa",
-                oldCost: "14.000.000",
-                path: "triple_chair.png",
-                type: "Luxury big sofa"
-            },
-            number: productAmount
+            id: 'single_product_id',
+            quantity: productAmount
         }
         dispatch(addProduct(productInf))
     }
-
+    const addCompareProductHandler = () => {
+        dispatch(addProductToCompare('single_product_id'))
+    }
     return (
         <section className='product_info_section'>
             <div className='photos_product'>
@@ -166,7 +160,7 @@ const ProductInfo = () => {
                     </div>
                     <div className='add_compare'>
                         <button className='add_cart add_compare_btn' onClick={() => addProductHandler()}>Add To Cart</button>
-                        <button className='compare add_compare_btn'>+ &nbsp;Compare</button>
+                        <button onClick={addCompareProductHandler} className='compare add_compare_btn'>+ &nbsp;Compare</button>
                     </div>
                 </div>
                 <div className='product_info_footer'>

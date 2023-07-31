@@ -3,7 +3,11 @@ import './nav.css'
 import { Link } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteProduct, useTotalCost } from '../features/todo/todoSlice';
+import {
+    deleteProduct
+    // , useTotalCost
+} from '../features/todo/todoSlice';
+import { selectProductById, selectTotalCost } from '../store/selectors';
 
 const linksWord = ['Home', 'Shop', 'About', 'Contact']
 const linksWordsList = linksWord.map(function (link) {
@@ -48,14 +52,14 @@ const LinksPhotoList = ({ links, handleOpenModal }) => {
 };
 const Nav = () => {
     const [showModal, setShowModal] = useState(false)
-    const products = useSelector((state) => state.product.products)
-    const totalCost = useTotalCost(products);
+    const selectedProducts = useSelector(selectProductById)
+    const totalCost = useSelector(selectTotalCost)
     const dispatch = useDispatch()
 
     const deleteProd = (id) => {
         dispatch(deleteProduct(id))
     }
-    
+
     const handleOpenModal = () => {
         setShowModal(true);
     }
@@ -115,13 +119,13 @@ const Nav = () => {
                             <button onClick={handleCloseModal} className='modal_top_line_close'><img src='/photos/cart.svg' alt='cart' width='17' height='19' /></button>
                         </div>
                         <div className='todos_items'>
-                            {products.map(product => {
+                            {selectedProducts.map(product => {
                                 return (
                                     <div className='todos_item'>
-                                        <div className='todos_item_main_back'><img className='todos_item_main' width='105' height='105' src={`/photos/products/${product.info.path}`} alt={product.info.name} /></div>
+                                        <div className='todos_item_main_back'><img className='todos_item_main' width='105' height='105' src={`/photos/products/${product.path}`} alt={product.name} /></div>
                                         <div className='todos_item_text'>
-                                            <h3 className='todos_item_title'>{product.info.name}</h3>
-                                            <p className='todos_item_number'>{product.number} <span className='todos_item_cost'>X<span className='todos_item_cost_yel'>Rs. {product.info.cost}</span> </span></p>
+                                            <h3 className='todos_item_title'>{product.name}</h3>
+                                            <p className='todos_item_number'>{product.quantity} <span className='todos_item_cost'>X<span className='todos_item_cost_yel'>Rs. {product.cost}</span> </span></p>
                                         </div>
                                         <button className='todos_item_delete' onClick={() => { deleteProd(product.id) }}><img src='/photos/close_cart.svg' alt='close cart' width='20' height='20' /></button>
                                     </div>
@@ -130,12 +134,14 @@ const Nav = () => {
                         </div>
                         <div className='todos_total_cost'>
                             <p className='todos_total_cost_title'>Subtotal</p>
-                            <p className='todos_total_cost_numbers'> Rs. {totalCost}</p>
+                            <p className='todos_total_cost_numbers'> Rs.
+                                {totalCost}
+                            </p>
                         </div>
                         <div className='todos_footer_btn_container'>
                             <Link to='product/cart' className='todos_footer_btn'>Cart</Link>
                             <Link to='' className='todos_footer_btn'>Checkout</Link>
-                            <Link to='' className='todos_footer_btn'>Comparison</Link>
+                            <Link to='product/comparison' className='todos_footer_btn'>Comparison</Link>
                         </div>
                     </div>
                 </ReactModal>

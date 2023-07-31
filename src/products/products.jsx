@@ -2,33 +2,8 @@ import React, { useState } from 'react';
 import './products.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { v4 } from 'uuid';
 import { addProduct } from '../features/todo/todoSlice';
-
-
-const productHooverItems = [
-    {
-        path: '1.svg',
-        text: 'Share',
-    },
-    {
-        path: '2.svg',
-        text: 'Compare',
-    },
-    {
-        path: '3.svg',
-        text: 'Like',
-    },
-]
-
-const productHooverItemsList = productHooverItems.map(item => {
-    return (
-        <Link to='' className='product_link_item'>
-            <img src={`/photos/products/${item.path}`} alt={item.text} />
-            <p to='' className='product_link_item_text'>{item.text}</p>
-        </Link>
-    )
-})
+import { addProductToCompare } from '../features/compare/compare';
 
 const ProductList = ({ products, index }) => {
     const navigate = useNavigate();
@@ -38,20 +13,35 @@ const ProductList = ({ products, index }) => {
             const newPath = `/products/${product.name}`;
             navigate(newPath);
         };
-
         const addProductHandler = () => {
             const productInf = {
-                id: v4(),
-                info: product,
-                number: 1
+                id: product.id,
+                quantity: 1
             }
             dispatch(addProduct(productInf))
+        }
+
+        const addCompareProductHandler = () => {
+            dispatch(addProductToCompare(product.id))
         }
         return (
             <div className='product_item' onClick={handleClick}>
                 <div className='item_hoover_state'>
                     <button onClick={() => addProductHandler()} className='item_button'>Add to cart</button>
-                    <div className='product_link_items'>{productHooverItemsList}</div>
+                    <div className='product_link_items'>
+                        <button className='product_link_item'>
+                            <img src={`/photos/products/1.svg`} alt='share' />
+                            <figcaption className='product_link_item_text'>Share</figcaption>
+                        </button>
+                        <button onClick={addCompareProductHandler} className='product_link_item'>
+                            <img src={`/photos/products/2.svg`} alt='compare' />
+                            <figcaption className='product_link_item_text'>Compare</figcaption>
+                        </button>
+                        <button className='product_link_item'>
+                            <img src={`/photos/products/3.svg`} alt='like' />
+                            <figcaption className='product_link_item_text'>Like</figcaption>
+                        </button>
+                    </div>
                 </div>
                 <Link to={`/products/${product.name}`} className='product_link'>
                     <img src={`/photos/products/${product.path}`} alt={product.name} />
