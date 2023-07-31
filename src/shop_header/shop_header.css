@@ -15,6 +15,12 @@
     font-weight: 600;
 }
 
+.shop_header_header_checkout {
+    font-size: 48px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
 .shop_header_text_inner {
     display: flex;
     align-items: center;
@@ -48,4 +54,16 @@
     position: absolute;
     top: -61px;
     left: 210px;
+}
+
+.shop_header_icon_checkout {
+    position: absolute;
+    top: -61px;
+    left: 78px;
+}
+
+@media (min-width:1430px) {
+    .dynamic_header_link {
+        margin-right: -40px;
+    }
 }

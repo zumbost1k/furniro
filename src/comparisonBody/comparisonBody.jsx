@@ -197,7 +197,7 @@ const ComparisonBody = () => {
                     <HeaderInfoList product={firstCompared} />
                     <HeaderInfoList product={secondCompared} />
                     <div className='comparison_first_table_line_item_add_items'>
-                        <label className='nother_prod_label' for='nother_prod'>Add A Product</label>
+                        <label className='nother_prod_label' htmlFor='nother_prod'>Add A Product</label>
                         <select className='nother_prod_selector' onChange={newProduct => { dispatch(addProductToCompare(newProduct.target.value)) }} name='nother_prod' id='nother_prod'>
                             <option defaultValue disabled value='default'>Choose a Product</option>
                             {selectedProducts.map(product => {

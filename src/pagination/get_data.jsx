@@ -60,17 +60,17 @@ const ProductList = ({ products }) => {
         return (
             <div className='product_item_shop' onClick={handleClick}>
                 <div className='item_hoover_state'>
-                    <button onClick={addProductHandler} className='item_button'>Add to cart</button>
+                    <button type='button' onClick={addProductHandler} className='item_button'>Add to cart</button>
                     <div className='product_link_items'>
-                        <button className='product_link_item'>
+                        <button type='button' className='product_link_item'>
                             <img src={`/photos/products/1.svg`} alt='share' />
                             <figcaption className='product_link_item_text'>Share</figcaption>
                         </button>
-                        <button onClick={addCompareProductHandler} className='product_link_item'>
+                        <button type='button' onClick={addCompareProductHandler} className='product_link_item'>
                             <img src={`/photos/products/2.svg`} alt='compare' />
                             <figcaption className='product_link_item_text'>Compare</figcaption>
                         </button>
-                        <button className='product_link_item'>
+                        <button type='button' className='product_link_item'>
                             <img src={`/photos/products/3.svg`} alt='like' />
                             <figcaption className='product_link_item_text'>Like</figcaption>
                         </button>
@@ -95,7 +95,7 @@ const ProductList = ({ products }) => {
 }
 
 const PaginatedItems = () => {
-    const productsList = useSelector((state) => state.productList.products)
+    const productsList = useSelector((state) => state.productList.products).slice(0, 40)
     const [itemsPerPage, setItemsPerPage] = useState('16');
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);

@@ -41,7 +41,7 @@ const navLinks = [
 const LinksPhotoList = ({ links, handleOpenModal }) => {
     return links.map(link => {
         return (
-            <button onClick={link.extraClass ? handleOpenModal : () => { }} className={link.extraClass ? 'navig_item shopping_cart' : 'navig_item'}>
+            <button type='button' onClick={link.extraClass ? handleOpenModal : () => { }} className={link.extraClass ? 'navig_item shopping_cart' : 'navig_item'}>
                 <img
                     src={`/photos/${link.path}.svg`}
                     alt={link.path} />
@@ -116,7 +116,7 @@ const Nav = () => {
                     <div className='modal_content'>
                         <div className='modal_top_line'>
                             <h3 className='modal_top_line_header'>Shopping Cart</h3>
-                            <button onClick={handleCloseModal} className='modal_top_line_close'><img src='/photos/cart.svg' alt='cart' width='17' height='19' /></button>
+                            <button type='button' onClick={handleCloseModal} className='modal_top_line_close'><img src='/photos/cart.svg' alt='cart' width='17' height='19' /></button>
                         </div>
                         <div className='todos_items'>
                             {selectedProducts.map(product => {
@@ -127,7 +127,7 @@ const Nav = () => {
                                             <h3 className='todos_item_title'>{product.name}</h3>
                                             <p className='todos_item_number'>{product.quantity} <span className='todos_item_cost'>X<span className='todos_item_cost_yel'>Rs. {product.cost}</span> </span></p>
                                         </div>
-                                        <button className='todos_item_delete' onClick={() => { deleteProd(product.id) }}><img src='/photos/close_cart.svg' alt='close cart' width='20' height='20' /></button>
+                                        <button type='button' className='todos_item_delete' onClick={() => { deleteProd(product.id) }}><img src='/photos/close_cart.svg' alt='close cart' width='20' height='20' /></button>
                                     </div>
                                 )
                             })}
@@ -140,7 +140,7 @@ const Nav = () => {
                         </div>
                         <div className='todos_footer_btn_container'>
                             <Link to='product/cart' className='todos_footer_btn'>Cart</Link>
-                            <Link to='' className='todos_footer_btn'>Checkout</Link>
+                            <Link to='product/checkout' className='todos_footer_btn'>Checkout</Link>
                             <Link to='product/comparison' className='todos_footer_btn'>Comparison</Link>
                         </div>
                     </div>

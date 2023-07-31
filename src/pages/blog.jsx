@@ -6,7 +6,7 @@ import PaginatedItemsPost from '../pagination/get_data_post';
 const Blog = () => {
     return (
         <div>
-            <ShopHeader logo={true} path={'Blog'}/>
+            <ShopHeader logo={true} path={'Blog'} underTitle={'Blog'}/>
             <PaginatedItemsPost/>
             <DiscountShop />
         </div>

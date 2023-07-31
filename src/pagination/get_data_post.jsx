@@ -148,7 +148,7 @@ const recentPostsList = recentPosts.map(post => {
 const categoriesList = categories.map(category => {
     return (
         <div className='catergory_item'>
-            <button className='catergory_item_btn'>{category.name}</button>
+            <button type='button' className='catergory_item_btn'>{category.name}</button>
             <p className='catergory_item_text'>{category.numberOf}</p>
         </div>
     )
@@ -174,7 +174,7 @@ const PostList = ({ posts }) => {
                 </div>
                 <h2 className='post_title'>{post.title}</h2>
                 <p className='post_text'>{post.text}</p>
-                <div className='post_btn_container'><button className='post_btn'>Read more</button></div>
+                <div className='post_btn_container'><button type='button' className='post_btn'>Read more</button></div>
             </div >
         )
     })

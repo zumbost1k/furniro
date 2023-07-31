@@ -58,7 +58,7 @@ const CartTotal = () => {
                                     }
                                 />
                                 <p className='cart_item_total_cost cart_item_text'>Rs. {costChecker(product.cost, product.quantity)}</p>
-                                <button className='cart_item_delete' onClick={() => { deleteProd(product.id) }}><img src='/photos/dumpster.svg' alt='dumpster' width='28' height='28' /></button>
+                                <button type='button' className='cart_item_delete' onClick={() => { deleteProd(product.id) }}><img src='/photos/dumpster.svg' alt='dumpster' width='28' height='28' /></button>
                             </div>
                         )
                     })}
@@ -78,7 +78,7 @@ const CartTotal = () => {
                         {totalCost}
                     </p>
                 </div>
-                <button className='cart_check_btn'><Link className='cart_check_out_inner' to=''>Check Out</Link></button>
+                <button type='button' className='cart_check_btn'><Link className='cart_check_out_inner' to=''>Check Out</Link></button>
             </div>
         </section>
     )

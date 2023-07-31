@@ -1,15 +1,16 @@
 import React from 'react';
 import ShopHeader from '../shop_header/shop_header';
-import CartTotal from '../cart_total/cart_total';
 import DiscountShop from '../discount_shop/discount_shop';
-const Cart = () => {
+import CheckoutBody from '../checkout_body/checkout_body';
+
+const Checkout = () => {
     return (
         <div>
-            <ShopHeader logo={true} path={'Cart'} underTitle={'Cart'}/>
-            <CartTotal />
+            <ShopHeader logo={true} path={'Checkout'} underTitle={'Checkout'} />
+            <CheckoutBody />
             <DiscountShop />
         </div>
     )
 }
 
-export default Cart
+export default Checkout

@@ -143,7 +143,7 @@ const ProductInfo = () => {
                 </div>
                 <div className='items_amount'>
                     <div className='items_amount_calc'>
-                        <button className='amount_calc_button' onClick={lower}>-</button>
+                        <button type='button' className='amount_calc_button' onClick={lower}>-</button>
                         <input
                             className='amount_textholder'
                             type='text'
@@ -156,11 +156,11 @@ const ProductInfo = () => {
                                 }
                             }}
                         />
-                        <button className='amount_calc_button' onClick={raise}>+</button>
+                        <button type='button' className='amount_calc_button' onClick={raise}>+</button>
                     </div>
                     <div className='add_compare'>
-                        <button className='add_cart add_compare_btn' onClick={() => addProductHandler()}>Add To Cart</button>
-                        <button onClick={addCompareProductHandler} className='compare add_compare_btn'>+ &nbsp;Compare</button>
+                        <button type='button' className='add_cart add_compare_btn' onClick={() => addProductHandler()}>Add To Cart</button>
+                        <button type='button' onClick={addCompareProductHandler} className='compare add_compare_btn'>+ &nbsp;Compare</button>
                     </div>
                 </div>
                 <div className='product_info_footer'>

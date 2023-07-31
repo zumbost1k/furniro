@@ -349,7 +349,6 @@ const initialState = {
             notCoveredinWarranty: 'The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.',
             domesticWarranty: '1 Year',
             reviews: 204,
-
         },
         {
 

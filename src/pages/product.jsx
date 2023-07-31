@@ -10,7 +10,7 @@ const Product = () => {
             <ProductPath />
             <ProductInfo />
             <Description />
-            <Products title={'Related Products'} />
+            <Products title={'Related Products'}/>
         </div>
     )
 }

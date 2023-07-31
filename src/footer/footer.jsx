@@ -40,7 +40,7 @@ const Footer = () => {
                     <h3 className='links_title'>Newsletter</h3>
                     <form className='footer_form' action=''>
                         <input type='email' className='email_footer' placeholder='Enter Your Email Address' />
-                        <button className='subscribe' >SUBSCRIBE</button>
+                        <button type='button'className='subscribe' >SUBSCRIBE</button>
                     </form>
 
                 </div>

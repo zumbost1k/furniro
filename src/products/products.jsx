@@ -27,17 +27,17 @@ const ProductList = ({ products, index }) => {
         return (
             <div className='product_item' onClick={handleClick}>
                 <div className='item_hoover_state'>
-                    <button onClick={() => addProductHandler()} className='item_button'>Add to cart</button>
+                    <button type='button' onClick={() => addProductHandler()} className='item_button'>Add to cart</button>
                     <div className='product_link_items'>
-                        <button className='product_link_item'>
+                        <button type='button' className='product_link_item'>
                             <img src={`/photos/products/1.svg`} alt='share' />
                             <figcaption className='product_link_item_text'>Share</figcaption>
                         </button>
-                        <button onClick={addCompareProductHandler} className='product_link_item'>
+                        <button type='button' onClick={addCompareProductHandler} className='product_link_item'>
                             <img src={`/photos/products/2.svg`} alt='compare' />
                             <figcaption className='product_link_item_text'>Compare</figcaption>
                         </button>
-                        <button className='product_link_item'>
+                        <button type='button' className='product_link_item'>
                             <img src={`/photos/products/3.svg`} alt='like' />
                             <figcaption className='product_link_item_text'>Like</figcaption>
                         </button>
@@ -71,7 +71,7 @@ const Products = ({ title }) => {
             <div className='products'>
                 {<ProductList products={productsList} index={showMore ? 8 : 4} />}
             </div>
-            <div><button className={title === 'Related Products' ? 'show_more_single' : 'show_more'} onClick={() => { setShowMore(!showMore) }}>Show {showMore ? 'Less' : 'More'}</button></div>
+            <div><button type='button' className={title === 'Related Products' ? 'show_more_single' : 'show_more'} onClick={() => { setShowMore(!showMore) }}>Show {showMore ? 'Less' : 'More'}</button></div>
         </section>
 
     )

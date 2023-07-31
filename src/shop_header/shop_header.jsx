@@ -2,7 +2,7 @@ import React from 'react';
 import './shop_header.css'
 import { Link } from 'react-router-dom';
 
-const ShopHeader = ({ logo, path }) => {
+const ShopHeader = ({ logo, path, underTitle }) => {
     return (
         <div>
             <img width='1440' height='330' className='shop_header_back' src='/photos/shop_header_background.png' alt='header back' />
@@ -11,15 +11,15 @@ const ShopHeader = ({ logo, path }) => {
                     className={path === 'Blog' || path === 'Cart' ?
                         'shop_header_icon_blog'
                         :
-                        path === 'Product Comparison' ? 'shop_header_icon_comparison' : 'shop_header_icon'}
+                        path === 'Product Comparison' ? 'shop_header_icon_comparison' : path === 'Checkout' ? 'shop_header_icon_checkout' : 'shop_header_icon'}
                     src='/photos/header_back_phot_icon.png' alt='header icon' />}
-                <h2 className='shop_header_header'>
+                <h2 className= 'shop_header_header'>
                     {path}
                 </h2>
                 <div className='shop_header_text_inner'>
                     <Link to='/home' className='shop_header_link home_header_link'>Home</Link>
                     <img width='20' height='20' src='/photos/shop_header_arrow.svg' alt='arrow' />
-                    <Link to={`/${path}`} className='shop_header_link dynamic_header_link'>{path}</Link>
+                    <Link to={`/${path}`} className={path === 'Checkout' ?' shop_header_link dynamic_header_link' :'shop_header_link'}>{underTitle}</Link>
                 </div>
             </div>
         </div>

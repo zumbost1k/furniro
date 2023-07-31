@@ -6,7 +6,7 @@ import ContactForm from '../contact_form/contact_form';
 const Contact = () => {
     return (
         <div>
-            <ShopHeader logo={true} path={'Contact'} />
+            <ShopHeader logo={true} path={'Contact'} underTitle={'Contact'}/>
             <ContactForm />
             <DiscountShop />
         </div>
