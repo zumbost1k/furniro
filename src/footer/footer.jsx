@@ -36,10 +36,8 @@ const footerLinks = {
         }]
 }
 
-
-
-const FooterLinksList = ({ link }) => {
-    return link.map((link) => {
+const FooterLinksList = ({ links }) => {
+    return links.map((link) => {
         return (
             <Link className='footer_link' to={link.path}>
                 {link.text}
@@ -61,17 +59,17 @@ const Footer = () => {
                 </div>
                 <div className='funiro_col furniro_col_second'>
                     <h3 className='links_title'>Links</h3>
-                    {<FooterLinksList link={footerLinks.links} />}
+                    <FooterLinksList links={footerLinks.links} />
                 </div>
                 <div className='funiro_col furniro_col_second'>
                     <h3 className='links_title'>Help</h3>
-                    {<FooterLinksList link={footerLinks.help} />}
+                    <FooterLinksList links={footerLinks.help} />
                 </div>
                 <div className='funiro_col furniro_col_third'>
                     <h3 className='links_title'>Newsletter</h3>
                     <form className='footer_form' action=''>
                         <input type='email' className='email_footer' placeholder='Enter Your Email Address' />
-                        <button className='subscribe' >SUBSCRIBE</button>
+                        <button type='submit' className='subscribe' >SUBSCRIBE</button>
                     </form>
 
                 </div>
