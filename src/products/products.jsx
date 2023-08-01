@@ -25,7 +25,7 @@ const ProductList = ({ products, index }) => {
             dispatch(addProductToCompare(product.id))
         }
         return (
-            <div className='product_item' onClick={handleClick}>
+            <div key={`${product.id}_product_list_item`} className='product_item' onClick={handleClick}>
                 <div className='item_hoover_state'>
                     <button type='button' onClick={() => addProductHandler()} className='item_button'>Add to cart</button>
                     <div className='product_link_items'>

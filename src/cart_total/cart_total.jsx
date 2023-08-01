@@ -36,7 +36,7 @@ const CartTotal = () => {
                     {selectedProducts.map(product => {
                         let productNumber = product.quantity
                         return (
-                            <div className='cart_total_item'>
+                            <div key={`${product.id}_cart_total`} className='cart_total_item'>
                                 <div className='cart_item_back'><img className='cart_item_photo' width='105' height='105' src={`/photos/products/${product.path}`} alt={product.name} /></div>
                                 <p className='cart_item_name cart_item_text'>{product.name}</p>
                                 <p className='cart_item_cost cart_item_text'>Rs. {product.cost}</p>

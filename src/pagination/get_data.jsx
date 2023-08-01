@@ -30,7 +30,7 @@ const filterIcons = [
 
 const filterIconList = filterIcons.map(icon => {
     return (
-        <div className='filter_icon_list_item'>
+        <div key={`${icon.alt}_filter_icon`} className='filter_icon_list_item'>
             <img src={`/photos/${icon.path}`} alt={icon.alt} />
             {icon.text && <p>{icon.text}</p>}
         </div>
@@ -58,7 +58,7 @@ const ProductList = ({ products }) => {
         };
 
         return (
-            <div className='product_item_shop' onClick={handleClick}>
+            <div key={`${product.id}_product_list_item`} className='product_item_shop' onClick={handleClick}>
                 <div className='item_hoover_state'>
                     <button type='button' onClick={addProductHandler} className='item_button'>Add to cart</button>
                     <div className='product_link_items'>

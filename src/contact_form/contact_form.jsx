@@ -55,7 +55,7 @@ const placeholders = [
 
 const contactList = contacts.map(contact => {
     return (
-        <div className='contact_item_container'>
+        <div key={contact.path} className='contact_item_container'>
             <img width='30' height='30' src={`/photos/${contact.path}.svg`} alt={contact.path} />
             <div className='contact_item_text'>
                 <h3 className='contact_item_text_title'>{contact.title}</h3>
@@ -68,7 +68,7 @@ const contactList = contacts.map(contact => {
 
 const placeholdersList = placeholders.map((placeholder, index) => {
     return (
-        <div className='contact_form_item_inner'>
+        <div key={placeholder.name} className='contact_form_item_inner'>
             <label className='form_item_label' htmlFor={placeholder.name}>{placeholder.theme} </label>
             <input className={placeholder.extraClass ? 'form_item_input big_form_input' : 'form_item_input'} type={placeholder.type} name='contact_form_item' id={placeholder.name} placeholder={placeholder.innerText} required />
         </div>

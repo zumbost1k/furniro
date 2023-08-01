@@ -131,7 +131,7 @@ const checkoutInputs = [
 const checkoutInputsList = checkoutInputs.map((checkoutInput, index) => {
     if (checkoutInput.inputType === 'double') {
         return (
-            <div className='double_iputs_container'>
+            <div key={`${checkoutInput.id}_checkout_inputs`} className='double_iputs_container'>
                 <div className='double_iputs_item'>
                     <label className='inputs_label' htmlFor={checkoutInput.id}>{checkoutInput.topText}</label>
                     <input required className='double_checkkout_input check_input' type={checkoutInput.type} id={checkoutInput.id} />
@@ -158,7 +158,7 @@ const checkoutInputsList = checkoutInputs.map((checkoutInput, index) => {
                 <select required className='checkout_selector check_input' type={checkoutInput.type} name={checkoutInput.id} id={checkoutInput.id}>
                     {checkoutInput.additionalInformation.countryes.map(country => {
                         return (
-                            <option value={country.selectVal}>{country.name}</option>
+                            <option key={country.name} value={country.selectVal}>{country.name}</option>
                         )
                     })}
                 </select>
@@ -186,7 +186,7 @@ const CheckoutBody = () => {
                     </div>
                     {selectedProducts.map(product => {
                         return (
-                            <div className='checkout_product_item'>
+                            <div key={`${product.id}_checkout_body`} className='checkout_product_item'>
                                 <p className='checkout_product_name'>{product.name} <span className='checkout_product_quant'>X {product.quantity}</span></p>
                                 <p className='checkout_product_cost'>Rs. {product.cost}</p>
                             </div>

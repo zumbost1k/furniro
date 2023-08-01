@@ -10,9 +10,9 @@ import {
 import { selectProductById, selectTotalCost } from '../store/selectors';
 
 const linksWord = ['Home', 'Shop', 'About', 'Contact']
-const linksWordsList = linksWord.map(function (link) {
+const linksWordsList = linksWord.map((link) => {
     return (
-        <Link className='menu_link' to={link}>
+        <Link key={`${link}_links_words_list`} className='menu_link' to={link}>
             {link}
         </Link>
     );
@@ -41,7 +41,7 @@ const navLinks = [
 const LinksPhotoList = ({ links, handleOpenModal }) => {
     return links.map(link => {
         return (
-            <button type='button' onClick={link.extraClass ? handleOpenModal : () => { }} className={link.extraClass ? 'navig_item shopping_cart' : 'navig_item'}>
+            <button key={`${link.path}_links_photo_list`} type='button' onClick={link.extraClass ? handleOpenModal : () => { }} className={link.extraClass ? 'navig_item shopping_cart' : 'navig_item'}>
                 <img
                     src={`/photos/${link.path}.svg`}
                     alt={link.path} />
@@ -121,7 +121,7 @@ const Nav = () => {
                         <div className='todos_items'>
                             {selectedProducts.map(product => {
                                 return (
-                                    <div className='todos_item'>
+                                    <div key={`${product.id}_todos_item`} className='todos_item'>
                                         <div className='todos_item_main_back'><img className='todos_item_main' width='105' height='105' src={`/photos/products/${product.path}`} alt={product.name} /></div>
                                         <div className='todos_item_text'>
                                             <h3 className='todos_item_title'>{product.name}</h3>

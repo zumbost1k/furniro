@@ -80,7 +80,7 @@ const MySlider = () => {
                 <Slider {...settings}>
                     {slides.map((slide) => {
                         return (
-                            <div className='slider'>
+                            <div key={slide.title} className='slider'>
                                 <img className='photo' src={`/photos/${slide.path}`} alt={slide.title} width='404' height='582' />
                                 <div className='slide_block'>
                                     <div className='slide_caption'>

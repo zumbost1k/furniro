@@ -43,7 +43,7 @@ const tableInfo = [
     {
         header: true,
         text: 'General',
-        key: ''
+        key: 'general'
     },
     {
         header: false,
@@ -78,7 +78,7 @@ const tableInfo = [
     {
         header: true,
         text: 'Product',
-        key: ''
+        key: 'product'
     },
     {
         header: false,
@@ -108,7 +108,7 @@ const tableInfo = [
     {
         header: true,
         text: 'Dimensions',
-        key: ''
+        key: 'dimensions'
     },
     {
         header: false,
@@ -143,7 +143,7 @@ const tableInfo = [
     {
         header: true,
         text: 'Warranty',
-        key: ''
+        key: 'warranty'
     },
     {
         header: false,
@@ -202,7 +202,7 @@ const ComparisonBody = () => {
                             <option defaultValue disabled value='default'>Choose a Product</option>
                             {selectedProducts.map(product => {
                                 return (
-                                    <option value={product.id}>{product.name}</option>
+                                    <option key={`${product.id}_comparison_body`} value={product.id}>{product.name}</option>
                                 )
                             })}
                         </select>
@@ -214,7 +214,7 @@ const ComparisonBody = () => {
                         {tableInfo.map(tableItem => {
                             if (tableItem.header) {
                                 return (
-                                    <tr>
+                                    <tr key={tableItem.key}>
                                         <th className='compare_table_header compare_table_text' >{tableItem.text}</th>
                                         <th className='compare_table_item' ></th>
                                         <th className='compare_table_item'></th>
@@ -224,7 +224,7 @@ const ComparisonBody = () => {
                             }
                             else {
                                 return (
-                                    <tr>
+                                    <tr key={tableItem.key}>
                                         <td><p className='compare_text_table compare_item_first'>{tableItem.text}</p></td>
                                         <td className='compare_table_item_pad compare_table_item compare_item_second'><p className='compare_text_table'>{firstCompared[tableItem.key]}</p></td>
                                         <td className='compare_table_item_pad compare_table_item compare_item_third'><p className='compare_text_table'>{secondCompared[tableItem.key]}</p></td>
