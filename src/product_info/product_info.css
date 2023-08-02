@@ -52,7 +52,7 @@
 }
 
 .rating {
-    position: absolute;
+    height: 35px;
     padding-top: 16px;
     display: flex;
 }
@@ -79,7 +79,7 @@
 }
 
 .text_product_lorem {
-    padding-top: 57px;
+    padding-top: 30px;
     width: 424px;
     font-size: 13px;
     font-weight: 400;
