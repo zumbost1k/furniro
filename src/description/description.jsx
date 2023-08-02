@@ -58,20 +58,20 @@ const ProductsDescriptions  = () => {
     return (
         <section className='description_section'>
             <form className='description_links'>
-                {descriptionTopLinksInfo.map(topLinkInfoIten => {
+                {descriptionTopLinksInfo.map(topLinkInfoItem  => {
                     return (
                         <div className='description_link_relative'>
                             <input
-                                value={topLinkInfoIten.pageId}
-                                checked={currentPage === topLinkInfoIten.pageId}
+                                value={topLinkInfoItem.pageId}
+                                checked={currentPage === topLinkInfoItem.pageId}
                                 onChange={(event) => {
                                     setCurrentPage(parseInt(event.target.value));
                                 }}
                                 className='description_link'
                                 type='radio'
                                 name='description_link'
-                                id={topLinkInfoIten.labelFor} />
-                            <label htmlFor={topLinkInfoIten.labelFor} className='description_label'>{topLinkInfoIten.text}</label>
+                                id={topLinkInfoItem.labelFor} />
+                            <label htmlFor={topLinkInfoItem.labelFor} className='description_label'>{topLinkInfoItem.text}</label>
                         </div>
                     )
                 })}

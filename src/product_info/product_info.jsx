@@ -41,32 +41,23 @@ const messengers = [
 ]
 
 const ProductInfo = () => {
-    const [productAmount, setProductAmount] = useState('1')
+    const [productAmount, setProductAmount] = useState(1)
     const [ratingValue, setRatingValue] = useState(3.5);
     const { productName } = useParams();
-    const [currentPhoto, setCurrentPhoto] = useState(productPhotos[4])
-    const smallPhotos = productPhotos.filter(product => {
-        if (product.name !== currentPhoto.name) {
-            return product
-        }
-        else {
-            return false
-        }
-    })
+    const [currentPhoto, setCurrentPhoto] = useState(productPhotos[0])
 
     const lower = () => {
-        if (parseInt(productAmount) > 1) { (setProductAmount((parseInt(productAmount) - 1).toString())) }
-
+        if (productAmount > 1) { (setProductAmount(productAmount - 1)) }
     }
 
     const raise = () => {
-        if (parseInt(productAmount) < 10) { setProductAmount((parseInt(productAmount) + 1).toString()) }
+        if (productAmount < 10) { setProductAmount(productAmount + 1) }
     }
 
     return (
         <section className='product_info_section'>
             <div className='photos_product'>
-                <div className='photos_product_left'>{smallPhotos.map(product => {
+                <div className='photos_product_left'>{productPhotos.map(product => {
                     return (
                         <div className='product_left' onClick={e => { setCurrentPhoto(product) }} >
                             <img width='76' height='76' src={`/photos/productInfoPhotos/${product.path}`} alt={product.name} />
@@ -133,13 +124,12 @@ const ProductInfo = () => {
                         <button className='amount_calc_button' onClick={lower}>-</button>
                         <input
                             className='amount_textholder'
-                            type='text'
-                            value={productAmount}
-                            onChange={(e) => {
-                                const inputValue = e.target.value;
-                                const regex = /^[^+-]+$/;
-                                if (regex.test(inputValue) && (inputValue.length <= 1 || inputValue === '10')) {
-                                    setProductAmount(inputValue);
+                            type='number'
+                            value={Number(productAmount)}
+                            onChange={e => {
+                                const inputValue = Number(e.target.value)
+                                if (inputValue >= 1 && inputValue <= 10) {
+                                    setProductAmount(inputValue)
                                 }
                             }}
                         />
