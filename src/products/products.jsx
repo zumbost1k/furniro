@@ -105,7 +105,6 @@ const productHooverItemsList = productHooverItems.map(item => {
 })
 
 const ProductList = ({ products, index }) => {
-    const navigate = useNavigate();
 
     return products.slice(0, index).map((product) => {
 
