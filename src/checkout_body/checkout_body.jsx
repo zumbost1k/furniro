@@ -147,7 +147,7 @@ const checkoutInputsList = checkoutInputs.map((checkoutInput, index) => {
         return (
             <div className='standart_chek_input_container'>
                 <label className='inputs_label' htmlFor={checkoutInput.id}>{checkoutInput.topText}</label>
-                <input placeholder={checkoutInput.placeholder} required pattern={checkoutInput.type === 'tel' && '^\\+375-\\d{2}-\\d{3}-\\d{2}-\\d{2}$'} className='standart_chek_input check_input' type={checkoutInput.type} id={checkoutInput.id} />
+                <input placeholder={checkoutInput.placeholder} required pattern={checkoutInput.type === 'tel' ? '^\\+375-\\d{2}-\\d{3}-\\d{2}-\\d{2}$' : undefined} className='standart_chek_input check_input' type={checkoutInput.type} id={checkoutInput.id} />
             </div>
         )
     }

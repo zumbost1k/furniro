@@ -214,31 +214,40 @@ const ComparisonBody = () => {
                         {tableInfo.map(tableItem => {
                             if (tableItem.header) {
                                 return (
-                                    <tr key={tableItem.key}>
-                                        <th className='compare_table_header compare_table_text' >{tableItem.text}</th>
-                                        <th className='compare_table_item' ></th>
-                                        <th className='compare_table_item'></th>
-                                        <th></th>
-                                    </tr>
+                                    <thead key={tableItem.key}>
+                                        <tr >
+                                            <th className='compare_table_header compare_table_text' >{tableItem.text}</th>
+                                            <th className='compare_table_item' ></th>
+                                            <th className='compare_table_item'></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+
                                 )
                             }
                             else {
                                 return (
-                                    <tr key={tableItem.key}>
-                                        <td><p className='compare_text_table compare_item_first'>{tableItem.text}</p></td>
-                                        <td className='compare_table_item_pad compare_table_item compare_item_second'><p className='compare_text_table'>{firstCompared[tableItem.key]}</p></td>
-                                        <td className='compare_table_item_pad compare_table_item compare_item_third'><p className='compare_text_table'>{secondCompared[tableItem.key]}</p></td>
-                                        <td className='compare_table_item_pad compare_item_foufth'></td>
-                                    </tr>
+                                    <tbody key={tableItem.key}>
+                                        <tr >
+                                            <td><p className='compare_text_table compare_item_first'>{tableItem.text}</p></td>
+                                            <td className='compare_table_item_pad compare_table_item compare_item_second'><p className='compare_text_table'>{firstCompared[tableItem.key]}</p></td>
+                                            <td className='compare_table_item_pad compare_table_item compare_item_third'><p className='compare_text_table'>{secondCompared[tableItem.key]}</p></td>
+                                            <td className='compare_table_item_pad compare_item_foufth'></td>
+                                        </tr>
+                                    </tbody>
+
                                 )
                             }
                         })}
-                        <tr>
+                        <tbody>
+                           <tr>
                             <td className='compare_item_btn'></td>
                             <td className='compare_item_btn'><button onClick={() => { addProductHandler(firstCompared) }} type='button' className='compare_table_btn'>Add To Cart</button></td>
                             <td className='compare_item_btn'><button onClick={() => { addProductHandler(secondCompared) }} type='button' className='compare_table_btn'>Add To Cart</button></td>
                             <td className='compare_item_btn'></td>
-                        </tr>
+                        </tr>  
+                        </tbody>
+                       
 
                     </table>
                 </div>

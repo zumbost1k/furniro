@@ -24,7 +24,6 @@ root.render(
         <ScrollToTop />
         <Nav />
         <Routes>
-          <Route path='/' element={<Navigate to='/home' />} />
           <Route path='/home' element={<HomePage />} />
           <Route path='/products/:productName' element={<Product />} />
           <Route path='/shop' element={<ShopPage />} />
@@ -33,6 +32,7 @@ root.render(
           <Route path='/product/cart' element={<Cart />} />
           <Route path='/product/comparison' element={<Comparison />} />
           <Route path='/product/checkout' element={<Checkout />} />
+          <Route path='*' element={<Navigate to='/home' />} />
         </Routes>
         <Footer />
       </Provider>
