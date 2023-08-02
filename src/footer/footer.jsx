@@ -30,11 +30,11 @@ const Footer = () => {
                 </div>
                 <div className='funiro_col furniro_col_second'>
                     <h3 className='links_title'>Links</h3>
-                    <FooterLinksList links={footerLinks.links} />
+                    {<FooterLinksList elem={footerLinks[0]} />}
                 </div>
                 <div className='funiro_col furniro_col_second'>
                     <h3 className='links_title'>Help</h3>
-                    <FooterLinksList links={footerLinks.help} />
+                    {<FooterLinksList elem={footerLinks[1]} />}
                 </div>
                 <div className='funiro_col furniro_col_third'>
                     <h3 className='links_title'>Newsletter</h3>
