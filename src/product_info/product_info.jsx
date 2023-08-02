@@ -48,7 +48,6 @@ const ProductInfo = () => {
     const [ratingValue, setRatingValue] = useState(3.5);
     const { productName } = useParams();
     const [currentPhoto, setCurrentPhoto] = useState(productPhotos[0])
-    const dispatch = useDispatch()
 
     const lower = () => {
         if (productAmount > 1) { (setProductAmount(productAmount - 1)) }
@@ -57,21 +56,8 @@ const ProductInfo = () => {
     const raise = () => {
         if (productAmount < 10) { setProductAmount(productAmount + 1) }
     }
-    const addProductHandler = () => {
-        const productInf = {
-            id: v4(),
-            info: {
-                cost: "2.500.00",
-                discount: "-50%",
-                name: "Asgaard sofa",
-                oldCost: "14.000.000",
-                path: "triple_chair.png",
-                type: "Luxury big sofa"
-            },
-            number: productAmount
-        }
-        dispatch(addProduct(productInf))
-    }
+
+   
     const addProductHandler = () => {
         const productInf = {
             id: 'single_product_id',
