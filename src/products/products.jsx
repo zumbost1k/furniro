@@ -109,10 +109,6 @@ const ProductList = ({ products, index }) => {
     const dispatch = useDispatch()
 
     return products.slice(0, index).map((product) => {
-        const handleClick = () => {
-            const newPath = `/products/${product.name}`;
-            navigate(newPath);
-        };
 
         const addProductHandler = () => {
             const productInf = {
@@ -123,12 +119,12 @@ const ProductList = ({ products, index }) => {
             dispatch(addProduct(productInf))
         }
         return (
-            <div className='product_item' onClick={handleClick}>
+            <Link className='product_item' to={`/products/${product.name}`} >
                 <div className='item_hoover_state'>
                     <button onClick={() => addProductHandler()} className='item_button'>Add to cart</button>
                     <div className='product_link_items'>{productHooverItemsList}</div>
                 </div>
-                <Link to={`/products/${product.name}`} className='product_link'>
+                <div className='product_link'>
                     <img src={`/photos/products/${product.path}`} alt={product.name} />
                     {product.discount && <div className='item_circle item_discount'>{product.discount}</div>}
                     {product.new && <div className='item_circle item_new'>New</div>}
@@ -140,8 +136,8 @@ const ProductList = ({ products, index }) => {
                             {product.oldCost && <p className='old_cost'> Rp {product.oldCost}</p>}
                         </div>
                     </div>
-                </Link>
-            </div>
+                </div>
+            </Link>
         )
     })
 }
