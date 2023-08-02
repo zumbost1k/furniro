@@ -7,7 +7,7 @@ import { addProductToCompare } from '../features/compare/compare';
 
 const ProductList = ({ products, index }) => {
     const navigate = useNavigate();
-    const dispatch = useDispatch()
+
     return products.slice(0, index).map((product) => {
 
         const addProductHandler = () => {
