@@ -128,41 +128,61 @@ const checkoutInputs = [
     },
 ]
 
+const DoubleInput = ({ checkoutInput }) => {
+    return (
+        <div key={checkoutInput.id} className='double_iputs_container'>
+            <div className='double_iputs_item'>
+                <label className='inputs_label' htmlFor={checkoutInput.id}>{checkoutInput.topText}</label>
+                <input required className='input_text_global_pad double_checkkout_input check_input' type={checkoutInput.type} id={checkoutInput.id} />
+            </div>
+            <div className='double_iputs_item'>
+                <label className='inputs_label' htmlFor={checkoutInput.secondId}>{checkoutInput.additionalInformation.secondTopText}</label>
+                <input required className='input_text_global_pad double_checkkout_input check_input' type={checkoutInput.type} id={checkoutInput.additionalInformation.secondId} />
+            </div>
+        </div>
+    )
+}
+
+
+const StandartInput = ({ checkoutInput }) => {
+    return (
+        <div key={checkoutInput.id} className='standart_chek_input_container'>
+            <label className='inputs_label' htmlFor={checkoutInput.id}>{checkoutInput.topText}</label>
+            <input placeholder={checkoutInput.placeholder} required pattern={checkoutInput.type === 'tel' ? '^\\+375-\\d{2}-\\d{3}-\\d{2}-\\d{2}$' : undefined} className='input_text_global_pad standart_chek_input check_input' type={checkoutInput.type} id={checkoutInput.id} />
+        </div>
+    )
+}
+
+const ChekInput = ({ checkoutInput }) => {
+    return (
+        <div key={checkoutInput.id} className='standart_chek_input_container'>
+            <label className='inputs_label' htmlFor={checkoutInput.id}>{checkoutInput.topText}</label>
+            <select required className='checkout_selector check_input' type={checkoutInput.type} name={checkoutInput.id} id={checkoutInput.id}>
+                {checkoutInput.additionalInformation.countryes.map(country => {
+                    return (
+                        <option key={country.name} value={country.selectVal}>{country.name}</option>
+                    )
+                })}
+            </select>
+        </div>
+    )
+}
+
+
 const checkoutInputsList = checkoutInputs.map((checkoutInput, index) => {
     if (checkoutInput.inputType === 'double') {
         return (
-            <div key={`${checkoutInput.id}_checkout_inputs`} className='double_iputs_container'>
-                <div className='double_iputs_item'>
-                    <label className='inputs_label' htmlFor={checkoutInput.id}>{checkoutInput.topText}</label>
-                    <input required className='double_checkkout_input check_input' type={checkoutInput.type} id={checkoutInput.id} />
-                </div>
-                <div className='double_iputs_item'>
-                    <label className='inputs_label' htmlFor={checkoutInput.secondId}>{checkoutInput.additionalInformation.secondTopText}</label>
-                    <input required className='double_checkkout_input check_input' type={checkoutInput.type} id={checkoutInput.additionalInformation.secondId} />
-                </div>
-            </div>
+            <DoubleInput checkoutInput={checkoutInput} />
         )
     }
     else if (checkoutInput.inputType === 'standart') {
         return (
-            <div className='standart_chek_input_container'>
-                <label className='inputs_label' htmlFor={checkoutInput.id}>{checkoutInput.topText}</label>
-                <input placeholder={checkoutInput.placeholder} required pattern={checkoutInput.type === 'tel' ? '^\\+375-\\d{2}-\\d{3}-\\d{2}-\\d{2}$' : undefined} className='standart_chek_input check_input' type={checkoutInput.type} id={checkoutInput.id} />
-            </div>
+            <StandartInput checkoutInput={checkoutInput} />
         )
     }
     else {
         return (
-            <div className='standart_chek_input_container'>
-                <label className='inputs_label' htmlFor={checkoutInput.id}>{checkoutInput.topText}</label>
-                <select required className='checkout_selector check_input' type={checkoutInput.type} name={checkoutInput.id} id={checkoutInput.id}>
-                    {checkoutInput.additionalInformation.countryes.map(country => {
-                        return (
-                            <option key={country.name} value={country.selectVal}>{country.name}</option>
-                        )
-                    })}
-                </select>
-            </div>
+            <ChekInput checkoutInput={checkoutInput} />
         )
     }
 })
@@ -186,7 +206,7 @@ const CheckoutBody = () => {
                     </div>
                     {selectedProducts.map(product => {
                         return (
-                            <div key={`${product.id}_checkout_body`} className='checkout_product_item'>
+                            <div key={product.id} className='checkout_product_item'>
                                 <p className='checkout_product_name'>{product.name} <span className='checkout_product_quant'>X {product.quantity}</span></p>
                                 <p className='checkout_product_cost'>Rs. {product.cost}</p>
                             </div>

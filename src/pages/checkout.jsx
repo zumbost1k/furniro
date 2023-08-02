@@ -6,7 +6,7 @@ import CheckoutBody from '../checkout_body/checkout_body';
 const Checkout = () => {
     return (
         <div>
-            <ShopHeader logo={true} path={'Checkout'} underTitle={'Checkout'} />
+            <ShopHeader logo={true} path={'Checkout'} underTitle={'Checkout'} classname={'shop_header_icon_checkout'} dynamic={true} />
             <CheckoutBody />
             <DiscountShop />
         </div>

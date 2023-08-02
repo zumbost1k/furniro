@@ -70,7 +70,7 @@ const placeholdersList = placeholders.map((placeholder, index) => {
     return (
         <div key={placeholder.name} className='contact_form_item_inner'>
             <label className='form_item_label' htmlFor={placeholder.name}>{placeholder.theme} </label>
-            <input className={placeholder.extraClass ? 'form_item_input big_form_input' : 'form_item_input'} type={placeholder.type} name='contact_form_item' id={placeholder.name} placeholder={placeholder.innerText} required />
+            <input className={placeholder.extraClass ? 'input_text_global_pad form_item_input big_form_input' : 'input_text_global_pad form_item_input'} type={placeholder.type} name='contact_form_item' id={placeholder.name} placeholder={placeholder.innerText} required />
         </div>
     )
 })

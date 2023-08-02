@@ -81,7 +81,7 @@ const ProductInfo = () => {
             <div className='photos_product'>
                 <div className='photos_product_left'>{smallPhotos.map(product => {
                     return (
-                        <div key={`${product.name}`} className='product_left' onClick={e => { setCurrentPhoto(product) }} >
+                        <div key={product.name} className='product_left' onClick={e => { setCurrentPhoto(product) }} >
                             <img width='76' height='76' src={`/photos/productInfoPhotos/${product.path}`} alt={product.name} />
                         </div>
                     )
@@ -182,7 +182,7 @@ const ProductInfo = () => {
                         <p>Sofa, Chair, Home, Shop</p>
                         <p className='messenger_links'>{messengers.map((messenger) => {
                             return (
-                                <img key={`${messenger.name}_mass`} className='product_info_photo' width='20' height='20' src={`/photos/productInfoPhotos/${messenger.path}`} alt={messenger.name} />
+                                <img key={messenger.name} className='product_info_photo' width='20' height='20' src={`/photos/productInfoPhotos/${messenger.path}`} alt={messenger.name} />
                             )
                         })}</p>
                     </div>

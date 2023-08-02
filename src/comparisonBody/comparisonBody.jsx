@@ -202,7 +202,7 @@ const ComparisonBody = () => {
                             <option defaultValue disabled value='default'>Choose a Product</option>
                             {selectedProducts.map(product => {
                                 return (
-                                    <option key={`${product.id}_comparison_body`} value={product.id}>{product.name}</option>
+                                    <option key={product.id} value={product.id}>{product.name}</option>
                                 )
                             })}
                         </select>

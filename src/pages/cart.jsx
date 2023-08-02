@@ -5,7 +5,7 @@ import DiscountShop from '../discount_shop/discount_shop';
 const Cart = () => {
     return (
         <div>
-            <ShopHeader logo={true} path={'Cart'} underTitle={'Cart'}/>
+            <ShopHeader logo={true} path={'Cart'} underTitle={'Cart'} classname={'shop_header_icon_blog'}/>
             <CartTotal />
             <DiscountShop />
         </div>

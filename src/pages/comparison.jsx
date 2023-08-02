@@ -5,7 +5,7 @@ import ComparisonBody from '../comparisonBody/comparisonBody';
 const Comparison = () => {
     return (
         <div>
-            <ShopHeader logo={true} path={'Product Comparison'} underTitle={'Comparison'}/>
+            <ShopHeader logo={true} path={'Product Comparison'} underTitle={'Comparison'} classname={'shop_header_icon_comparison'}/>
             <ComparisonBody />
             <DiscountShop />
         </div>

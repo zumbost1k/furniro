@@ -18,7 +18,7 @@ const rooms = [
 
 const roomsList = rooms.map(function (room) {
     return (
-        <Link key={`${room.text}_item`} to=''>
+        <Link key={room.text} to=''>
             <img className='range_photos' src={`/photos/${room.path}`} alt={room.text} />
             <figcaption className='rooms_caption'>{room.text}</figcaption>
         </Link>

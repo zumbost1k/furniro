@@ -135,7 +135,7 @@ const recentPosts = [
 
 const recentPostsList = recentPosts.map(post => {
     return (
-        <div key={`${post.path}_recent_posts`} className='recent_post_item'>
+        <div key={post.path} className='recent_post_item'>
             <img width='80' height='80' src={`/photos/recent_posts/${post.path}.png`} alt={post.path} />
             <div>
                 <p className='recent_post_text'>{post.mainText}</p>
@@ -147,7 +147,7 @@ const recentPostsList = recentPosts.map(post => {
 
 const categoriesList = categories.map(category => {
     return (
-        <div key={`${category.name}_categories_list`} className='catergory_item'>
+        <div key={category.name} className='catergory_item'>
             <button type='button' className='catergory_item_btn'>{category.name}</button>
             <p className='catergory_item_text'>{category.numberOf}</p>
         </div>
@@ -165,7 +165,7 @@ const PostInfoDisplayer = ({ photo, text }) => {
 const PostList = ({ posts }) => {
     return posts.map((post) => {
         return (
-            <div key={`${post.path}_post_list_item`} className='post_item'>
+            <div key={post.path} className='post_item'>
                 <img width='817' height='500' src={`/photos/${post.path}.png`} alt={post.path} />
                 <div className='post_info'>
                     <PostInfoDisplayer photo={'user.svg'} text={post.person} />
@@ -211,8 +211,8 @@ const PaginatedItemsPost = () => {
                 </div>
                 <div className='more_post_info'>
                     <div className='category'>
-                        <input className='post_category_input' type='text' id='post_category' />
-                        <label className='post_category_loop' htmlFor='post_category'><img src='/photos/loop.svg' width='24' height='24' alt='loop' /></label>
+                        <input className='input_text_global_pad post_category_input' type='text' id='post_category' />
+                        <label className='input_text_global_pad post_category_loop' htmlFor='post_category'><img src='/photos/loop.svg' width='24' height='24' alt='loop' /></label>
                     </div>
                     <div className='additional'>
                         <div className='find_category'>
