@@ -58,45 +58,23 @@ const ProductsDescriptions  = () => {
     return (
         <section className='description_section'>
             <form className='description_links'>
-                <div className='description_link_relative'>
-                    <input
-                        value={1}
-                        checked={currentPage === 1}
-                        onChange={(event) => {
-                            setCurrentPage(parseInt(event.target.value));
-                        }}
-                        className='description_link'
-                        type='radio'
-                        name='description_link'
-                        id='description' />
-                    <label htmlFor='description' className='description_label'>Description</label>
-                </div>
-                <div className='description_link_relative'>
-                    <input
-                        value={2}
-                        checked={currentPage === 2}
-                        onChange={(event) => {
-                            setCurrentPage(parseInt(event.target.value));
-                        }}
-                        className='description_link'
-                        type='radio'
-                        name='description_link'
-                        id='additional' />
-                    <label htmlFor='additional' className='description_label'>Additional Information</label>
-                </div>
-                <div className='description_link_relative'>
-                    <input
-                        value={3}
-                        checked={currentPage === 3}
-                        onChange={(event) => {
-                            setCurrentPage(parseInt(event.target.value));
-                        }}
-                        className='description_link'
-                        type='radio'
-                        name='description_link'
-                        id='reviews' />
-                    <label htmlFor='reviews' className='description_label'>Reviews [5]</label>
-                </div>
+                {descriptionTopLinksInfo.map(topLinkInfoItem  => {
+                    return (
+                        <div className='description_link_relative'>
+                            <input
+                                value={topLinkInfoItem.pageId}
+                                checked={currentPage === topLinkInfoItem.pageId}
+                                onChange={(event) => {
+                                    setCurrentPage(parseInt(event.target.value));
+                                }}
+                                className='description_link'
+                                type='radio'
+                                name='description_link'
+                                id={topLinkInfoItem.labelFor} />
+                            <label htmlFor={topLinkInfoItem.labelFor} className='description_label'>{topLinkInfoItem.text}</label>
+                        </div>
+                    )
+                })}
             </form>
             {
                 infoForTopDeskLinks.map(infoForTopDeskLink => {
