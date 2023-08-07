@@ -63,15 +63,15 @@ const ProductList = ({ products }) => {
                     <button type='button' onClick={addProductHandler} className='item_button'>Add to cart</button>
                     <div className='product_link_items'>
                         <button type='button' className='product_link_item'>
-                            <img src={`/photos/products/1.svg`} alt='share' />
+                            <img src={`/photos/products/share.svg`} alt='share' />
                             <figcaption className='product_link_item_text'>Share</figcaption>
                         </button>
                         <button type='button' onClick={addCompareProductHandler} className='product_link_item'>
-                            <img src={`/photos/products/2.svg`} alt='compare' />
+                            <img src={`/photos/products/compare.svg`} alt='compare' />
                             <figcaption className='product_link_item_text'>Compare</figcaption>
                         </button>
                         <button type='button' className='product_link_item'>
-                            <img src={`/photos/products/3.svg`} alt='like' />
+                            <img src={`/photos/products/like.svg`} alt='like' />
                             <figcaption className='product_link_item_text'>Like</figcaption>
                         </button>
                     </div>
@@ -94,18 +94,24 @@ const ProductList = ({ products }) => {
     })
 }
 
+
 const PaginatedItems = () => {
+    const currentPage = usePageQueryParam()
     const productsList = useSelector((state) => state.productList.products).slice(0, 40)
-    const [itemsPerPage, setItemsPerPage] = useState('16');
+    const [itemsPerPage, setItemsPerPage] = useState(16);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
-    const [isLoading, setIsLoading] = useState({
-        filterArrVal: true,
-        currentPageVal: false,
-    });
+    const [isLoading, setIsLoading] = useState(true);
     const [filterOn, setFilterOn] = useState('default');
-    const [currentPage, setCurrentPage] = useState(JSON.parse(localStorage.getItem('localCurrentPage')) || 0);
-    const [filteredArray, setFilteredArray] = useState(allproducts)
+    const [filtereProductsdArray, setFilteredProductsdArray] = useState(allproducts)
+
+    const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const updatePageQueryParam = (newPage) => {
+        searchParams.set('page', newPage);
+        setSearchParams(searchParams);
+        navigate({ search: searchParams.toString(), replace: true });
+    }
     useEffect(() => {
         setPageCount(Math.ceil(productsList.length / itemsPerPage));
 
