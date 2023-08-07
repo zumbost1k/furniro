@@ -52,7 +52,14 @@ const filterIconList = filterIcons.map(icon => {
     )
 })
 
-
+const productHooverItemsList = productHooverItems.map(item => {
+    return (
+        <Link to='' className='product_link_item'>
+            <img src={`/photos/products/${item.path}`} alt={item.text} />
+            <Link to='' className='product_link_item_text'>{item.text}</Link>
+        </Link>
+    )
+})
 
 const ProductList = ({ products }) => {
     const navigate = useNavigate();
@@ -75,7 +82,7 @@ const ProductList = ({ products }) => {
 
         return (
             <div className='product_item_shop' onClick={handleClick}>
-                <div className='item_hoover_state'>
+                <div className='item_hover_state'>
                     <button className='item_button'>Add to cart</button>
                     <div className='product_link_items'>{productHooverItemsList}</div>
                 </div>
@@ -106,13 +113,22 @@ const usePageQueryParam = () => {
 
 
 const PaginatedItems = () => {
-    const [itemsPerPage, setItemsPerPage] = useState('16');
+    const productsList = useSelector((state) => state.productList.products).slice(0, 40)
+    const currentPage = usePageQueryParam()
+    const [itemsPerPage, setItemsPerPage] = useState(16);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const [filterOn, setFilterOn] = useState('default');
-    const [currentPage, setCurrentPage] = useState(JSON.parse(localStorage.getItem('localCurrentPage')) || 0);
-    const [filteredArray, setFilteredArray] = useState(allproducts)
+    const [filtereProductsdArray, setFilteredProductsdArray] = useState(productsListucts)
+
+    const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const updatePageQueryParam = (newPage) => {
+        searchParams.set('page', newPage);
+        setSearchParams(searchParams);
+        navigate({ search: searchParams.toString(), replace: true });
+    }
     useEffect(() => {
         setPageCount(Math.ceil(productsList.length / itemsPerPage));
 
@@ -123,7 +139,7 @@ const PaginatedItems = () => {
             setFilteredProductsdArray(productsListucts);
         }
         if (filterOn === 'name') {
-            setFilteredArray([...productsList].sort((a, b) => a.name.localeCompare(b.name)));
+            setFilteredArray([...productsListucts].sort((a, b) => a.name.localeCompare(b.name)));
         }
         if (filterOn === 'cost') {
             setFilteredProductsdArray([...productsListucts].sort((a, b) => {
