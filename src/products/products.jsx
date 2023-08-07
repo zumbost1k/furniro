@@ -51,7 +51,7 @@ const ProductList = ({ products, index }) => {
                         <h3 className='item_name'>{product.name}</h3>
                         <p className='item_type'>{product.type}</p>
                         <div className='item_cost'>
-                            <p className='current_cost'>Rp {product.cost}</p>
+                            <p className='current_cost'>Rp {product.cost.toLocaleString('en-US')}</p>
                             {product.oldCost && <p className='old_cost'> Rp {product.oldCost}</p>}
                         </div>
                     </div>
