@@ -94,6 +94,13 @@ const ProductList = ({ products }) => {
     })
 }
 
+const usePageQueryParam = () => {
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const page = searchParams.get('page');
+    return page;
+}
+
 
 const PaginatedItems = () => {
     const currentPage = usePageQueryParam()
