@@ -9,7 +9,6 @@ import './pagination.css'
 
 
     
-
 const productHoverItems = [
     {
         path: 'share.svg',
@@ -52,7 +51,7 @@ const filterIconList = filterIcons.map(icon => {
     )
 })
 
-const productHooverItemsList = productHooverItems.map(item => {
+const productHooverItemsList = productHoverItems.map(item => {
     return (
         <Link to='' className='product_link_item'>
             <img src={`/photos/products/${item.path}`} alt={item.text} />
@@ -120,15 +119,8 @@ const PaginatedItems = () => {
     const [itemOffset, setItemOffset] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const [filterOn, setFilterOn] = useState('default');
-    const [filtereProductsdArray, setFilteredProductsdArray] = useState(productsListucts)
-
-    const navigate = useNavigate();
-    const [searchParams, setSearchParams] = useSearchParams();
-    const updatePageQueryParam = (newPage) => {
-        searchParams.set('page', newPage);
-        setSearchParams(searchParams);
-        navigate({ search: searchParams.toString(), replace: true });
-    }
+    const [currentPage, setCurrentPage] = useState(JSON.parse(localStorage.getItem('localCurrentPage')) || 0);
+    const [filteredArray, setFilteredArray] = useState(productsListucts)
     useEffect(() => {
         setPageCount(Math.ceil(productsList.length / itemsPerPage));
 
@@ -136,13 +128,13 @@ const PaginatedItems = () => {
 
     useEffect(() => {
         if (filterOn === 'default') {
-            setFilteredProductsdArray(productsListucts);
+            setFilteredArray(productsListucts);
         }
         if (filterOn === 'name') {
             setFilteredArray([...productsListucts].sort((a, b) => a.name.localeCompare(b.name)));
         }
         if (filterOn === 'cost') {
-            setFilteredProductsdArray([...productsListucts].sort((a, b) => {
+            setFilteredArray([...productsListucts].sort((a, b) => {
                 return a - b;
             }));
         }
