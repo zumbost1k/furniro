@@ -8,6 +8,7 @@ import '../products/products.css'
 import './pagination.css'
 
 
+    
 
 const productHoverItems = [
     {
@@ -73,7 +74,7 @@ const ProductList = ({ products }) => {
         };
 
         return (
-            <Link className='product_item_shop' to={`/products/${product.name}`}>
+            <div className='product_item_shop' onClick={handleClick}>
                 <div className='item_hoover_state'>
                     <button className='item_button'>Add to cart</button>
                     <div className='product_link_items'>{productHooverItemsList}</div>
@@ -105,22 +106,13 @@ const usePageQueryParam = () => {
 
 
 const PaginatedItems = () => {
-    const currentPage = usePageQueryParam()
-    const productsList = useSelector((state) => state.productList.products).slice(0, 40)
-    const [itemsPerPage, setItemsPerPage] = useState(16);
+    const [itemsPerPage, setItemsPerPage] = useState('16');
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const [filterOn, setFilterOn] = useState('default');
-    const [filtereProductsdArray, setFilteredProductsdArray] = useState(productsList)
-
-    const navigate = useNavigate();
-    const [searchParams, setSearchParams] = useSearchParams();
-    const updatePageQueryParam = (newPage) => {
-        searchParams.set('page', newPage);
-        setSearchParams(searchParams);
-        navigate({ search: searchParams.toString(), replace: true });
-    }
+    const [currentPage, setCurrentPage] = useState(JSON.parse(localStorage.getItem('localCurrentPage')) || 0);
+    const [filteredArray, setFilteredArray] = useState(allproducts)
     useEffect(() => {
         setPageCount(Math.ceil(productsList.length / itemsPerPage));
 
