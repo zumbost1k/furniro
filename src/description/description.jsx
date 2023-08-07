@@ -49,16 +49,17 @@ const infoForTopDeskLinks = [
     }
 ]
 
-const ProductsDescriptions  = () => {
+const ProductsDescriptions = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const classNameCheker = (pageId) => {
-        if (pageId  === currentPage) { return 'description_active' }
+
+        if (pageId === currentPage) { return 'description_active' }
         else { return 'description_hidden' }
     }
     return (
         <section className='description_section'>
             <form className='description_links'>
-                {descriptionTopLinksInfo.map(topLinkInfoItem  => {
+                {descriptionTopLinksInfo.map(topLinkInfoItem => {
                     return (
                         <div className='description_link_relative'>
                             <input
