@@ -59,7 +59,7 @@ const ProductList = ({ products }) => {
 
         return (
             <div className='product_item_shop' onClick={handleClick}>
-                <div className='item_hoover_state'>
+                <div className='item_hover_state'>
                     <button className='item_button'>Add to cart</button>
                     <div className='product_link_items'>{productHooverItemsList}</div>
                 </div>
@@ -79,6 +79,13 @@ const ProductList = ({ products }) => {
             </div>
         )
     })
+}
+
+const usePageQueryParam = () => {
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const page = searchParams.get('page');
+    return page;
 }
 
 
