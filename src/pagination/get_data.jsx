@@ -6,9 +6,23 @@ import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-do
 import Paginate from './reactPaginate';
 import '../products/products.css'
 import './pagination.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { addProductToCompare } from '../features/compare/compare';
-import { addProduct } from '../features/todo/selectedProducts';
+
+
+
+const productHoverItems = [
+    {
+        path: 'share.svg',
+        text: 'Share',
+    },
+    {
+        path: 'compare.svg',
+        text: 'Compare',
+    },
+    {
+        path: 'like.svg',
+        text: 'Like',
+    },
+]
 
 const filterIcons = [
     {
@@ -38,6 +52,7 @@ const filterIconList = filterIcons.map(icon => {
 })
 
 
+
 const ProductList = ({ products }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch()
@@ -58,25 +73,12 @@ const ProductList = ({ products }) => {
         };
 
         return (
-            <div key={product.id} className='product_item_shop' onClick={handleClick}>
+            <Link className='product_item_shop' to={`/products/${product.name}`}>
                 <div className='item_hoover_state'>
-                    <button type='button' onClick={addProductHandler} className='item_button'>Add to cart</button>
-                    <div className='product_link_items'>
-                        <button type='button' className='product_link_item'>
-                            <img src={`/photos/products/share.svg`} alt='share' />
-                            <figcaption className='product_link_item_text'>Share</figcaption>
-                        </button>
-                        <button type='button' onClick={addCompareProductHandler} className='product_link_item'>
-                            <img src={`/photos/products/compare.svg`} alt='compare' />
-                            <figcaption className='product_link_item_text'>Compare</figcaption>
-                        </button>
-                        <button type='button' className='product_link_item'>
-                            <img src={`/photos/products/like.svg`} alt='like' />
-                            <figcaption className='product_link_item_text'>Like</figcaption>
-                        </button>
-                    </div>
+                    <button className='item_button'>Add to cart</button>
+                    <div className='product_link_items'>{productHooverItemsList}</div>
                 </div>
-                <Link to={`/products/${product.name}`} className='product_link'>
+                <div  className='product_link'>
                     <img src={`/photos/products/${product.path}`} alt={product.name} />
                     {product.discount && <div className='item_circle item_discount'>{product.discount}</div>}
                     {product.new && <div className='item_circle item_new'>New</div>}
@@ -88,8 +90,8 @@ const ProductList = ({ products }) => {
                             {product.oldCost && <p className='old_cost'> Rp {product.oldCost}</p>}
                         </div>
                     </div>
-                </Link>
-            </div>
+                </div>
+            </Link>
         )
     })
 }
@@ -110,7 +112,7 @@ const PaginatedItems = () => {
     const [itemOffset, setItemOffset] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const [filterOn, setFilterOn] = useState('default');
-    const [filtereProductsdArray, setFilteredProductsdArray] = useState(allproducts)
+    const [filtereProductsdArray, setFilteredProductsdArray] = useState(productsList)
 
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
@@ -126,13 +128,13 @@ const PaginatedItems = () => {
 
     useEffect(() => {
         if (filterOn === 'default') {
-            setFilteredProductsdArray(allproducts);
+            setFilteredProductsdArray(productsListucts);
         }
         if (filterOn === 'name') {
             setFilteredArray([...productsList].sort((a, b) => a.name.localeCompare(b.name)));
         }
         if (filterOn === 'cost') {
-            setFilteredProductsdArray([...allproducts].sort((a, b) => {
+            setFilteredProductsdArray([...productsListucts].sort((a, b) => {
                 return a - b;
             }));
         }
