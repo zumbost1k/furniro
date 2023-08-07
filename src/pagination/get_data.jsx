@@ -2,7 +2,7 @@ import React, {
     useEffect,
     useState
 } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import Paginate from './reactPaginate';
 import '../products/products.css'
 import './pagination.css'
@@ -84,7 +84,7 @@ const ProductList = ({ products }) => {
                         <h3 className='item_name'>{product.name}</h3>
                         <p className='item_type'>{product.type}</p>
                         <div className='item_cost'>
-                            <p className='current_cost'>Rp {product.cost}</p>
+                            <p className='current_cost'>Rp {product.cost.toLocaleString('en-US')}</p>
                             {product.oldCost && <p className='old_cost'> Rp {product.oldCost}</p>}
                         </div>
                     </div>
@@ -95,7 +95,6 @@ const ProductList = ({ products }) => {
 }
 
 const PaginatedItems = () => {
-    const productsList = useSelector((state) => state.productList.products)
     const [itemsPerPage, setItemsPerPage] = useState('16');
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
@@ -105,45 +104,37 @@ const PaginatedItems = () => {
     });
     const [filterOn, setFilterOn] = useState('default');
     const [currentPage, setCurrentPage] = useState(JSON.parse(localStorage.getItem('localCurrentPage')) || 0);
-    const [filteredArray, setFilteredArray] = useState(productsList)
+    const [filteredArray, setFilteredArray] = useState(allproducts)
     useEffect(() => {
         setPageCount(Math.ceil(productsList.length / itemsPerPage));
 
-    }, [itemOffset, itemsPerPage, productsList.length]);
-    useEffect(() => {
-        localStorage.setItem('localCurrentPage', JSON.stringify(currentPage));
-    }, [currentPage])
+    }, [itemOffset, itemsPerPage]);
 
     useEffect(() => {
         if (filterOn === 'default') {
-            setFilteredArray(productsList);
+            setFilteredProductsdArray(allproducts);
         }
         if (filterOn === 'name') {
             setFilteredArray([...productsList].sort((a, b) => a.name.localeCompare(b.name)));
         }
         if (filterOn === 'cost') {
-            setFilteredArray([...productsList].sort((a, b) => {
-                const costA = parseInt(a.cost.replace(/\./g, '').replace(',', ''));
-                const costB = parseInt(b.cost.replace(/\./g, '').replace(',', ''));
-                return costA - costB;
+            setFilteredProductsdArray([...allproducts].sort((a, b) => {
+                return a - b;
             }));
         }
-        setIsLoading(prevValues => ({
-            ...prevValues,
-            filterArrVal: false
-        }));
-    }, [filterOn, productsList]);
+        setIsLoading(false);
+    }, [filterOn]);
 
 
     const handlePageClick = (event) => {
         const newOffset = event.selected * itemsPerPage % productsList.length;
         setItemOffset(newOffset);
-        setCurrentPage(event.selected);
+        updatePageQueryParam(event.selected)
     };
 
 
 
-    if (Object.values(isLoading).every(item => item === false)) {
+    if (!isLoading) {
         return (
             <section className='paginate_section'>
                 <div className='paginate_filter'>
@@ -154,11 +145,10 @@ const PaginatedItems = () => {
                     <div className='paginate_filter_item'>
                         <div className='filter_number_item'>
                             <p>Show</p>
-                            <input min='4' value={itemsPerPage} max='16' className='filter_number_input' type='number'
-                                onChange={(e) => {
-                                    const inputValue = e.target.value;
-                                    const regex = /^[^+-]+$/;
-                                    if (regex.test(inputValue) && (inputValue.length <= 2 && (parseInt(inputValue) <= 16 && inputValue !== '0'))) {
+                            <input value={itemsPerPage} className='filter_number_input' type='number'
+                                onChange={e => {
+                                    const inputValue = Number(e.target.value)
+                                    if (inputValue >= 4 && inputValue <= 16) {
                                         setItemsPerPage(inputValue);
                                     }
                                 }}
@@ -174,8 +164,8 @@ const PaginatedItems = () => {
                         </div>
                     </div>
                 </div>
-                <div className='products_shop'><ProductList products={filteredArray.slice(currentPage * itemsPerPage, (currentPage * itemsPerPage + 16))} /></div>
-                <Paginate handlePageClick={handlePageClick} pageCount={pageCount} currentPage={currentPage} />
+                <div className='products_shop'><ProductList products={filtereProductsdArray.slice(currentPage * itemsPerPage, (currentPage * itemsPerPage + itemsPerPage))} /></div>
+                <Paginate handlePageClick={handlePageClick} pageCount={pageCount} currentPage={Number(currentPage)} />
             </section>
         );
     }
