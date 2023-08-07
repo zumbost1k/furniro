@@ -30,7 +30,7 @@ const promises = [
 
 const promisesList = promises.map(promise => {
     return (
-        <div className={`discount_shop_item ${promise.alt}`}>
+        <div className={`discount_shop_item`}>
             <img src={`/photos/${promise.path}`} alt={promise.alt} />
             <div>
                 <h2 className='promise_main_text'>{promise.mainText}</h2>

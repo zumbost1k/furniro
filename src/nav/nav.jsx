@@ -2,11 +2,29 @@ import React from 'react';
 import './nav.css'
 import { Link } from 'react-router-dom';
 
-const linksWord = ['Home', 'Shop', 'About', 'Contact']
+
+const linksWord = [
+    {
+        text: 'Home',
+        path: 'home'
+    },
+    {
+        text: 'Shop',
+        path: '/shop?page=0'
+    },
+    {
+        text: 'About',
+        path: 'about'
+    },
+    {
+        text: 'Contact',
+        path: 'contact'
+    },
+]
 const linksWordsList = linksWord.map(function (link) {
     return (
-        <Link className='menu_link' to={link}>
-            {link}
+        <Link className='menu_link' to={link.path}>
+            {link.text}
         </Link>
     );
 });
