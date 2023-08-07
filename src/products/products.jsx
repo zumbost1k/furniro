@@ -10,7 +10,7 @@ const allproducts = [
         path: 'grifo.png',
         name: 'Grifo',
         type: 'Night lamp',
-        cost: '2.500.000',
+        cost: 2500000,
         oldCost: '',
         new: false,
         discount: ''
@@ -19,7 +19,7 @@ const allproducts = [
         path: 'leviosa.png',
         name: 'Leviosa',
         type: 'Stylish cafe chair',
-        cost: '2.500.000',
+        cost: 2500000,
         oldCost: '',
         new: false,
         discount: ''
@@ -28,7 +28,7 @@ const allproducts = [
         path: 'lolito.png',
         name: 'Lolito',
         type: 'Luxury big sofa',
-        cost: '7.000.000',
+        cost: 7000000,
         oldCost: '14.000.000',
         discount: '-50%'
     },
@@ -36,7 +36,7 @@ const allproducts = [
         path: 'muggo.png',
         name: 'Muggo',
         type: 'Small mug',
-        cost: '150.000',
+        cost: 150000,
         oldCost: '',
         new: true,
         discount: ''
@@ -46,7 +46,7 @@ const allproducts = [
         path: 'pingky.png',
         name: 'Pingky',
         type: 'Cute bed set',
-        cost: '7.000.000',
+        cost: 7000000,
         oldCost: '14.000.000',
         discount: '-50%',
         new: false,
@@ -55,7 +55,7 @@ const allproducts = [
         path: 'potty.png',
         name: 'Potty',
         type: 'Minimalist flower pot',
-        cost: '500.000',
+        cost: 500000,
         oldCost: '',
         new: true,
         discount: ''
@@ -64,7 +64,7 @@ const allproducts = [
         path: 'respira.png',
         name: 'Respira',
         type: 'Outdoor bar table and stool',
-        cost: '500.000',
+        cost: 500000,
         oldCost: '',
         new: true,
         discount: ''
@@ -73,7 +73,7 @@ const allproducts = [
         path: 'syltherine.png',
         name: 'Syltherine',
         type: 'Stylish cafe chair',
-        cost: '2.500.000',
+        cost: 2500000,
         oldCost: '3.500.000',
         discount: '-30%',
         new: false
@@ -136,7 +136,7 @@ const ProductList = ({ products, index }) => {
                         <h3 className='item_name'>{product.name}</h3>
                         <p className='item_type'>{product.type}</p>
                         <div className='item_cost'>
-                            <p className='current_cost'>Rp {product.cost}</p>
+                            <p className='current_cost'>Rp {product.cost.toLocaleString('en-US')}</p>
                             {product.oldCost && <p className='old_cost'> Rp {product.oldCost}</p>}
                         </div>
                     </div>
