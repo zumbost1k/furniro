@@ -60,21 +60,8 @@ const ProductList = ({ products }) => {
         return (
             <div className='product_item_shop' onClick={handleClick}>
                 <div className='item_hoover_state'>
-                    <button onClick={addProductHandler} className='item_button'>Add to cart</button>
-                    <div className='product_link_items'>
-                        <button className='product_link_item'>
-                            <img src={`/photos/products/1.svg`} alt='share' />
-                            <figcaption className='product_link_item_text'>Share</figcaption>
-                        </button>
-                        <button onClick={addCompareProductHandler} className='product_link_item'>
-                            <img src={`/photos/products/2.svg`} alt='compare' />
-                            <figcaption className='product_link_item_text'>Compare</figcaption>
-                        </button>
-                        <button className='product_link_item'>
-                            <img src={`/photos/products/3.svg`} alt='like' />
-                            <figcaption className='product_link_item_text'>Like</figcaption>
-                        </button>
-                    </div>
+                    <button className='item_button'>Add to cart</button>
+                    <div className='product_link_items'>{productHooverItemsList}</div>
                 </div>
                 <Link to={`/products/${product.name}`} className='product_link'>
                     <img src={`/photos/products/${product.path}`} alt={product.name} />
@@ -94,17 +81,23 @@ const ProductList = ({ products }) => {
     })
 }
 
+
 const PaginatedItems = () => {
-    const [itemsPerPage, setItemsPerPage] = useState('16');
+    const currentPage = usePageQueryParam()
+    const [itemsPerPage, setItemsPerPage] = useState(16);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
-    const [isLoading, setIsLoading] = useState({
-        filterArrVal: true,
-        currentPageVal: false,
-    });
+    const [isLoading, setIsLoading] = useState(true);
     const [filterOn, setFilterOn] = useState('default');
-    const [currentPage, setCurrentPage] = useState(JSON.parse(localStorage.getItem('localCurrentPage')) || 0);
-    const [filteredArray, setFilteredArray] = useState(allproducts)
+    const [filtereProductsdArray, setFilteredProductsdArray] = useState(allproducts)
+
+    const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const updatePageQueryParam = (newPage) => {
+        searchParams.set('page', newPage);
+        setSearchParams(searchParams);
+        navigate({ search: searchParams.toString(), replace: true });
+    }
     useEffect(() => {
         setPageCount(Math.ceil(productsList.length / itemsPerPage));
 
