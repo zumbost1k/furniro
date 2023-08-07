@@ -5,6 +5,80 @@ import { useDispatch, useSelector } from 'react-redux';
 import { v4 } from 'uuid';
 import { addProduct } from '../features/todo/todoSlice';
 
+const allproducts = [
+    {
+        path: 'grifo.png',
+        name: 'Grifo',
+        type: 'Night lamp',
+        cost: 2500000,
+        oldCost: '',
+        new: false,
+        discount: ''
+    },
+    {
+        path: 'leviosa.png',
+        name: 'Leviosa',
+        type: 'Stylish cafe chair',
+        cost: 2500000,
+        oldCost: '',
+        new: false,
+        discount: ''
+    },
+    {
+        path: 'lolito.png',
+        name: 'Lolito',
+        type: 'Luxury big sofa',
+        cost: 7000000,
+        oldCost: '14.000.000',
+        discount: '-50%'
+    },
+    {
+        path: 'muggo.png',
+        name: 'Muggo',
+        type: 'Small mug',
+        cost: 150000,
+        oldCost: '',
+        new: true,
+        discount: ''
+
+    },
+    {
+        path: 'pingky.png',
+        name: 'Pingky',
+        type: 'Cute bed set',
+        cost: 7000000,
+        oldCost: '14.000.000',
+        discount: '-50%',
+        new: false,
+    },
+    {
+        path: 'potty.png',
+        name: 'Potty',
+        type: 'Minimalist flower pot',
+        cost: 500000,
+        oldCost: '',
+        new: true,
+        discount: ''
+    },
+    {
+        path: 'respira.png',
+        name: 'Respira',
+        type: 'Outdoor bar table and stool',
+        cost: 500000,
+        oldCost: '',
+        new: true,
+        discount: ''
+    },
+    {
+        path: 'syltherine.png',
+        name: 'Syltherine',
+        type: 'Stylish cafe chair',
+        cost: 2500000,
+        oldCost: '3.500.000',
+        discount: '-30%',
+        new: false
+    },
+]
 
 const productHooverItems = [
     {
@@ -61,7 +135,7 @@ const ProductList = ({ products, index }) => {
                         <h3 className='item_name'>{product.name}</h3>
                         <p className='item_type'>{product.type}</p>
                         <div className='item_cost'>
-                            <p className='current_cost'>Rp {product.cost}</p>
+                            <p className='current_cost'>Rp {product.cost.toLocaleString('en-US')}</p>
                             {product.oldCost && <p className='old_cost'> Rp {product.oldCost}</p>}
                         </div>
                     </div>
