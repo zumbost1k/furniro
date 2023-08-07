@@ -31,13 +31,11 @@
     display: inline-block;
 }
 
-.product_item_shop .item_hoover_state {
+.product_item_shop .item_hover_state{
     display: none;
 }
 
-
-
-.product_item_shop:hover .item_hoover_state {
+.product_item_shop:hover .item_hover_state{
     display: flex;
     position: absolute;
     width: 285px;
@@ -47,7 +45,7 @@
     transition: opacity 0.3s ease;
 }
 
-.product_item_shop:hover .item_hoover_state:hover {
+.product_item_shop:hover .item_hover_state:hover {
     opacity: 1;
 }
 
