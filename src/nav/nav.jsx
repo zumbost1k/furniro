@@ -25,7 +25,7 @@ const linksWord = [
         path: 'contact'
     },
 ]
-const linksWordsList = linksWord.map(function (link) {
+const linksWordsList = linksWord.map((link) => {
     return (
         <Link className='menu_link' to={link.path}>
             {link.text}
