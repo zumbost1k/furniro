@@ -27,7 +27,7 @@ const checkoutInputs = [
     {
         inputType: 'select',
         additionalInformation: {
-            countryes: [{
+            countries: [{
                 name: 'Belarus',
                 selectVal: 'blr'
             },
@@ -42,7 +42,7 @@ const checkoutInputs = [
             ]
         },
         topText: 'Country / Region',
-        id: 'countryes',
+        id: 'countries',
         type: 'select',
         placeholder: '',
     },
@@ -67,7 +67,7 @@ const checkoutInputs = [
     {
         inputType: 'select',
         additionalInformation: {
-            countryes: [{
+            countries: [{
                 name: 'Western Province',
                 selectVal: 'west'
             },
@@ -86,7 +86,7 @@ const checkoutInputs = [
             ]
         },
         topText: 'Province',
-        id: 'countryes',
+        id: 'countries',
         type: 'select',
         placeholder: '',
     },
@@ -130,35 +130,35 @@ const checkoutInputs = [
 
 const DoubleInput = ({ checkoutInput }) => {
     return (
-        <div key={checkoutInput.id} className='double_iputs_container'>
-            <div className='double_iputs_item'>
+        <div key={checkoutInput.id} className='double_inputs_container'>
+            <div className='double_inputs_item'>
                 <label className='inputs_label' htmlFor={checkoutInput.id}>{checkoutInput.topText}</label>
-                <input required className='input_text_global_pad double_checkkout_input check_input' type={checkoutInput.type} id={checkoutInput.id} />
+                <input required className='input_text_global_pad double_checkout_input check_input' type={checkoutInput.type} id={checkoutInput.id} />
             </div>
-            <div className='double_iputs_item'>
+            <div className='double_inputs_item'>
                 <label className='inputs_label' htmlFor={checkoutInput.secondId}>{checkoutInput.additionalInformation.secondTopText}</label>
-                <input required className='input_text_global_pad double_checkkout_input check_input' type={checkoutInput.type} id={checkoutInput.additionalInformation.secondId} />
+                <input required className='input_text_global_pad double_checkout_input check_input' type={checkoutInput.type} id={checkoutInput.additionalInformation.secondId} />
             </div>
         </div>
     )
 }
 
 
-const StandartInput = ({ checkoutInput }) => {
+const StandardInput = ({ checkoutInput }) => {
     return (
-        <div key={checkoutInput.id} className='standart_chek_input_container'>
+        <div key={checkoutInput.id} className='standard_check_input_container'>
             <label className='inputs_label' htmlFor={checkoutInput.id}>{checkoutInput.topText}</label>
-            <input placeholder={checkoutInput.placeholder} required pattern={checkoutInput.type === 'tel' ? '^\\+375-\\d{2}-\\d{3}-\\d{2}-\\d{2}$' : undefined} className='input_text_global_pad standart_chek_input check_input' type={checkoutInput.type} id={checkoutInput.id} />
+            <input placeholder={checkoutInput.placeholder} required pattern={checkoutInput.type === 'tel' ? '^\\+375-\\d{2}-\\d{3}-\\d{2}-\\d{2}$' : undefined} className='input_text_global_pad standard_check_input  check_input' type={checkoutInput.type} id={checkoutInput.id} />
         </div>
     )
 }
 
 const ChekInput = ({ checkoutInput }) => {
     return (
-        <div key={checkoutInput.id} className='standart_chek_input_container'>
+        <div key={checkoutInput.id} className='standard_check_input_container'>
             <label className='inputs_label' htmlFor={checkoutInput.id}>{checkoutInput.topText}</label>
             <select required className='checkout_selector check_input' type={checkoutInput.type} name={checkoutInput.id} id={checkoutInput.id}>
-                {checkoutInput.additionalInformation.countryes.map(country => {
+                {checkoutInput.additionalInformation.countries.map(country => {
                     return (
                         <option key={country.name} value={country.selectVal}>{country.name}</option>
                     )
@@ -177,7 +177,7 @@ const checkoutInputsList = checkoutInputs.map((checkoutInput, index) => {
     }
     else if (checkoutInput.inputType === 'standart') {
         return (
-            <StandartInput checkoutInput={checkoutInput} />
+            <StandardInput checkoutInput={checkoutInput} />
         )
     }
     else {
@@ -207,7 +207,7 @@ const CheckoutBody = () => {
                     {selectedProducts.map(product => {
                         return (
                             <div key={product.id} className='checkout_product_item'>
-                                <p className='checkout_product_name'>{product.name} <span className='checkout_product_quant'>X {product.quantity}</span></p>
+                                <p className='checkout_product_name'>{product.name} <span className='checkout_product_quantity'>X {product.quantity}</span></p>
                                 <p className='checkout_product_cost'>Rs. {product.cost}</p>
                             </div>
                         )
@@ -222,19 +222,19 @@ const CheckoutBody = () => {
                     </div>
                 </div>
                 <form className='checkout_place_order' action=''>
-                    <div className='direct_inp_block'>
-                        <input className='direct_inp' type='radio' name='bank' id='direct_bank' />
-                        <label className='direct_inp_label' htmlFor='direct_bank'>Direct Bank Transfer</label>
+                    <div className='direct_input_block'>
+                        <input className='direct_input' type='radio' name='bank' id='direct_bank' />
+                        <label className='direct_input_label' htmlFor='direct_bank'>Direct Bank Transfer</label>
                     </div>
 
                     <p className='make_sure_directly'>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-                    <div className='direct_inp_block'>
-                        <input className='direct_inp' type='radio' name='bank' id='second_direct_bank' />
-                        <label className='direct_inp_label' htmlFor='second_direct_bank'>Direct Bank Transfer</label>
+                    <div className='direct_input_block'>
+                        <input className='direct_input' type='radio' name='bank' id='second_direct_bank' />
+                        <label className='direct_input_label' htmlFor='second_direct_bank'>Direct Bank Transfer</label>
                     </div>
-                    <div className='direct_inp_block third_radio_block'>
-                        <input className='direct_inp' type='radio' name='bank' id='delivery' />
-                        <label className='direct_inp_label' htmlFor='delivery'>Cash On Delivery</label>
+                    <div className='direct_input_block cash_radio_block'>
+                        <input className='direct_input' type='radio' name='bank' id='delivery' />
+                        <label className='direct_input_label' htmlFor='delivery'>Cash On Delivery</label>
                     </div>
 
                     <p className='personal_data_support'>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <span className='bold_text'>privacy policy.</span></p>
