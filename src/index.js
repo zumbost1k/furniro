@@ -5,10 +5,10 @@ import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Nav from './nav/nav';
 import HomePage from './pages/home';
 import Footer from './footer/footer';
-import Product from './pages/product';
 import ScrollToTop from './scroll_to_top';
 import ShopPage from './pages/shop';
-import Contact from './pages/contact';
+import ContactPage from './pages/contact';
+import ProductPage from './pages/product';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,9 +19,9 @@ root.render(
       <Routes>
         <Route path='/' element={<Navigate to='/home' />} />
         <Route path='/home' element={<HomePage />} />
-        <Route path='/products/:productName' element={<Product />} />
+        <Route path='/products/:productName' element={<ProductPage />} />
         <Route path='/shop' element={<ShopPage />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/contact' element={<ContactPage />} />
       </Routes>
       <Footer />
     </HashRouter>
