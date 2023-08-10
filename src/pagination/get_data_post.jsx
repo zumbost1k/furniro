@@ -1,11 +1,10 @@
-import React, {
-    useEffect,
-    useState
-} from 'react';
+import React from 'react';
 import Paginate from './reactPaginate';
 import '../products/products.css'
 import './pagination.css'
 import './get_data_post.css'
+import { useLocation, useNavigate } from 'react-router';
+import { useSearchParams } from 'react-router-dom';
 
 const allPosts = [
     {
@@ -85,49 +84,49 @@ const allPosts = [
 const categories = [
     {
         name: 'Crafts',
-        numberOf: '2'
+        numberOfPosts: '2'
     },
     {
         name: 'Design',
-        numberOf: '8'
+        numberOfPosts: '8'
     },
     {
         name: 'Handmade',
-        numberOf: '7'
+        numberOfPosts: '7'
     },
     {
         name: 'Interior',
-        numberOf: '1'
+        numberOfPosts: '1'
     },
     {
         name: 'Wood',
-        numberOf: '6'
+        numberOfPosts: '6'
     },
 ]
 
 const recentPosts = [
     {
-        path: 'notebook',
+        name: 'notebook',
         mainText: 'Going all-in with millennial design',
         date: '03 Aug 2022'
     },
     {
-        path: 'exploring',
+        name: 'exploring',
         mainText: 'Exploring new ways of decorating',
         date: '03 Aug 2022'
     },
     {
-        path: 'handmade',
+        name: 'handmade',
         mainText: 'Handmade pieces that took time to make',
         date: '03 Aug 2022'
     },
     {
-        path: 'milan',
+        name: 'milan',
         mainText: `Modern home in Milan`,
         date: '03 Aug 2022'
     },
     {
-        path: 'redesign',
+        name: 'redesign',
         mainText: 'Colorful office redesign',
         date: '03 Aug 2022'
     },
@@ -136,7 +135,7 @@ const recentPosts = [
 const recentPostsList = recentPosts.map(post => {
     return (
         <div className='recent_post_item'>
-            <img width='80' height='80' src={`/photos/recent_posts/${post.path}.png`} alt={post.path} />
+            <img width='80' height='80' src={`/photos/recent_posts/${post.name}.png`} alt={post.name} />
             <div>
                 <p className='recent_post_text'>{post.mainText}</p>
                 <time className='recent_post_time' dateTime={post.date}>{post.date}</time>
@@ -149,7 +148,7 @@ const categoriesList = categories.map(category => {
     return (
         <div className='catergory_item'>
             <button className='catergory_item_btn'>{category.name}</button>
-            <p className='catergory_item_text'>{category.numberOf}</p>
+            <p className='catergory_item_text'>{category.numberOfPosts}</p>
         </div>
     )
 })
@@ -182,24 +181,27 @@ const PostList = ({ posts }) => {
 
 }
 
+const usePageQueryParam = () => {
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const page = searchParams.get('page');
+    return page;
+}
+
 const PaginatedItemsPost = () => {
-    const [pageCount, setPageCount] = useState(0);
-    const [itemOffset, setItemOffset] = useState(0);
-    const [currentPage, setCurrentPage] = useState(JSON.parse(localStorage.getItem('localCurrentPage')) || 0);
-    useEffect(() => {
-        setPageCount(Math.ceil(allPosts.length / 3));
-
-    }, [itemOffset]);
-    useEffect(() => {
-        localStorage.setItem('localCurrentPage', JSON.stringify(currentPage));
-    }, [currentPage])
-
+    const pageCount = Math.ceil(allPosts.length / 3)
+    const currentPage = usePageQueryParam()
+    const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const updatePageQueryParam = (newPage) => {
+        searchParams.set('page', newPage);
+        setSearchParams(searchParams);
+        navigate({ search: searchParams.toString(), replace: true });
+    }
 
 
     const handlePageClick = (event) => {
-        const newOffset = event.selected * 3 % allPosts.length;
-        setItemOffset(newOffset);
-        setCurrentPage(event.selected);
+        updatePageQueryParam(event.selected)
     };
 
 
@@ -229,7 +231,7 @@ const PaginatedItemsPost = () => {
                 </div>
             </div>
 
-            <Paginate handlePageClick={handlePageClick} pageCount={pageCount} currentPage={currentPage} />
+            <Paginate handlePageClick={handlePageClick} pageCount={pageCount} currentPage={Number(currentPage)} />
         </section>
     )
 

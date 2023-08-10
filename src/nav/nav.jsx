@@ -9,11 +9,29 @@ import {
 } from '../features/todo/selectedProducts';
 import { selectProductById, selectTotalCost } from '../store/selectors';
 
-const linksWord = ['Home', 'Shop', 'About', 'Contact']
+
+const linksWord = [
+    {
+        text: 'Home',
+        path: 'home'
+    },
+    {
+        text: 'Shop',
+        path: '/shop?page=0'
+    },
+    {
+        text: 'About',
+        path: 'about?page=0'
+    },
+    {
+        text: 'Contact',
+        path: 'contact'
+    },
+]
 const linksWordsList = linksWord.map(function (link) {
     return (
-        <Link className='menu_link' to={link}>
-            {link}
+        <Link className='menu_link' to={link.path}>
+            {link.text}
         </Link>
     );
 });
