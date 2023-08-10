@@ -48,7 +48,7 @@ const ProductInfo = () => {
     const [ratingValue, setRatingValue] = useState(3.5);
     const { productName } = useParams();
     const [currentPhoto, setCurrentPhoto] = useState(productPhotos[0])
-
+    const dispatch = useDispatch()
     const lower = () => {
         if (productAmount > 1) { (setProductAmount(productAmount - 1)) }
     }
