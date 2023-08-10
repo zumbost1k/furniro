@@ -31,19 +31,19 @@
     padding-right: 100px;
 }
 
-.navig_item {
+.navigation_item {
     border: 0;
     background: none;
     cursor: pointer;
 }
 
-.modal_top_line {
+.modal_window_content {
     padding-top: 28px;
     display: flex;
     align-items: flex-start;
 }
 
-.modal_top_line_header {
+.modal_window_content_header {
     margin-left: 29px;
     font-size: 24px;
     font-weight: 600;
@@ -52,7 +52,7 @@
     margin-bottom: 42px;
 }
 
-.modal_top_line_close {
+.modal_window_content_close {
     padding-top: 7px;
     padding-left: 42px;
     border: 0;
