@@ -36,8 +36,6 @@ const footerLinks = {
         }]
 }
 
-
-
 const FooterLinksList = ({ links }) => {
     return links.map((link) => {
         return (

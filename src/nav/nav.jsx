@@ -6,8 +6,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteProduct, useTotalCost } from '../features/todo/todoSlice';
 
 
-const linksWord = ['Home', 'Shop', 'About', 'Contact']
-const linksWordsList = linksWord.map(function (link) {
+
+const linksWord = [
+    {
+        text: 'Home',
+        path: 'home'
+    },
+    {
+        text: 'Shop',
+        path: '/shop?page=0'
+    },
+    {
+        text: 'About',
+        path: 'about?page=0'
+    },
+    {
+        text: 'Contact',
+        path: 'contact'
+    },
+]
+const linksWordsList = linksWord.map((link) => {
     return (
         <Link className='menu_link' to={link.path}>
             {link.text}
@@ -49,7 +67,6 @@ const Nav = () => {
     const deleteProd = (id) => {
         dispatch(deleteProduct(id))
     }
-
     const handleOpenModal = () => {
         setShowModal(true);
     }

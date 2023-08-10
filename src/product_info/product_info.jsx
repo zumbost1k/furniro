@@ -65,9 +65,7 @@ const ProductInfo = () => {
         }
         dispatch(addProduct(productInf))
     }
-    const addCompareProductHandler = () => {
-        dispatch(addProductToCompare('single_product_id'))
-    }
+
     return (
         <section className='product_info_section'>
             <div className='photos_product'>
