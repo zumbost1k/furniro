@@ -70,8 +70,12 @@ const placeholdersList = contactForms.map((placeholder, index) => {
     return (
         <div className='contact_form_item_inner'>
             <label className='form_item_label' for={placeholder.name}>{placeholder.label} </label>
-            <input className={placeholder.isBig ? 'form_item_input big_form_input' : 'form_item_input'} type={placeholder.type} name='contact_form_item' id={placeholder.name} placeholder={placeholder.placeholder} required />
-        </div>
+            {placeholder.isBig ?
+                < textarea className='form_item_input big_form_input' name='contact_form_item' id={placeholder.name} placeholder={placeholder.placeholder} required />
+                : <input className='form_item_input' type={placeholder.type} name='contact_form_item' id={placeholder.name} placeholder={placeholder.placeholder} required />
+            }
+
+        </div >
     )
 })
 
