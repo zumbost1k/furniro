@@ -1,10 +1,10 @@
 import { createSelector } from 'reselect'
 
 const selectProducts = state => state.product.selectedProducts
-const selectProductList = state => state.productList.products;
+const selectAllProductList = state => state.productList.products;
 const selectcomparedProduct = state => state.comparedProduct.CompareProd;
 
-export const selectProductById = createSelector([selectProductList, selectProducts],
+export const selectProductById = createSelector([selectAllProductList, selectProducts],
     (allProducts, productId) => {
         return allProducts.filter(product => {
             const idToFind = productId.find(idObj => idObj.id === product.id);
@@ -33,9 +33,9 @@ export const selectTotalCost = createSelector([selectProductById],
 )
 
 
-export const selectProductByCompared = createSelector([selectProductList, selectcomparedProduct],
+export const selectProductByCompared = createSelector([selectAllProductList, selectcomparedProduct],
     (allProducts, productId) => {
-        const prods =  allProducts.filter(product => productId.includes(product.id))
+        const prods = allProducts.filter(product => productId.includes(product.id))
         return prods
     }
 )

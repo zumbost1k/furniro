@@ -14,7 +14,7 @@
     padding-left: 4px;
 }
 
-.compared_prod_numb_rating {
+.compared_product_number_rating {
     font-size: 18px;
     font-weight: 600;
     padding-right: 5px;
@@ -113,14 +113,14 @@
     padding: 44px 70px 0px 32px;
 }
 
-.nother_prod_label {
+.nother_product_label {
     letter-spacing: .2px;
     font-size: 24px;
     font-weight: 600;
     line-height: 126.5%;
 }
 
-.nother_prod_selector {
+.nother_product_selector {
     position: relative;
     color: #FFF;
     font-size: 14px;

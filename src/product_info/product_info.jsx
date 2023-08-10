@@ -3,7 +3,7 @@ import './product_info.css'
 import { useParams } from 'react-router';
 import { Rating } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { addProduct } from '../features/todo/todoSlice';
+import { addProduct } from '../features/todo/selectedProducts';
 import { addProductToCompare } from '../features/compare/compare';
 const productPhotos = [
     {
