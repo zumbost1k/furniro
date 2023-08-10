@@ -8,8 +8,26 @@ import {
 } from '../features/todo/todoSlice';
 import { selectProductById, selectTotalCost } from '../store/selectors';
 
-const linksWord = ['Home', 'Shop', 'About', 'Contact']
-const linksWordsList = linksWord.map((link) => {
+
+const linksWord = [
+    {
+        text: 'Home',
+        path: 'home'
+    },
+    {
+        text: 'Shop',
+        path: '/shop?page=0'
+    },
+    {
+        text: 'About',
+        path: 'about?page=0'
+    },
+    {
+        text: 'Contact',
+        path: 'contact'
+    },
+]
+const linksWordsList = linksWord.map(function (link) {
     return (
         <Link key={link} className='menu_link' to={link}>
             {link}
