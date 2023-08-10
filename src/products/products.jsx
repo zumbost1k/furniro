@@ -6,7 +6,7 @@ import { addProduct } from '../features/todo/selectedProducts';
 import { addProductToCompare } from '../features/compare/compare';
 
 const ProductList = ({ products, index }) => {
-
+    const dispatch = useDispatch()
     return products.slice(0, index).map((product) => {
 
         const addProductHandler = () => {
