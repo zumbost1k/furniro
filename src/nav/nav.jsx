@@ -7,26 +7,8 @@ import { useEffect } from 'react';
 import { deleteProduct } from '../features/todo/todoSlice';
 
 
-
-const linksWord = [
-    {
-        text: 'Home',
-        path: 'home'
-    },
-    {
-        text: 'Shop',
-        path: '/shop?page=0'
-    },
-    {
-        text: 'About',
-        path: 'about?page=0'
-    },
-    {
-        text: 'Contact',
-        path: 'contact'
-    },
-]
-const linksWordsList = linksWord.map((link) => {
+const linksWord = ['Home', 'Shop', 'About', 'Contact']
+const linksWordsList = linksWord.map(function (link) {
     return (
         <Link className='menu_link' to={link.path}>
             {link.text}
@@ -72,9 +54,7 @@ const Nav = () => {
         let totalProductsCost = 0;
         products.forEach((product) => {
             const costString = product.info.cost;
-            const costWithoutDots = costString.replace(/\./g, '');
-            const cost = parseInt(costWithoutDots) * parseInt(product.number);
-
+            const cost = parseInt(costString) * parseInt(product.number);
             totalProductsCost += cost;
         })
         setTotalCost(totalProductsCost.toLocaleString('en-US'))
