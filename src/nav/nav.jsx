@@ -1,14 +1,28 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './nav.css'
 import { Link } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    deleteProduct
-} from '../features/todo/todoSlice';
-import { selectProductById, selectTotalCost } from '../store/selectors';
+import { deleteProduct, useTotalCost } from '../features/todo/todoSlice';
 
-const linksWord = ['Home', 'Shop', 'About', 'Contact']
+const linksWord = [
+    {
+        text: 'Home',
+        path: 'home'
+    },
+    {
+        text: 'Shop',
+        path: '/shop?page=0'
+    },
+    {
+        text: 'About',
+        path: 'about?page=0'
+    },
+    {
+        text: 'Contact',
+        path: 'contact'
+    },
+]
 const linksWordsList = linksWord.map(function (link) {
     return (
         <Link key={link} className='menu_link' to={link}>
