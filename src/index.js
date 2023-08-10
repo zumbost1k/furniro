@@ -9,7 +9,7 @@ import Product from './pages/product';
 import ScrollToTop from './scroll_to_top';
 import ShopPage from './pages/shop';
 import Contact from './pages/contact';
-import Blog from './pages/blog';
+import BlogPage from './pages/blog';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 
@@ -26,7 +26,7 @@ root.render(
           <Route path='/products/:productName' element={<Product />} />
           <Route path='/shop' element={<ShopPage />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/about' element={<Blog />} />
+          <Route path='/about' element={<BlogPage />} />
         </Routes>
         <Footer />
       </Provider>
