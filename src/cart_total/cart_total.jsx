@@ -2,16 +2,16 @@ import React from 'react';
 import './cart_total.css'
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    changeNumberProduct, deleteProduct
+    changeQuantityProduct, deleteProduct
 
-} from '../features/todo/todoSlice';
+} from '../features/todo/selectedProducts';
 import { Link } from 'react-router-dom';
 import { selectProductById, selectTotalCost } from '../store/selectors';
 
-const costChecker = (cost, number) => {
+const costChecker = (cost, quantity) => {
     const costString = cost;
     const costWithoutDots = costString.replace(/\./g, '');
-    const productCost = parseInt(costWithoutDots) * parseInt(number);
+    const productCost = parseInt(costWithoutDots) * parseInt(quantity);
     return productCost.toLocaleString('en-US')
 }
 
@@ -34,21 +34,21 @@ const CartTotal = () => {
                 </div>
                 <div className='cart_total_products'>
                     {selectedProducts.map(product => {
-                        let productNumber = product.quantity
+                        let productQuantity = product.quantity
                         return (
                             <div key={`${product.id}`} className='cart_total_item'>
                                 <div className='cart_item_back'><img className='cart_item_photo' width='105' height='105' src={`/photos/products/${product.path}`} alt={product.name} /></div>
                                 <p className='cart_item_name cart_item_text'>{product.name}</p>
                                 <p className='cart_item_cost cart_item_text'>Rs. {product.cost}</p>
                                 <input className='cart_item_number cart_item_text'
-                                    value={productNumber}
+                                    value={productQuantity}
                                     type='text'
                                     onChange={(e) => {
                                         const inputValue = e.target.value;
                                         const regex = /^[^+-]+$/;
                                         if (regex.test(inputValue) && (inputValue.length <= 1 || inputValue === '10')) {
                                             dispatch(
-                                                changeNumberProduct({
+                                                changeQuantityProduct({
                                                     id: product.id,
                                                     quantity: inputValue
                                                 })

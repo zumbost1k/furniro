@@ -4,8 +4,7 @@
 }
 
 .links {
-    margin-right: 101px;
-    margin-left: 101px;
+    margin: auto 101px;
     display: flex;
     text-align: left;
     justify-content: space-between;
@@ -36,13 +35,11 @@
 }
 
 .furniro_col_third {
-    margin-right: 110px;
-    margin-left: -110px;
+    margin: 0px 110px 0px -110px;
 }
 
 .furniro_col_second .links_title {
-    margin-top: -9px;
-    margin-bottom: 9px;
+    margin: 9px 0px -9px;
 }
 
 .footer_link {
@@ -88,8 +85,7 @@
 
 .furino {
     margin-top: 48px;
-    margin-right: 101px;
-    margin-left: 101px;
+    margin: auto 101px;
     padding-top: 35px;
     color: #000;
     font-size: 16px;

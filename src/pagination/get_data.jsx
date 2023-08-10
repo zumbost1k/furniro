@@ -8,7 +8,7 @@ import '../products/products.css'
 import './pagination.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { addProductToCompare } from '../features/compare/compare';
-import { addProduct } from '../features/todo/todoSlice';
+import { addProduct } from '../features/todo/selectedProducts';
 
 const filterIcons = [
     {

@@ -34,7 +34,7 @@ export const productSlice = createSlice({
         deleteProduct: (state, action) => {
             state.selectedProducts = state.selectedProducts.filter((product) => product.id !== action.payload)
         },
-        changeNumberProduct: (state, action) => {
+        changeQuantityProduct: (state, action) => {
             const { id, quantity } = action.payload;
             state.selectedProducts = state.selectedProducts.map(p => {
                 if (p.id === id) {
@@ -49,5 +49,5 @@ export const productSlice = createSlice({
 
 
 
-export const { addProduct, deleteProduct, changeNumberProduct } = productSlice.actions
+export const { addProduct, deleteProduct, changeQuantityProduct } = productSlice.actions
 export default productSlice.reducer

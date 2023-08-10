@@ -3,8 +3,37 @@ import './footer.css'
 import { Link } from 'react-router-dom';
 
 const footerLinks = {
-    links: ['Home', 'Shop', 'About', 'Contact'],
-    help: ['Payment Options', 'Returns', 'Privacy Policies']
+    links: [
+        {
+            text: 'Home',
+            path: 'home'
+        },
+        {
+            text: 'Shop',
+            path: '/shop?page=0'
+        },
+        {
+            text: 'About',
+            path: 'about?page=0'
+        },
+        {
+            text: 'Contact',
+            path: 'contact'
+        },
+    ],
+    help: [
+        {
+            text: 'Payment Options',
+            path: 'home'
+        },
+        {
+            text: 'Returns',
+            path: 'home'
+        },
+        {
+            text: 'Privacy Policies',
+            path: 'home'
+        }]
 }
 
 const FooterLinksList = ({ links }) => {
