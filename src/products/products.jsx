@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './products.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct } from '../features/todo/selectedProducts';
 import { addProductToCompare } from '../features/compare/compare';
@@ -21,20 +21,20 @@ const ProductList = ({ products, index }) => {
             dispatch(addProductToCompare(product.id))
         }
         return (
-            <Link key={product.id} className='product_item' to={`/products/${product.name}`} >
+            <Link className='product_item' to={`/products/${product.name}`} >
                 <div className='item_hoover_state'>
                     <button type='button' onClick={() => addProductHandler()} className='item_button'>Add to cart</button>
                     <div className='product_link_items'>
-                        <button type='button' className='product_link_item'>
-                            <img src={`/photos/products/1.svg`} alt='share' />
+                        <button className='product_link_item'>
+                            <img src={`/photos/products/share.svg`} alt='share' />
                             <figcaption className='product_link_item_text'>Share</figcaption>
                         </button>
-                        <button type='button' onClick={addCompareProductHandler} className='product_link_item'>
-                            <img src={`/photos/products/2.svg`} alt='compare' />
+                        <button onClick={addCompareProductHandler} className='product_link_item'>
+                            <img src={`/photos/products/compare.svg`} alt='compare' />
                             <figcaption className='product_link_item_text'>Compare</figcaption>
                         </button>
-                        <button type='button' className='product_link_item'>
-                            <img src={`/photos/products/3.svg`} alt='like' />
+                        <button className='product_link_item'>
+                            <img src={`/photos/products/like.svg`} alt='like' />
                             <figcaption className='product_link_item_text'>Like</figcaption>
                         </button>
                     </div>

@@ -94,7 +94,7 @@ const ProductList = ({ products }) => {
                         </button>
                     </div>
                 </div>
-                <div  className='product_link'>
+                <div className='product_link'>
                     <img src={`/photos/products/${product.path}`} alt={product.name} />
                     {product.discount && <div className='item_circle item_discount'>{product.discount}</div>}
                     {product.new && <div className='item_circle item_new'>New</div>}

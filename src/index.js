@@ -13,7 +13,7 @@ import BlogPage from './pages/blog';
 import { Provider } from 'react-redux';
 import ComparisonPage from './pages/comparison';
 import { store } from './store/store';
-import Checkout from './pages/checkout';
+import CartPage from './pages/cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,8 +30,6 @@ root.render(
           <Route path='/about' element={<BlogPage />} />
           <Route path='/product/cart' element={<CartPage />} />
           <Route path='/product/comparison' element={<ComparisonPage />} />
-          <Route path='/product/checkout' element={<Checkout />} />
-          <Route path='*' element={<Navigate to='/home' />} />
         </Routes>
         <Footer />
       </Provider>

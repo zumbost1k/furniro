@@ -3,7 +3,10 @@ import './nav.css'
 import { Link } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteProduct, useTotalCost } from '../features/todo/todoSlice';
+import { deleteProduct } from '../features/todo/selectedProducts';
+import { selectProductById, selectTotalCost } from '../store/selectors';
+
+
 
 const linksWord = [
     {
@@ -47,7 +50,7 @@ const navLinks = [
 const LinksPhotoList = ({ links, handleOpenModal }) => {
     return links.map(link => {
         return (
-            <button className='navigation_item'>
+            <button key={link.path} type='button' className='navigation_item'>
                 <img
                     src={`/photos/${link.path}.svg`}
                     alt={link.path} />
@@ -65,7 +68,6 @@ const Nav = () => {
     const deleteProd = (id) => {
         dispatch(deleteProduct(id))
     }
-
     const handleOpenModal = () => {
         setShowModal(true);
     }
@@ -85,7 +87,7 @@ const Nav = () => {
             </div>
             <div className='header_photos'>
                 <LinksPhotoList links={navLinks} handleOpenModal={handleOpenModal} />
-                <button onClick={handleOpenModal} className={'navigation_item shopping_cart'}>
+                <button onClick={handleOpenModal} className='navigation_item shopping_cart'>
                     <img
                         src={`/photos/shoppingCart.svg`}
                         alt='shopping cart' />
