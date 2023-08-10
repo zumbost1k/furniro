@@ -59,6 +59,7 @@
 }
 
 .form_item_input {
+    padding: 25px 30px;
     overflow: hidden;
     margin-top: 21px;
     margin-bottom: 36px;
@@ -66,6 +67,7 @@
     height: 75px;
     border-radius: 10px;
     border: 1px solid #9F9F9F;
+    outline: none;
 }
 
 .form_item_input::placeholder {
