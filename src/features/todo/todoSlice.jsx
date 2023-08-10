@@ -6,8 +6,7 @@ const products = JSON.parse(localStorage.getItem('products')) || [];
 const calculateTotalCost = (products) => {
     return products.reduce((accumulator, product) => {
         const costString = product.info.cost;
-        const costWithoutDots = costString.replace(/\./g, '');
-        const cost = parseInt(costWithoutDots) * parseInt(product.number);
+        const cost = parseInt(costString) * parseInt(product.number);
         return accumulator + cost;
     }, 0);
 };

@@ -66,15 +66,6 @@ const Nav = () => {
     const deleteProd = (id) => {
         dispatch(deleteProduct(id))
     }
-    useEffect(() => {
-        let totalProductsCost = 0;
-        products.forEach((product) => {
-            const costString = product.info.cost;
-            const cost = parseInt(costString) * parseInt(product.number);
-            totalProductsCost += cost;
-        })
-        setTotalCost(totalProductsCost.toLocaleString('en-US'))
-    }, [products])
     const handleOpenModal = () => {
         setShowModal(true);
     }
