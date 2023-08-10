@@ -27,11 +27,10 @@ const contacts = [
 const contactForms = [
     {
         label: 'Your name',
-        label: 'Your name',
         type: 'text',
         placeholder: 'Abc',
-        placeholder: 'Abc',
         name: 'name',
+        isBig: false
     },
     {
         label: 'Email address',
@@ -48,7 +47,6 @@ const contactForms = [
         isBig: false
     },
     {
-        label: 'Message',
         label: 'Message',
         type: 'text',
         placeholder: 'Hi! i’d like to ask about',
