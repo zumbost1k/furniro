@@ -22,8 +22,6 @@ const contacts = [
     },
 ]
 
-
-
 const contactForms = [
     {
         label: 'Your name',
