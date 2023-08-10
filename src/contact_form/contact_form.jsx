@@ -82,23 +82,23 @@ const placeholdersList = contactForms.map((placeholder, index) => {
         )
     })
 
-    const ContactForm = () => {
-        return (
-            <section className='contact_form_section'>
-                <div className='contact_form_headers'>
-                    <h2 className='contact_form_header'>Get In Touch With Us</h2>
-                    <h3 className='contact_form_subheading'>For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!</h3>
+const ContactForm = () => {
+    return (
+        <section className='contact_form_section'>
+            <div className='contact_form_headers'>
+                <h2 className='contact_form_header'>Get In Touch With Us</h2>
+                <h3 className='contact_form_subheading'>For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!</h3>
+            </div>
+            <div className='contact_form_container'>
+                <div >
+                    {contactList}
                 </div>
-                <div className='contact_form_container'>
-                    <div >
-                        {contactList}
-                    </div>
-                    <form className='contact_form_item ' action='' >
-                        {placeholdersList}
-                        <button className='contact_form_btn' type='submit'>Submit</button>
-                    </form>
-                </div>
-            </section>
-        )
-    }
-    export default ContactForm
+                <form className='contact_form_item ' action='' >
+                    {placeholdersList}
+                    <button className='contact_form_btn' type='submit'>Submit</button>
+                </form>
+            </div>
+        </section>
+    )
+}
+export default ContactForm
