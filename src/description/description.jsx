@@ -49,10 +49,11 @@ const infoForTopDeskLinks = [
     }
 ]
 
-const ProductsDescriptions  = () => {
+const ProductsDescriptions = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const classNameCheker = (pageId) => {
-        if (pageId  === currentPage) { return 'description_active' }
+
+        if (pageId === currentPage) { return 'description_active' }
         else { return 'description_hidden' }
     }
     return (
@@ -111,4 +112,4 @@ const ProductsDescriptions  = () => {
     )
 }
 
-export default ProductsDescriptions 
+export default ProductsDescriptions

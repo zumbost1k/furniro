@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteProduct, useTotalCost } from '../features/todo/todoSlice';
 
 
-
 const linksWord = [
     {
         text: 'Home',
