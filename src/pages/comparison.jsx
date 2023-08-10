@@ -2,7 +2,7 @@ import React from 'react';
 import ShopHeader from '../shop_header/shop_header';
 import DiscountShop from '../discount_shop/discount_shop';
 import ComparisonBody from '../comparisonBody/comparisonBody';
-const Comparison = () => {
+const ComparisonPage = () => {
     return (
         <div>
             <ShopHeader logo={true} path={'Product Comparison'} underTitle={'Comparison'} classname={'shop_header_icon_comparison'}/>
@@ -12,4 +12,4 @@ const Comparison = () => {
     )
 }
 
-export default Comparison
+export default ComparisonPage

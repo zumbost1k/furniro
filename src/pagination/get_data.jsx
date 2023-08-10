@@ -55,13 +55,12 @@ const productHooverItemsList = productHoverItems.map(item => {
     return (
         <Link to='' className='product_link_item'>
             <img src={`/photos/products/${item.path}`} alt={item.text} />
-            <Link to='' className='product_link_item_text'>{item.text}</Link>
+            <p  className='product_link_item_text'>{item.text}</p>
         </Link>
     )
 })
 
 const ProductList = ({ products }) => {
-    const navigate = useNavigate();
     const dispatch = useDispatch()
     return products.map((product) => {
         const addProductHandler = () => {
@@ -74,16 +73,26 @@ const ProductList = ({ products }) => {
         const addCompareProductHandler = () => {
             dispatch(addProductToCompare(product.id))
         }
-        const handleClick = () => {
-            const newPath = `/products/${product.name}`;
-            navigate(newPath);
-        };
+
 
         return (
-            <div className='product_item_shop' onClick={handleClick}>
-                <div className='item_hover_state'>
-                    <button className='item_button'>Add to cart</button>
-                    <div className='product_link_items'>{productHooverItemsList}</div>
+            <Link key={product.id} className='product_item_shop' to={`/products/${product.name}`}>
+                <div className='item_hoover_state'>
+                    <button type='button' onClick={addProductHandler} className='item_button'>Add to cart</button>
+                    <div className='product_link_items'>
+                        <button type='button' className='product_link_item'>
+                            <img src={`/photos/products/share.svg`} alt='share' />
+                            <figcaption className='product_link_item_text'>Share</figcaption>
+                        </button>
+                        <button type='button' onClick={addCompareProductHandler} className='product_link_item'>
+                            <img src={`/photos/products/compare.svg`} alt='compare' />
+                            <figcaption className='product_link_item_text'>Compare</figcaption>
+                        </button>
+                        <button type='button' className='product_link_item'>
+                            <img src={`/photos/products/like.svg`} alt='like' />
+                            <figcaption className='product_link_item_text'>Like</figcaption>
+                        </button>
+                    </div>
                 </div>
                 <div  className='product_link'>
                     <img src={`/photos/products/${product.path}`} alt={product.name} />
@@ -93,7 +102,7 @@ const ProductList = ({ products }) => {
                         <h3 className='item_name'>{product.name}</h3>
                         <p className='item_type'>{product.type}</p>
                         <div className='item_cost'>
-                            <p className='current_cost'>Rp {product.cost.toLocaleString('en-US')}</p>
+                            <p className='current_cost'>Rp {product.cost}</p>
                             {product.oldCost && <p className='old_cost'> Rp {product.oldCost}</p>}
                         </div>
                     </div>
@@ -102,15 +111,12 @@ const ProductList = ({ products }) => {
         )
     })
 }
-
 const usePageQueryParam = () => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const page = searchParams.get('page');
     return page;
 }
-
-
 const PaginatedItems = () => {
     const productsList = useSelector((state) => state.productList.products).slice(0, 40)
     const currentPage = usePageQueryParam()
@@ -119,12 +125,19 @@ const PaginatedItems = () => {
     const [itemOffset, setItemOffset] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const [filterOn, setFilterOn] = useState('default');
-    const [currentPage, setCurrentPage] = useState(JSON.parse(localStorage.getItem('localCurrentPage')) || 0);
-    const [filteredArray, setFilteredArray] = useState(productsListucts)
+    const currentPage = usePageQueryParam()
+    const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const updatePageQueryParam = (newPage) => {
+        searchParams.set('page', newPage);
+        setSearchParams(searchParams);
+        navigate({ search: searchParams.toString(), replace: true });
+    }
+    const [filteredArray, setFilteredArray] = useState(productsList)
     useEffect(() => {
         setPageCount(Math.ceil(productsList.length / itemsPerPage));
 
-    }, [itemOffset, itemsPerPage]);
+    }, [itemOffset, itemsPerPage, productsList.length]);
 
     useEffect(() => {
         if (filterOn === 'default') {
@@ -138,8 +151,9 @@ const PaginatedItems = () => {
                 return a - b;
             }));
         }
-        setIsLoading(false);
-    }, [filterOn]);
+        setIsLoading(false
+        );
+    }, [filterOn, productsList]);
 
 
     const handlePageClick = (event) => {
@@ -161,7 +175,8 @@ const PaginatedItems = () => {
                     <div className='paginate_filter_item'>
                         <div className='filter_number_item'>
                             <p>Show</p>
-                            <input value={itemsPerPage} className='filter_number_input' type='number'
+                            <input min='4' value={itemsPerPage} max='16' className='filter_number_input' type='number'
+
                                 onChange={e => {
                                     const inputValue = Number(e.target.value)
                                     if (inputValue >= 4 && inputValue <= 16) {
@@ -180,7 +195,7 @@ const PaginatedItems = () => {
                         </div>
                     </div>
                 </div>
-                <div className='products_shop'><ProductList products={filtereProductsdArray.slice(currentPage * itemsPerPage, (currentPage * itemsPerPage + itemsPerPage))} /></div>
+                <div className='products_shop'><ProductList products={filteredArray.slice(currentPage * itemsPerPage, (currentPage * itemsPerPage + 16))} /></div>
                 <Paginate handlePageClick={handlePageClick} pageCount={pageCount} currentPage={Number(currentPage)} />
             </section>
         );

@@ -11,8 +11,7 @@ import ContactPage from './pages/contact';
 import ProductPage from './pages/product';
 import BlogPage from './pages/blog';
 import { Provider } from 'react-redux';
-import Cart from './pages/cart';
-import Comparison from './pages/comparison';
+import ComparisonPage from './pages/comparison';
 import { store } from './store/store';
 import Checkout from './pages/checkout';
 
@@ -29,14 +28,13 @@ root.render(
           <Route path='/shop' element={<ShopPage />} />
           <Route path='/contact' element={<ContactPage />} />
           <Route path='/about' element={<BlogPage />} />
-          <Route path='/product/cart' element={<Cart />} />
-          <Route path='/product/comparison' element={<Comparison />} />
+          <Route path='/product/cart' element={<CartPage />} />
+          <Route path='/product/comparison' element={<ComparisonPage />} />
           <Route path='/product/checkout' element={<Checkout />} />
           <Route path='*' element={<Navigate to='/home' />} />
         </Routes>
         <Footer />
       </Provider>
-
     </HashRouter>
   </React.StrictMode>
 );

@@ -57,7 +57,7 @@ const ProductInfo = () => {
         if (productAmount < 10) { setProductAmount(productAmount + 1) }
     }
 
-   
+
     const addProductHandler = () => {
         const productInf = {
             id: 'single_product_id',
