@@ -41,6 +41,7 @@ const contactForms = [
     },
     {
         label: 'Subject',
+        label: 'Subject',
         type: 'text',
         placeholder: 'This is an optional',
         name: 'subj',
