@@ -62,7 +62,7 @@
     overflow: hidden;
     margin-top: 21px;
     margin-bottom: 36px;
-    width: 528.75px;
+    width: 529px;
     height: 75px;
     border-radius: 10px;
     border: 1px solid #9F9F9F;
@@ -71,7 +71,7 @@
 .form_item_input::placeholder {
     position: absolute;
     top: 25px;
-    padding-left: 29.75px;
+    padding-left: 30px;
     color: #9F9F9F;
     font-size: 16px;
     font-weight: 400;
@@ -96,7 +96,7 @@
     color: #FFF;
     font-size: 16px;
     font-weight: 400;
-    padding: 13.75px 89px;
+    padding: 14px 89px;
 }
 
 .contact_form_btn:hover {

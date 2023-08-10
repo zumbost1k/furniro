@@ -4,7 +4,7 @@ import ProductInfo from "../product_info/product_info";
 import Description from "../description/description";
 import Products from "../products/products";
 
-const Product = () => {
+const ProductPage = () => {
     return (
         <div>
             <ProductPath />
@@ -15,4 +15,4 @@ const Product = () => {
     )
 }
 
-export default Product
+export default ProductPage

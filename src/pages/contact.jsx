@@ -3,7 +3,7 @@ import ShopHeader from '../shop_header/shop_header';
 import DiscountShop from '../discount_shop/discount_shop';
 import ContactForm from '../contact_form/contact_form';
 
-const Contact = () => {
+const ContactPage = () => {
     return (
         <div>
             <ShopHeader logo={true} path={'Contact'} underTitle={'Contact'} classname={'shop_header_icon'} />
@@ -13,4 +13,4 @@ const Contact = () => {
     )
 }
 
-export default Contact
+export default ContactPage
