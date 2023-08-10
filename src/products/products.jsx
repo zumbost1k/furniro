@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './products.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct } from '../features/todo/selectedProducts';
 import { addProductToCompare } from '../features/compare/compare';
 
 const ProductList = ({ products, index }) => {
-
+    const dispatch = useDispatch()
     return products.slice(0, index).map((product) => {
 
         const addProductHandler = () => {

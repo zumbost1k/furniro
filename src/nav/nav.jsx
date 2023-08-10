@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './nav.css'
 import { Link } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    deleteProduct
-    // , useTotalCost
-} from '../features/todo/selectedProducts';
-import { selectProductById, selectTotalCost } from '../store/selectors';
+import { deleteProduct, useTotalCost } from '../features/todo/todoSlice';
+
 
 
 const linksWord = [
