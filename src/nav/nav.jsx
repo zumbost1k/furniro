@@ -16,21 +16,14 @@ const linksWordsList = linksWord.map(function (link) {
 });
 const navLinks = [
     {
-        path: 'person',
-        extraClass: false
+        path: 'person'
     },
     {
-        path: 'magnifier',
-        extraClass: false
+        path: 'magnifier'
     },
     {
-        path: 'heart',
-        extraClass: false
-    },
-    {
-        path: 'shoppingCart',
-        extraClass: true
-    },
+        path: 'heart'
+    }
 ]
 
 
@@ -38,7 +31,7 @@ const navLinks = [
 const LinksPhotoList = ({ links, handleOpenModal }) => {
     return links.map(link => {
         return (
-            <button onClick={link.extraClass ? handleOpenModal : () => { }} className={link.extraClass ? 'navig_item shopping_cart' : 'navig_item'}>
+            <button className='navigation_item'>
                 <img
                     src={`/photos/${link.path}.svg`}
                     alt={link.path} />
@@ -86,6 +79,11 @@ const Nav = () => {
             </div>
             <div className='header_photos'>
                 <LinksPhotoList links={navLinks} handleOpenModal={handleOpenModal} />
+                <button onClick={handleOpenModal} className={'navigation_item shopping_cart'}>
+                    <img
+                        src={`/photos/shoppingCart.svg`}
+                        alt='shopping cart' />
+                </button>
                 <ReactModal
                     style={{
                         overlay: {
@@ -121,9 +119,9 @@ const Nav = () => {
                     ariaHideApp={false}
                 >
                     <div className='modal_content'>
-                        <div className='modal_top_line'>
-                            <h3 className='modal_top_line_header'>Shopping Cart</h3>
-                            <button onClick={handleCloseModal} className='modal_top_line_close'><img src='/photos/cart.svg' alt='cart' width='17' height='19' /></button>
+                        <div className='modal_window_content'>
+                            <h3 className='modal_window_content_header'>Shopping Cart</h3>
+                            <button onClick={handleCloseModal} className='modal_window_content_close'><img src='/photos/cart.svg' alt='cart' width='17' height='19' /></button>
                         </div>
                         <div className='todos_items'>
                             {products.map(product => {
