@@ -26,15 +26,15 @@ const ProductList = ({ products, index }) => {
                     <button onClick={() => addProductHandler()} className='item_button'>Add to cart</button>
                     <div className='product_link_items'>
                         <button className='product_link_item'>
-                            <img src={`/photos/products/1.svg`} alt='share' />
+                            <img src={`/photos/products/share.svg`} alt='share' />
                             <figcaption className='product_link_item_text'>Share</figcaption>
                         </button>
                         <button onClick={addCompareProductHandler} className='product_link_item'>
-                            <img src={`/photos/products/2.svg`} alt='compare' />
+                            <img src={`/photos/products/compare.svg`} alt='compare' />
                             <figcaption className='product_link_item_text'>Compare</figcaption>
                         </button>
                         <button className='product_link_item'>
-                            <img src={`/photos/products/3.svg`} alt='like' />
+                            <img src={`/photos/products/like.svg`} alt='like' />
                             <figcaption className='product_link_item_text'>Like</figcaption>
                         </button>
                     </div>

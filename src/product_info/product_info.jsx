@@ -57,7 +57,7 @@ const ProductInfo = () => {
         if (productAmount < 10) { setProductAmount(productAmount + 1) }
     }
 
-   
+
     const addProductHandler = () => {
         const productInf = {
             id: 'single_product_id',
@@ -65,7 +65,9 @@ const ProductInfo = () => {
         }
         dispatch(addProduct(productInf))
     }
-
+    const addCompareProductHandler = () => {
+        dispatch(addProductToCompare('single_product_id'))
+    }
     return (
         <section className='product_info_section'>
             <div className='photos_product'>

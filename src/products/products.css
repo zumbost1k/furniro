@@ -107,8 +107,6 @@
     display: none;
 }
 
-
-
 .product_item:hover .item_hoover_state {
     display: flex;
     position: absolute;
