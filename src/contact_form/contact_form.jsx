@@ -6,67 +6,67 @@ const contacts = [
         path: 'tag',
         title: 'Address',
         text: '236 5th SE Avenue, New York NY10000, United States',
-        seconLineText: ''
+        additionalInfo: ''
     },
     {
         path: 'bxs_phone',
         title: 'Phone',
         text: 'Mobile: +(84) 546-6789 Hotline: +(84) 456-6789',
-        seconLineText: ''
+        additionalInfo: ''
     },
     {
         path: 'clock',
         title: 'Working Time',
         text: `Monday-Friday: 9:00 - 22:00 `,
-        seconLineText: 'Saturday-Sunday: 9:00 - 21:00'
+        additionalInfo: 'Saturday-Sunday: 9:00 - 21:00'
     },
 ]
 
-const placeholders = [
+const contactForms = [
     {
-        theme: 'Your name',
+        label: 'Your name',
         type: 'text',
-        innerText: 'Abc',
+        placeholder: 'Abc',
         name: 'name',
-        extraClass: false
+        isBig: false
     },
     {
-        theme: 'Email address',
+        label: 'Email address',
         type: 'email',
-        innerText: 'Abc@def.com',
+        placeholder: 'Abc@def.com',
         name: 'mail',
-        extraClass: false
+        isBig: false
     },
     {
-        theme: 'Subject',
+        label: 'Subject',
         type: 'text',
-        innerText: 'This is an optional',
+        placeholder: 'This is an optional',
         name: 'subj',
-        extraClass: false
+        isBig: false
     },
     {
-        theme: 'Message',
+        label: 'Message',
         type: 'text',
-        innerText: 'Hi! i’d like to ask about',
+        placeholder: 'Hi! i’d like to ask about',
         name: 'mess',
-        extraClass: true
+        isBig: true
     },
 ]
 
 const contactList = contacts.map(contact => {
     return (
         <div className='contact_item_container'>
-            <img width='30' height='30' src={`/photos/${contact.path}.svg`} alt={contact.path} />
+            <img width='30' height='30' src={`/photos/${contact.path}.svg`} alt={contact.title} />
             <div className='contact_item_text'>
                 <h3 className='contact_item_text_title'>{contact.title}</h3>
                 <p className='contact_item_text_text'>{contact.text}</p>
-                {contact.seconLineText && <p className='contact_item_text_text'>{contact.seconLineText}</p>}
+                {contact.additionalInfo && <p className='contact_item_text_text'>{contact.additionalInfo}</p>}
             </div>
         </div>
     )
 })
 
-const placeholdersList = placeholders.map((placeholder, index) => {
+const placeholdersList = contactForms.map((placeholder, index) => {
     return (
         <div className='contact_form_item_inner'>
             <label className='form_item_label' htmlFor={placeholder.name}>{placeholder.theme} </label>
