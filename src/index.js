@@ -24,10 +24,10 @@ root.render(
         <Routes>
           <Route path='/' element={<Navigate to='/home' />} />
           <Route path='/home' element={<HomePage />} />
-          <Route path='/products/:productName' element={<Product />} />
+          <Route path='/products/:productName' element={<ProductPage />} />
           <Route path='/shop' element={<ShopPage />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/about' element={<Blog />} />
+          <Route path='/contact' element={<ContactPage />} />
+          <Route path='/about' element={<BlogPage />} />
           <Route path='/product/cart' element={<Cart />} />
         </Routes>
         <Footer />

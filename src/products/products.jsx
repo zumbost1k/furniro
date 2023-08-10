@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './products.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 } from 'uuid';
 import { addProduct } from '../features/todo/todoSlice';
@@ -105,7 +105,7 @@ const productHooverItemsList = productHooverItems.map(item => {
 })
 
 const ProductList = ({ products, index }) => {
-
+    const dispatch = useDispatch()
     return products.slice(0, index).map((product) => {
 
         const addProductHandler = () => {

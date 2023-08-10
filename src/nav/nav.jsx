@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './nav.css'
 import { Link } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteProduct, useTotalCost } from '../features/todo/todoSlice';
+
 
 
 const linksWord = [
@@ -66,7 +67,15 @@ const Nav = () => {
     const deleteProd = (id) => {
         dispatch(deleteProduct(id))
     }
-    
+    useEffect(() => {
+        let totalProductsCost = 0;
+        products.forEach((product) => {
+            const costString = product.info.cost;
+            const cost = parseInt(costString) * parseInt(product.number);
+            totalProductsCost += cost;
+        })
+        setTotalCost(totalProductsCost.toLocaleString('en-US'))
+    }, [products])
     const handleOpenModal = () => {
         setShowModal(true);
     }
