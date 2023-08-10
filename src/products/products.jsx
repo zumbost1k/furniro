@@ -79,15 +79,15 @@ const allproducts = [
 
 const productHooverItems = [
     {
-        path: '1.svg',
+        path: 'share.svg',
         text: 'Share',
     },
     {
-        path: '2.svg',
+        path: 'compare.svg',
         text: 'Compare',
     },
     {
-        path: '3.svg',
+        path: 'like.svg',
         text: 'Like',
     },
 ]
