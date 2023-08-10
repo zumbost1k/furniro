@@ -43,10 +43,10 @@ const contactForms = [
         type: 'text',
         placeholder: 'This is an optional',
         name: 'subj',
-        extraClass: false
+        isBig: false
     },
     {
-        theme: 'Message',
+        label: 'Message',
         type: 'text',
         placeholder: 'Hi! i’d like to ask about',
         name: 'mess',
