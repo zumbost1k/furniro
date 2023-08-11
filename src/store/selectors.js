@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect'
 
 const selectProducts = state => state.product.selectedProducts
-const selectAllProductList = state => state.productList.products;
+export const selectAllProductList = state => state.productList.products;
 const selectcomparedProduct = state => state.comparedProduct.CompareProd;
 
 export const selectProductById = createSelector([selectAllProductList, selectProducts],
@@ -25,8 +25,7 @@ export const selectTotalCost = createSelector([selectProductById],
     (allProdById) => {
         return allProdById.reduce((accumulator, product) => {
             const costString = product.cost;
-            const costWithoutDots = costString.replace(/\./g, '');
-            const cost = parseInt(costWithoutDots) * parseInt(product.quantity);
+            const cost = parseInt(costString) * parseInt(product.quantity);
             return accumulator + cost;
         }, 0).toLocaleString('en-US');
     }

@@ -59,9 +59,9 @@ const ProductsDescriptions = () => {
     return (
         <section className='description_section'>
             <form className='description_links'>
-                {descriptionTopLinksInfo.map(topLinkInfoItem  => {
+                {descriptionTopLinksInfo.map(topLinkInfoItem => {
                     return (
-                        <div className='description_link_relative'>
+                        <div key={topLinkInfoItem.pageId} className='description_link_relative'>
                             <input
                                 value={topLinkInfoItem.pageId}
                                 checked={currentPage === topLinkInfoItem.pageId}
@@ -80,11 +80,11 @@ const ProductsDescriptions = () => {
             {
                 infoForTopDeskLinks.map(infoForTopDeskLink => {
                     return (
-                        <div className={`page ${classNameCheker(infoForTopDeskLink.pageId)}`}>
+                        <div key={`${infoForTopDeskLink.pageId}_links`} className={`page ${classNameCheker(infoForTopDeskLink.pageId)}`}>
                             <p className='page_fish_text'>{infoForTopDeskLink.firstTextBlock}</p>
                             <p className='page_fish_text'>{infoForTopDeskLink.secondTextBlock}</p>
                             <div className='active_page_photos'>
-                                <div class='avtive_photo_container'>
+                                <div className='avtive_photo_container'>
                                     <img
                                         className='active_page_photo'
                                         width='604'
@@ -93,7 +93,7 @@ const ProductsDescriptions = () => {
                                         alt={infoForTopDeskLink.alt}
                                     />
                                 </div>
-                                <div class='avtive_photo_container'>
+                                <div className='avtive_photo_container'>
                                     <img
                                         className='active_page_photo'
                                         width='604'

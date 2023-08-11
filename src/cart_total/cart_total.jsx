@@ -9,9 +9,7 @@ import { Link } from 'react-router-dom';
 import { selectProductById, selectTotalCost } from '../store/selectors';
 
 const costChecker = (cost, quantity) => {
-    const costString = cost;
-    const costWithoutDots = costString.replace(/\./g, '');
-    const productCost = parseInt(costWithoutDots) * parseInt(quantity);
+    const productCost = parseInt(cost) * parseInt(quantity);
     return productCost.toLocaleString('en-US')
 }
 
@@ -42,11 +40,10 @@ const CartTotal = () => {
                                 <p className='cart_item_cost cart_item_text'>Rs. {product.cost}</p>
                                 <input className='cart_item_number cart_item_text'
                                     value={productQuantity}
-                                    type='text'
-                                    onChange={(e) => {
-                                        const inputValue = e.target.value;
-                                        const regex = /^[^+-]+$/;
-                                        if (regex.test(inputValue) && (inputValue.length <= 1 || inputValue === '10')) {
+                                    type='number'
+                                    onChange={e => {
+                                        const inputValue = Number(e.target.value)
+                                        if (inputValue >= 1 && inputValue <= 10) {
                                             dispatch(
                                                 changeQuantityProduct({
                                                     id: product.id,
@@ -54,8 +51,8 @@ const CartTotal = () => {
                                                 })
                                             )
                                         }
-                                    }
-                                    }
+                                    }}
+
                                 />
                                 <p className='cart_item_total_cost cart_item_text'>Rs. {costChecker(product.cost, product.quantity)}</p>
                                 <button type='button' className='cart_item_delete' onClick={() => { deleteProd(product.id) }}><img src='/photos/dumpster.svg' alt='dumpster' width='28' height='28' /></button>

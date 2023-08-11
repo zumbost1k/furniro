@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Nav from './nav/nav';
 import HomePage from './pages/home';
 import Footer from './footer/footer';
@@ -24,12 +24,13 @@ root.render(
         <Nav />
         <Routes>
           <Route path='/home' element={<HomePage />} />
-          <Route path='/products/:productName' element={<ProductPage />} />
+          <Route path='/products/:productId' element={<ProductPage />} />
           <Route path='/shop' element={<ShopPage />} />
           <Route path='/contact' element={<ContactPage />} />
           <Route path='/about' element={<BlogPage />} />
           <Route path='/product/cart' element={<CartPage />} />
           <Route path='/product/comparison' element={<ComparisonPage />} />
+          <Route path='*' element={<HomePage />} />
         </Routes>
         <Footer />
       </Provider>

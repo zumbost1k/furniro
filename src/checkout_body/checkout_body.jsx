@@ -16,7 +16,7 @@ const checkoutInputs = [
         placeholder: '',
     },
     {
-        inputType: 'standart',
+        inputType: 'standard',
         additionalInformation: {
         },
         topText: 'Company Name (Optional)',
@@ -47,7 +47,7 @@ const checkoutInputs = [
         placeholder: '',
     },
     {
-        inputType: 'standart',
+        inputType: 'standard',
         additionalInformation: {
         },
         topText: 'Street address',
@@ -56,7 +56,7 @@ const checkoutInputs = [
         placeholder: '',
     },
     {
-        inputType: 'standart',
+        inputType: 'standard',
         additionalInformation: {
         },
         topText: 'Town / City',
@@ -91,7 +91,7 @@ const checkoutInputs = [
         placeholder: '',
     },
     {
-        inputType: 'standart',
+        inputType: 'standard',
         additionalInformation: {
         },
         topText: 'ZIP code',
@@ -100,7 +100,7 @@ const checkoutInputs = [
         placeholder: '',
     },
     {
-        inputType: 'standart',
+        inputType: 'standard',
         additionalInformation: {
         },
         topText: 'Phone',
@@ -109,7 +109,7 @@ const checkoutInputs = [
         placeholder: '',
     },
     {
-        inputType: 'standart',
+        inputType: 'standard',
         additionalInformation: {
         },
         topText: 'Email address',
@@ -118,7 +118,7 @@ const checkoutInputs = [
         placeholder: '',
     },
     {
-        inputType: 'standart',
+        inputType: 'standard',
         additionalInformation: {
         },
         topText: '',
@@ -175,7 +175,7 @@ const checkoutInputsList = checkoutInputs.map((checkoutInput, index) => {
             <DoubleInput checkoutInput={checkoutInput} />
         )
     }
-    else if (checkoutInput.inputType === 'standart') {
+    else if (checkoutInput.inputType === 'standard') {
         return (
             <StandardInput checkoutInput={checkoutInput} />
         )

@@ -39,7 +39,139 @@ const HeaderInfoList = ({ product }) => {
 
 
 }
+const tableInfo = [
+    {
+        header: true,
+        text: 'General',
+        key: 'general'
+    },
+    {
+        header: false,
+        text: 'Sales Package',
+        key: 'salesPackage'
+    },
+    {
+        header: false,
+        text: 'Model Number',
+        key: 'modelNumber'
+    },
+    {
+        header: false,
+        text: 'Secondary Material',
+        key: 'secondaryMaterial'
+    },
+    {
+        header: false,
+        text: 'Configuration',
+        key: 'configuration'
+    },
+    {
+        header: false,
+        text: 'Upholstery Material',
+        key: 'upholsteryMaterial'
+    },
+    {
+        header: false,
+        text: 'Upholstery Color',
+        key: 'upholsteryColor'
+    },
+    {
+        header: true,
+        text: 'Product',
+        key: 'product'
+    },
+    {
+        header: false,
+        text: 'Filling Material',
+        key: 'fillingMaterial'
+    },
+    {
+        header: false,
+        text: 'Finish Type',
+        key: 'finishType'
+    },
+    {
+        header: false,
+        text: 'Adjustable Headrest',
+        key: 'adjustableHeadrest'
+    },
+    {
+        header: false,
+        text: 'Maximum Load Capacity',
+        key: 'maximumLoadCapacity'
+    },
+    {
+        header: false,
+        text: 'Origin of Manufacture',
+        key: 'originOfManufacture'
+    },
+    {
+        header: true,
+        text: 'Dimensions',
+        key: 'dimensions'
+    },
+    {
+        header: false,
+        text: 'Width',
+        key: 'width'
+    },
+    {
+        header: false,
+        text: 'Height',
+        key: 'height'
+    },
+    {
+        header: false,
+        text: 'Depth',
+        key: 'depth'
+    },
+    {
+        header: false,
+        text: 'Weight',
+        key: 'weight'
+    },
+    {
+        header: false,
+        text: 'Seat Height',
+        key: 'seatHeight'
+    },
+    {
+        header: false,
+        text: 'Leg Height',
+        key: 'legHeight'
+    },
+    {
+        header: true,
+        text: 'Warranty',
+        key: 'warranty'
+    },
+    {
+        header: false,
+        text: 'Warranty Summary',
+        key: 'warrantySummary'
+    },
+    {
+        header: false,
+        text: 'Warranty Service Type',
+        key: 'warrantyServiceType'
+    },
+    {
+        header: false,
+        text: 'Covered in Warranty',
+        key: 'coveredinWarranty'
+    },
+    {
+        header: false,
+        text: 'Not Covered in Warranty',
+        key: 'notCoveredinWarranty'
+    },
+    {
+        header: false,
+        text: 'Domestic Warranty',
+        key: 'domesticWarranty'
+    },
 
+]
 const ComparisonBody = () => {
 
     const dispatch = useDispatch()
@@ -96,8 +228,8 @@ const ComparisonBody = () => {
                                     <tbody key={tableItem.key}>
                                         <tr >
                                             <td><p className='compare_text_table compare_item_first'>{tableItem.text}</p></td>
-                                            <td className='compare_table_item_pad compare_table_item compare_item_second'><p className='compare_text_table'>{firstCompared[tableItem.key]}</p></td>
-                                            <td className='compare_table_item_pad compare_table_item compare_item_third'><p className='compare_text_table'>{secondCompared[tableItem.key]}</p></td>
+                                            <td className='compare_table_item_pad compare_table_item compare_item_second'><p className='compare_text_table'>{firstComparedProduct[tableItem.key]}</p></td>
+                                            <td className='compare_table_item_pad compare_table_item compare_item_third'><p className='compare_text_table'>{secondComparedProduct[tableItem.key]}</p></td>
                                             <td className='compare_table_item_pad compare_item_foufth'></td>
                                         </tr>
                                     </tbody>

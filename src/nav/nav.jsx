@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './nav.css'
 import { Link } from 'react-router-dom';
 import ReactModal from 'react-modal';
@@ -28,8 +28,8 @@ const linksWord = [
 ]
 const linksWordsList = linksWord.map((link) => {
     return (
-        <Link key={link} className='menu_link' to={link}>
-            {link}
+        <Link key={link.text} className='menu_link' to={link.path}>
+            {link.text}
         </Link>
     );
 });
@@ -138,7 +138,7 @@ const Nav = () => {
                                         <div className='todos_item_main_back'><img className='todos_item_main' width='105' height='105' src={`/photos/products/${product.path}`} alt={product.name} /></div>
                                         <div className='todos_item_text'>
                                             <h3 className='todos_item_title'>{product.name}</h3>
-                                            <p className='todos_item_number'>{product.quantity} <span className='todos_item_cost'>X<span className='todos_item_cost_yel'>Rs. {product.cost}</span> </span></p>
+                                            <p className='todos_item_number'>{product.quantity} <span className='todos_item_cost'>X<span className='todos_item_cost_yel'>Rs. {product.cost.toLocaleString('en-US')}</span> </span></p>
                                         </div>
                                         <button type='button' className='todos_item_delete' onClick={() => { deleteProd(product.id) }}><img src='/photos/close_cart.svg' alt='close cart' width='20' height='20' /></button>
                                     </div>

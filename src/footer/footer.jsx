@@ -39,7 +39,7 @@ const footerLinks = {
 const FooterLinksList = ({ links }) => {
     return links.map((link) => {
         return (
-            <Link className='footer_link' to={link.path}>
+            <Link key={link.text} className='footer_link' to={link.path}>
                 {link.text}
             </Link>
         )
