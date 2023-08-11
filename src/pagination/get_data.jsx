@@ -2,7 +2,7 @@ import React, {
     useEffect,
     useState
 } from 'react';
-import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import Paginate from './reactPaginate';
 import '../products/products.css'
 import './pagination.css'
@@ -99,19 +99,20 @@ const usePageQueryParam = () => {
 }
 const PaginatedItems = () => {
     const currentPage = usePageQueryParam()
-    const [productsList, setProductList] = useState(useSelector(selectAllProductList))
+    const productsList = useSelector(selectAllProductList)
     const [itemsPerPage, setItemsPerPage] = useState(16);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const [filterOn, setFilterOn] = useState('default');
-    const navigate = useNavigate();
+
     const [searchParams, setSearchParams] = useSearchParams();
     const updatePageQueryParam = (newPage) => {
-        searchParams.set('page', newPage);
-        setSearchParams(searchParams);
-        navigate({ search: searchParams.toString(), replace: true });
+        const newSearchParams = new URLSearchParams(searchParams.toString());
+        newSearchParams.set('page', newPage);
+        setSearchParams(newSearchParams, { replace: true });
     }
+
     const [filteredArray, setFilteredArray] = useState(productsList)
     useEffect(() => {
         setPageCount(Math.ceil(productsList.length / itemsPerPage));

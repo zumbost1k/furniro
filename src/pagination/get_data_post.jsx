@@ -3,7 +3,7 @@ import Paginate from './reactPaginate';
 import '../products/products.css'
 import './pagination.css'
 import './get_data_post.css'
-import { useLocation, useNavigate } from 'react-router';
+import { useLocation } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 
 const allPosts = [
@@ -188,15 +188,16 @@ const usePageQueryParam = () => {
     return page;
 }
 
+
+
 const PaginatedItemsPost = () => {
     const pageCount = Math.ceil(allPosts.length / 3)
     const currentPage = usePageQueryParam()
-    const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
     const updatePageQueryParam = (newPage) => {
-        searchParams.set('page', newPage);
-        setSearchParams(searchParams);
-        navigate({ search: searchParams.toString(), replace: true });
+        const newSearchParams = new URLSearchParams(searchParams.toString());
+        newSearchParams.set('page', newPage);
+        setSearchParams(newSearchParams, { replace: true });
     }
 
 

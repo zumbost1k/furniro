@@ -92,7 +92,7 @@ const ProductInfo = () => {
                     </div>
                 </div>
                 <div className='text_product'>
-                    <h2 className='product_info_title'>{currentProduct.name || 'Loading...'}</h2>
+                    <h2 className='product_info_title'>{currentProduct.name}</h2>
                     <p className='product_info_cost'>Rs. {currentProduct.cost.toLocaleString('en-US')}</p>
                     <div className='rating'>
                         <Rating
