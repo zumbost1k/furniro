@@ -1,7 +1,7 @@
 import React from 'react';
-import ShopHeader from '../shop_header/shop_header';
-import DiscountShop from '../discount_shop/discount_shop';
-import ComparisonBody from '../comparisonBody/comparisonBody';
+import ShopHeader from '@/shop_header/shop_header';
+import DiscountShop from '@/discount_shop/discount_shop';
+import ComparisonBody from '@/comparisonBody/comparisonBody';
 const ComparisonPage = () => {
     return (
         <div>
