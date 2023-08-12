@@ -173,7 +173,6 @@ const tableInfo = [
 
 ]
 const ComparisonBody = () => {
-
     const dispatch = useDispatch()
     const selectedProducts = useSelector(selectProductById)
     const [firstComparedProduct, secondComparedProduct] = useSelector(selectProductByCompared)

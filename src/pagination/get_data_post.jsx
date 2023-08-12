@@ -84,23 +84,23 @@ const allPosts = [
 const categories = [
     {
         name: 'Crafts',
-        numberOfPosts: '2'
+        numberOfPosts: 2
     },
     {
         name: 'Design',
-        numberOfPosts: '8'
+        numberOfPosts: 8
     },
     {
         name: 'Handmade',
-        numberOfPosts: '7'
+        numberOfPosts: 7
     },
     {
         name: 'Interior',
-        numberOfPosts: '1'
+        numberOfPosts: 1
     },
     {
         name: 'Wood',
-        numberOfPosts: '6'
+        numberOfPosts: 6
     },
 ]
 
@@ -135,7 +135,7 @@ const recentPosts = [
 const recentPostsList = recentPosts.map(post => {
     return (
         <div key={post.path} className='recent_post_item'>
-            <img width='80' height='80' src={`/photos/recent_posts/${post.path}.png`} alt={post.path} />
+            <img width='80' height='80' src={`/photos/recent_posts/${post.name}.png`} alt={post.path} />
             <div>
                 <p className='recent_post_text'>{post.mainText}</p>
                 <time className='recent_post_time' dateTime={post.date}>{post.date}</time>
@@ -148,7 +148,7 @@ const categoriesList = categories.map(category => {
     return (
         <div key={category.name} className='catergory_item'>
             <button type='button' className='catergory_item_btn'>{category.name}</button>
-            <p className='catergory_item_text'>{category.numberOf}</p>
+            <p className='catergory_item_text'>{category.numberOfPosts}</p>
         </div>
     )
 })

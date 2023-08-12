@@ -208,7 +208,7 @@ const CheckoutBody = () => {
                         return (
                             <div key={product.id} className='checkout_product_item'>
                                 <p className='checkout_product_name'>{product.name} <span className='checkout_product_quantity'>X {product.quantity}</span></p>
-                                <p className='checkout_product_cost'>Rs. {product.cost}</p>
+                                <p className='checkout_product_cost'>Rs. {product.cost.toLocaleString('en-US')}</p>
                             </div>
                         )
                     })}

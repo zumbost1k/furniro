@@ -75,7 +75,7 @@ const CartTotal = () => {
                         {totalCost}
                     </p>
                 </div>
-                <button type='button' className='cart_check_btn'><Link className='cart_check_out_inner' to=''>Check Out</Link></button>
+                <button type='button' className='cart_check_btn'><Link className='cart_check_out_inner' to='/product/checkout'>Check Out</Link></button>
             </div>
         </section>
     )

@@ -58,17 +58,25 @@ const ProductList = ({ products }) => {
         return (
             <Link key={product.id} className='product_item_shop' to={`/products/${product.id}`}>
                 <div className='item_hoover_state'>
-                    <button type='button' onClick={addProductHandler} className='item_button'>Add to cart</button>
+                    <button type='button' onClick={(event) => {
+                        event.preventDefault();
+                        addProductHandler();
+                    }} className='item_button'>Add to cart</button>
                     <div className='product_link_items'>
                         <button type='button' className='product_link_item'>
                             <img src={`/photos/products/share.svg`} alt='share' />
                             <figcaption className='product_link_item_text'>Share</figcaption>
                         </button>
-                        <button type='button' onClick={addCompareProductHandler} className='product_link_item'>
+                        <button type='button' onClick={(event) => {
+                            event.preventDefault();
+                            addCompareProductHandler();
+                        }} className='product_link_item'>
                             <img src={`/photos/products/compare.svg`} alt='compare' />
                             <figcaption className='product_link_item_text'>Compare</figcaption>
                         </button>
-                        <button type='button' className='product_link_item'>
+                        <button onClick={(event) => {
+                            event.preventDefault();
+                        }} type='button' className='product_link_item'>
                             <img src={`/photos/products/like.svg`} alt='like' />
                             <figcaption className='product_link_item_text'>Like</figcaption>
                         </button>
