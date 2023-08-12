@@ -135,9 +135,7 @@ const PaginatedItems = () => {
             setFilteredArray([...productsList].sort((a, b) => a.name.localeCompare(b.name)));
         }
         if (filterOn === 'cost') {
-            setFilteredArray([...productsList].sort((a, b) => {
-                return a - b;
-            }));
+            setFilteredArray([...productsList].sort((a, b) => a.cost - b.cost));
         }
         setIsLoading(false
         );
