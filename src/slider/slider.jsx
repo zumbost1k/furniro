@@ -144,7 +144,7 @@ const MySlider = () => {
   return (
     <section className='slider_section'>
       <div className='inspiration_block'>
-        <h2 className='rooms_inspiration'>50+ Beautiful rooms inspiration</h2>
+        <h2 className='rooms_inspiration' data-testid='slider'>50+ Beautiful rooms inspiration</h2>
         <p className='inspiration_text'>
           Our designer already made a lot of beautiful prototipe of rooms that
           inspire you

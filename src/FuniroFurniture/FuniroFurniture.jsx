@@ -6,7 +6,7 @@ const FuniroFurniture = () => {
     <section className='funiro_section'>
       <div className='funiro_title'>
         <p className='funiro_title_text'>Share your setup with</p>
-        <h2 className='funiro_title_header'>#FuniroFurniture</h2>
+        <h2 className='funiro_title_header' data-testid='furniro'>#FuniroFurniture</h2>
       </div>
 
       <div className='funiro_photos'>

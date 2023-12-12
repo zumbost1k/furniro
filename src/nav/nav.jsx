@@ -119,7 +119,7 @@ const Nav = () => {
         >
           <div className='modal_content'>
             <div className='modal_window_content'>
-              <h3 className='modal_window_content_header'>Shopping Cart</h3>
+              <h3 className='modal_window_content_header' >Shopping Cart</h3>
               <button
                 onClick={handleCloseModal}
                 className='modal_window_content_close'
@@ -171,7 +171,7 @@ const Nav = () => {
               })}
             </div>
             <div className='todos_total_cost'>
-              <p className='todos_total_cost_title'>Subtotal</p>
+              <p className='todos_total_cost_title' >Subtotal</p>
               <p className='todos_total_cost_numbers'>
                 {' '}
                 Rs.

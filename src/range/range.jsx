@@ -27,7 +27,7 @@ const roomsList = rooms.map(function (room) {
 const Range = () => {
     return (
         <section className='range_part'>
-            <h2 className='range'>Browse The Range</h2>
+            <h2 className='range' data-testid='range'>Browse The Range</h2>
             <p className='lorem_range'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <div className='rooms'>{roomsList}</div>
         </section>

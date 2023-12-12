@@ -94,7 +94,7 @@ const placeholdersList = contactForms.map((placeholder, index) => {
                     </div>
                     <form className='contact_form_item ' action='' >
                         {placeholdersList}
-                        <button className='contact_form_btn' type='submit'>Submit</button>
+                        <button className='contact_form_btn' type='submit' data-testid='contact'>Submit</button>
                     </form>
                 </div>
             </section>

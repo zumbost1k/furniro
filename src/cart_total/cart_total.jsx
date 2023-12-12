@@ -26,7 +26,7 @@ const CartTotal = () => {
             <div className='cart_total_product_item'>
                 <div className='cart_total_product_item_header'>
                     <p className='item_header_product product_item_header'>Product</p>
-                    <p className='item_header_price'>Price</p>
+                    <p className='item_header_price' data-testid="price">Price</p>
                     <p className='item_header_quantity'>Quantity</p>
                     <p className='item_header_subtotal'>Subtotal</p>
                 </div>
