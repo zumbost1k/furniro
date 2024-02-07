@@ -8,17 +8,15 @@ import { useSelector } from 'react-redux';
 const ProductPath = () => {
     const { productId } = useParams();
     const currentProduct = useSelector(selectAllProductList).filter(product => { return product.id === productId })[0]
-    if(currentProduct){
-      return (
+    return (
         <section className='product_path_section'>
             <Link to='/home' className='nav_link nav_link_home'>Home</Link>
             <img src='/photos/arrow.png' alt='arrow' />
-            <Link to='/shop' className='nav_link nav_link_shop'>Shop</Link>
+            <Link to='/shop' className='nav_link nav_link_shop' data-testid='shop-path'>Shop</Link>
             <img src='/photos/arrow.png' alt='arrow' />
-            <p className='product_name'>{currentProduct.name}</p>
+            {currentProduct && <p className='product_name'>{currentProduct.name}</p>}
         </section>
-    )  
-    }
-    
-}
+    ) 
+ }
+ 
 export default ProductPath

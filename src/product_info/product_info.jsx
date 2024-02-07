@@ -108,7 +108,7 @@ const ProductInfo = () => {
                         stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.
                     </p>
                     <div className='product_size'>
-                        <p className='product_size_text'>Size</p>
+                        <p className='product_size_text' >Size</p>
                         <form className='radio_sizes'>
                             <div className='size_relative'>
                                 <input type='radio' name='size' id='l' className='size_radio' />
